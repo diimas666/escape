@@ -8,7 +8,6 @@
     cursor: pointer;
   }
 
-  /* Покажи бургер-полоски */
   .header__hamburger span {
     height: 3px;
     background: linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%);
@@ -17,5 +16,11 @@
     width: 100%;
     display: block;
     border-radius: 3px;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .header__content-left h1 {
+    min-height: 140px;
   }
 }
