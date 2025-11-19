@@ -1,0 +1,26 @@
+:root {
+  /* Шрифт */
+  /* для заголовков  */
+  --font-Montserrat: 'Montserrat', sans-serif;
+  --font-Inter: 'Inter', sans-serif;
+  /* для текста  */
+
+  /* Розміри шрифтів */
+  --fz-45: 45px;
+  --fz-40: 40px;
+  --fz-24: 24px;
+  --fz-20: 20px;
+  --fz-18: 18px;
+  --fz-16: 16px;
+  --fz-14: 14px;
+  --fz-12: 12px;
+
+  /* Кольори */
+  --color-primary: #080d20;
+  --color-dark-primary: #ced5f4;
+  --color-light-primary: #f9faff;
+  --color-btn: #d0cdf1;
+  --color-white: #fff;
+  --сolor-light-gold: #f4d485;
+  --color-tertiary: #fafafa;
+}
