@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
   </head>
   <body>
     <header class="header">
@@ -32,6 +33,11 @@
       ></video>
       <div class="container">
         <div class="header__top">
+          <div class="header__hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <div class="logo">
             <!-- <img src="" alt="Logo" /> -->
             <span>Escape</span>
@@ -65,6 +71,26 @@
         </div>
       </div>
     </header>
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="mobile-menu">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__title">Меню</span>
+        <span class="mobile-menu__close">&times;</span>
+      </div>
+
+      <ul>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Послуги</a></li>
+        <li><a href="#">Приклади</a></li>
+        <li><a href="#">Вартість</a></li>
+        <li><a href="#">Часті питання</a></li>
+        <li><a href="#">Контакти</a></li>
+      </ul>
+    </div>
+    <main>
+      <section class="about"></section>
+    </main>
     <script src="./js/index.js"></script>
   </body>
 </html>
