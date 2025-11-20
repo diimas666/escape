@@ -17,6 +17,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/media.css" />
@@ -99,8 +103,107 @@
       </ul>
     </div>
     <main>
-      <section class="about"></section>
+      <section class="about">
+        <div class="container">
+          <div class="about__container">
+            <div class="about__left">
+              <div class="about__wrapper">
+                <div class="about__item">
+                  <h4><span class="counter" data-target="120">0</span>+</h4>
+                  <span>розроблених сайтів</span>
+                </div>
+                <div class="about__item">
+                  <h4><span class="counter" data-target="8">0</span>+</h4>
+                  <span>досвіду років</span>
+                </div>
+                <div class="about__item">
+                  <h4><span class="counter" data-target="25">0</span>+</h4>
+                  <span>експертів з досвідом роботи</span>
+                </div>
+                <div class="about__item">
+                  <h4><span class="counter" data-target="75">0</span>%</h4>
+                  <span>клієнтів, що повертаються і рекомендують нас</span>
+                </div>
+              </div>
+            </div>
+            <div class="about__right">
+              <h2 class="about__title">Про нас</h2>
+              <p>
+                Escape — це більше, ніж веб-розробка. Ми створюємо комплексні
+                рішення для бізнесу: від корпоративних сайтів та
+                інтернет-магазинів до нативних мобільних додатків. А щоб ваш
+                проект одразу почав приносити дохід, ми розробляємо та
+                впроваджуємо стратегії просування й реклами. Один партнер -
+                вирішення усіх цифрових задач.
+              </p>
+              <div class="about__right-reviews">
+                <div class="swiper reviews-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="review-card">
+                        <p class="review-text">
+                          "Співпраця з Escape перевершила наші очікування. Вони
+                          не просто створили сайт, а розробили інструмент, який
+                          збільшив наші онлайн-продажі на 40% за перші три
+                          місяці. Команда завжди на зв'язку та пропонує
+                          креативні рішення."
+                        </p>
+                        <div class="review-author">
+                          <div class="review-author__info">
+                            <h5>Олексій Данилюк</h5>
+                            <span>CEO "ТехноСвіт"</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="review-card">
+                        <p class="review-text">
+                          "Замовляли розробку мобільного додатку для служби
+                          доставки. Вражені швидкістю роботи та увагою до
+                          деталей UX/UI. Додаток працює стабільно, клієнти
+                          задоволені, а ми отримали зручну адмін-панель."
+                        </p>
+                        <div class="review-author">
+                          <div class="review-author__info">
+                            <h5>Марина Коваль</h5>
+                            <span>Маркетинг-директор "QuickEat"</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="review-card">
+                        <p class="review-text">
+                          "Дякуємо за комплексний підхід! Запустили
+                          інтернет-магазин і одразу налаштували рекламну
+                          кампанію. Результат пішов з першого тижня.
+                          Професіонали своєї справи."
+                        </p>
+                        <div class="review-author">
+                          <div class="review-author__info">
+                            <h5>Ігор Петренко</h5>
+                            <span>Власник мережі "StyleHub"</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-nav-wrapper">
+                    <div class="swiper-button-prev reviews-prev"></div>
+                    <div class="swiper-button-next reviews-next"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
