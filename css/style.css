@@ -415,3 +415,157 @@ a:focus {
   color: rgba(2, 4, 22, 1); /* Темний колір стрілок */
 }
 /* about end  */
+/* consult start  */
+
+/* Загальні відступи секції */
+.consult {
+  padding: 100px 0;
+}
+
+/* Темна картка-контейнер */
+.consult__wrapper {
+  background-color: #020416; /* Темний фон (майже чорний) */
+  border-radius: 24px; /* Більші заокруглення */
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+  /* Легка тінь */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Декоративний елемент (світіння) на фоні */
+.consult__wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(210, 212, 255, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ліва частина з текстом */
+.consult__content {
+  flex: 1;
+  z-index: 1;
+}
+
+.consult__title {
+  font-family: var(--font-Inter);
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 120%;
+}
+
+.consult__subtitle {
+  font-family: var(--font-Inter);
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7); /* Напівпрозорий білий */
+  max-width: 450px;
+  line-height: 150%;
+}
+
+/* Права частина (Форма) */
+.consult__form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  width: 100%;
+  z-index: 1;
+}
+
+.consult__input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05); /* Прозорий фон */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px 25px;
+  font-family: var(--font-Inter);
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.consult__input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.consult__input:focus {
+  outline: none;
+  border-color: #d2d4ff; /* Акцентний колір при кліку */
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка */
+.consult__btn {
+  width: 100%;
+  padding: 20px;
+  background-color: #d2d4ff; /* Ваш фірмовий колір з секції About */
+  color: #020416;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-Inter);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.consult__btn:hover {
+  background-color: #fff; /* При наведенні стає білою */
+  transform: translateY(-2px);
+}
+
+.consult__btn:active {
+  transform: translateY(0);
+}
+
+/* Адаптив для мобільних (Media Queries) */
+/* Додайте це в кінці або у файл media.css */
+@media (max-width: 992px) {
+  .consult__wrapper {
+    flex-direction: column; /* Блоки стають один під одним */
+    padding: 40px 30px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .consult__subtitle {
+    margin: 0 auto; /* Центруємо текст */
+  }
+
+  .consult__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .consult__wrapper {
+    padding: 30px 20px;
+  }
+
+  .consult__title {
+    font-size: 26px;
+  }
+
+  .consult__btn {
+    font-size: 16px;
+  }
+}
+/* consult end  */
