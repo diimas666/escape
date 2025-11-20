@@ -24,3 +24,30 @@
     min-height: 140px;
   }
 }
+@media screen and (max-width: 458px) {
+  .container {
+    padding: 0 15px;
+  }
+  .header__content {
+    margin-top: 200px;
+  }
+  .header__content-left h1 {
+    font-size: var(--fz-40);
+  }
+  .header__content-left p {
+    font-size: var(--fz-20);
+  }
+}
+@media screen and (max-width: 375px) {
+  .header__content {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .header__content-left h1 {
+    font-size: var(--fz-35);
+  }
+  .header__content-left p {
+    font-size: var(--fz-18);
+  }
+}
