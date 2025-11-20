@@ -23,14 +23,24 @@
   </head>
   <body>
     <header class="header">
-      <video
-        class="header__video"
-        src="./video/bg-video.mp4"
-        autoplay
-        muted
-        loop
-        playsinline
-      ></video>
+      <video class="header__video" autoplay muted loop playsinline>
+        <!-- Мобильное видео -->
+        <source
+          src="./video/bg-video-mobile2.mp4"
+          type="video/mp4"
+          media="(max-width: 567px)"
+        />
+
+        <!-- Десктопное видео -->
+        <source
+          src="./video/bg-video.mp4"
+          type="video/mp4"
+          media="(min-width: 568px)"
+        />
+
+        Ваш браузер не поддерживает HTML5 video.
+      </video>
+
       <div class="container">
         <div class="header__top">
           <div class="header__hamburger">
