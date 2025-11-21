@@ -571,6 +571,7 @@ a:focus {
 /* consult end  */
 
 /* services start  */
+/* services start  */
 .services {
   background: rgba(14, 2, 22, 1);
   padding: 70px 0;
@@ -578,12 +579,10 @@ a:focus {
 
 .services__title {
   font-family: var(--font-Inter);
-  font-size: var(--fz-40);
+  font-size: var(--fz-48);
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
-  font-weight: 500;
-  font-style: italic;
 }
 
 .services__grid {
@@ -612,7 +611,6 @@ a:focus {
   font-size: var(--fz-32);
   font-weight: 700;
   line-height: 140%;
-  margin-bottom: 8px;
 }
 
 .service-card__description {
@@ -620,7 +618,7 @@ a:focus {
   font-size: var(--fz-18);
   line-height: 150%;
   color: #222;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .service-card__list {
@@ -632,4 +630,96 @@ a:focus {
   font-size: var(--fz-18);
 }
 
+/* ---------- АДАПТИВ ---------- */
+
+/* ≤1200px */
+@media (max-width: 1200px) {
+  .services__grid {
+    gap: 20px;
+  }
+}
+
+/* ≤992px */
+@media (max-width: 992px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
+  .service-card__title {
+    font-size: var(--fz-28);
+  }
+}
+
+/* ≤768px */
+@media (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  .service-card__title {
+    font-size: var(--fz-26);
+  }
+}
+
+/* ≤576px */
+@media (max-width: 576px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .services__title {
+    font-size: var(--fz-36);
+  }
+
+  .service-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .service-card__title {
+    font-size: var(--fz-22);
+  }
+
+  .service-card__description,
+  .service-card__list {
+    font-size: var(--fz-16);
+  }
+}
+
+/* ≤420px */
+@media (max-width: 420px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .services__title {
+    font-size: var(--fz-32);
+  }
+
+  .service-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .service-card__title {
+    font-size: var(--fz-20);
+  }
+
+  .service-card__description,
+  .service-card__list {
+    font-size: var(--fz-15);
+  }
+}
 /* services end */
