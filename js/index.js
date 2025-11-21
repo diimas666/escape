@@ -140,4 +140,33 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false, // Не зупиняти після ручного перемикання
     },
   });
+
+  //свайпер слайдер 2
+  const swiper = new Swiper(".portfolio-slider", {
+    slidesPerView: 3,
+    spaceBetween: 24,
+    loop: true,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 3,
+      },
+    },
+  });
 });
