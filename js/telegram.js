@@ -54,6 +54,8 @@ async function sendTelegram(e) {
     let type = "Консультація";
     let name = "";
     let phone = "";
+    let email = "";
+    let userMessage = "";
 
     if (form.classList.contains("modal__form")) {
         type = orderTypeInput.value.trim() || "Замовлення";
@@ -66,6 +68,17 @@ async function sendTelegram(e) {
         const phoneInput = form.querySelector('input[name="phone"]');
         name = nameInput ? nameInput.value.trim() : "";
         phone = phoneInput ? phoneInput.value.trim() : "";
+    } else if (form.classList.contains("contacts__form")) {
+        type = "Повідомлення з контактів";
+        const nameInput = form.querySelector('input[name="name"]');
+        const phoneInput = form.querySelector('input[name="phone"]');
+        const emailInput = form.querySelector('input[name="email"]');
+        const msgInput = form.querySelector('textarea[name="message"]');
+
+        name = nameInput ? nameInput.value.trim() : "";
+        phone = phoneInput ? phoneInput.value.trim() : "";
+        email = emailInput ? emailInput.value.trim() : "";
+        userMessage = msgInput ? msgInput.value.trim() : "";
     }
 
     // Validation
@@ -81,12 +94,22 @@ async function sendTelegram(e) {
         return;
     }
 
-    const message = `📩 НОВА ЗАЯВКА
+    // Construct Message
+    let message = `📩 НОВА ЗАЯВКА
 ---------------------------
 🔶 Послуга: ${type}
 👤 Ім’я: ${name}
-📞 Телефон: ${phone}
-🌐 Сторінка: ${window.location.href}
+📞 Телефон: ${phone}`;
+
+    if (email) {
+        message += `\n📧 Email: ${email}`;
+    }
+
+    if (userMessage) {
+        message += `\n💬 Повідомлення: ${userMessage}`;
+    }
+
+    message += `\n🌐 Сторінка: ${window.location.href}
 ⏰ Час: ${new Date().toLocaleString()}
 `;
 
@@ -156,5 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (consultForm) {
         consultForm.addEventListener("submit", sendTelegram);
+    }
+
+    const contactsForm = document.querySelector(".contacts__form");
+    if (contactsForm) {
+        contactsForm.addEventListener("submit", sendTelegram);
     }
 });
