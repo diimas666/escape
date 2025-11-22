@@ -860,6 +860,7 @@ a:focus {
 .steps {
   padding: 70px 0;
   background: #f8f9ff;
+  margin-bottom: 40px;
 }
 
 .steps__title {
@@ -924,3 +925,137 @@ a:focus {
   font-style: italic;
 }
 /* steps end  */
+/* price start  */
+
+.price {
+  background: rgba(14, 2, 22, 1);
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+.price img:nth-of-type(1) {
+  position: absolute;
+  left: -200px;
+  top: 0;
+}
+.price img:nth-of-type(2) {
+  position: absolute;
+  right: -200px;
+  bottom: -100px;
+}
+.price_title {
+  font-family: var(--font-Inter);
+  font-size: var(--fz-48);
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+}
+.price {
+  padding: 80px 0;
+  background: linear-gradient(180deg, #1b0f2e, #0e061a);
+  color: #fff;
+}
+
+.price__title {
+  text-align: center;
+  font-size: var(--fz-45);
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.price__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.price__card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  width: 330px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 40px;
+}
+.price__card:hover {
+  transform: translateY(-3px);
+  border: 1px solid white;
+}
+.price__card--active {
+  border: 2px solid #6a4df4;
+  transform: translateY(-10px);
+}
+
+.price__label {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #6a4df4;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.price__card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.price__card-price {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.price__card-price span {
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.price__content {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.price__content li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  opacity: 0.88;
+  display: flex;
+  align-items: center;
+}
+
+.price__content li::before {
+  content: "✔";
+  color: #6a4df4;
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.price__btn {
+  display: block;
+  text-align: center;
+  background: #6a4df4;
+  padding: 14px 0;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.price__btn:hover {
+  background: #836bff;
+}
+
+/* price end */
