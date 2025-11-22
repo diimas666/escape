@@ -521,6 +521,23 @@
       </section>
 
       <section class="price">
+        <div id="modal" class="modal">
+          <div class="modal__content">
+            <button class="modal__close" onclick="closeModal()">✕</button>
+
+            <h3>Залишити заявку</h3>
+
+            <form class="modal__form">
+              <input id="order-type" type="text" readonly />
+
+              <input type="text" placeholder="Ваше ім’я" required />
+              <input type="tel" placeholder="Телефон" required />
+
+              <button type="submit">Надіслати</button>
+            </form>
+          </div>
+        </div>
+
         <div class="container">
           <h2 class="price__title">Вартість</h2>
 
@@ -549,7 +566,13 @@
                 </li>
               </ul>
 
-              <a href="#" class="price__btn">Замовити</a>
+              <a
+                href="#"
+                class="price__btn"
+                data-type="Landing page (візитівка)"
+                onclick="openModal(event)"
+                >Замовити</a
+              >
             </div>
 
             <!-- CARD 2 -->
@@ -580,7 +603,13 @@
                 </li>
               </ul>
 
-              <a href="#" class="price__btn">Замовити</a>
+              <a
+                href="#"
+                class="price__btn"
+                data-type="Корпоративний сайт"
+                onclick="openModal(event)"
+                >Замовити</a
+              >
             </div>
 
             <!-- CARD 3 -->
@@ -613,12 +642,52 @@
                 </li>
               </ul>
 
-              <a href="#" class="price__btn">Замовити</a>
+              <a
+                href="#"
+                class="price__btn"
+                data-type="Інтернет-магазин"
+                onclick="openModal(event)"
+                >Замовити</a
+              >
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      // ====== ОТКРЫТИЕ МОДАЛКИ ======
+      function openModal(event) {
+        event.preventDefault();
+        const type = event.target.dataset.type;
+
+        document.querySelector("#order-type").value = type;
+        document.querySelector("#modal").classList.add("active");
+      }
+
+      // ====== ЗАКРЫТИЕ МОДАЛКИ ======
+      function closeModal() {
+        document.querySelector("#modal").classList.remove("active");
+      }
+
+      // ====== ЗАКРЫТИЕ ПО КЛИКУ ВНЕ КОНТЕНТА ======
+      window.addEventListener("click", (e) => {
+        const modal = document.querySelector("#modal");
+        const content = document.querySelector(".modal__content");
+
+        // если клик по фону
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+
+      // ====== ЗАКРЫТИЕ ПО ESC ======
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
   </body>

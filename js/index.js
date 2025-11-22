@@ -169,4 +169,103 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
+
+  // === TELEGRAM CONFIG ===
+  const BOT_TOKEN = "8500980559:AAF89iZlK7aezv73nfJhWt162UDMxNuYkUE";
+  const CHAT_ID = "1965536609";
+  const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  // === OPEN MODAL ===
+  function openModal(event) {
+    event.preventDefault();
+    const type = event.target.dataset.type;
+    document.querySelector("#order-type").value = type;
+    document.querySelector("#modal").classList.add("active");
+  }
+
+  // === CLOSE MODAL ===
+  function closeModal() {
+    document.querySelector("#modal").classList.remove("active");
+  }
+
+  // === FORM SUBMIT (AJAX) ===
+  document
+    .querySelector(".modal__form")
+    .addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const type = document.querySelector("#order-type").value.trim();
+      const name = this.querySelector(
+        'input[placeholder="Ваше ім’я"]'
+      ).value.trim();
+      const phone = this.querySelector(
+        'input[placeholder="Телефон"]'
+      ).value.trim();
+
+      // === VALIDATION ===
+      if (name.length < 2) {
+        alert("Введіть коректне ім’я");
+        return;
+      }
+
+      if (!/^\+?\d{9,14}$/.test(phone)) {
+        alert("Введіть коректний номер телефону");
+        return;
+      }
+
+      const message = `📩 НОВА ЗАЯВКА
+---------------------------
+🔶 Послуга: ${type}
+👤 Ім’я: ${name}
+📞 Телефон: ${phone}
+🌐 Сторінка: ${window.location.href}
+⏰ Час: ${new Date().toLocaleString()}
+`;
+
+      // === SEND TO TELEGRAM ===
+      try {
+        await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+          }),
+        });
+
+        closeModal();
+        showSuccessPopup();
+        this.reset();
+      } catch (error) {
+        alert("Помилка надсилання. Спробуйте ще раз!");
+      }
+    });
+
+  // === SUCCESS POPUP ===
+  function showSuccessPopup() {
+    const popup = document.createElement("div");
+    popup.className = "success-popup";
+    popup.innerText = "Заявку успішно надіслано!";
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      popup.classList.add("show");
+    }, 10);
+
+    setTimeout(() => {
+      popup.classList.remove("show");
+      setTimeout(() => popup.remove(), 300);
+    }, 2000);
+  }
+
+  // === CLOSE BY OVERLAY CLICK ===
+  window.addEventListener("click", (e) => {
+    const modal = document.querySelector("#modal");
+    if (e.target === modal) closeModal();
+  });
+
+  // === CLOSE BY ESC ===
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
 });
