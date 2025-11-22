@@ -1,694 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Escape web-shop | Cучасні сайти під ключ</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/variables.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media.css" />
-  </head>
-  <body>
-    <header class="header">
-      <video class="header__video" autoplay muted loop playsinline>
-        <!-- Мобильное видео -->
-        <source
-          src="./video/bg-video-mobile2.mp4"
-          type="video/mp4"
-          media="(max-width: 567px)"
-        />
 
-        <!-- Десктопное видео -->
-        <source
-          src="./video/bg-video.mp4"
-          type="video/mp4"
-          media="(min-width: 568px)"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape web-shop | Cучасні сайти під ключ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/media.css" />
+</head>
 
-        Ваш браузер не поддерживает HTML5 video.
-      </video>
+<body>
+  <header class="header">
+    <video class="header__video" autoplay muted loop playsinline>
+      <!-- Мобильное видео -->
+      <source src="./video/bg-video-mobile2.mp4" type="video/mp4" media="(max-width: 567px)" />
+
+      <!-- Десктопное видео -->
+      <source src="./video/bg-video.mp4" type="video/mp4" media="(min-width: 568px)" />
+
+      Ваш браузер не поддерживает HTML5 video.
+    </video>
+
+    <div class="container">
+      <div class="header__top">
+        <div class="header__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logo">
+          <!-- <img src="" alt="Logo" /> -->
+          <span>Escape</span>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Послуги</a></li>
+            <li><a href="#">Приклади</a></li>
+            <li><a href="#">Вартість</a></li>
+            <li><a href="#">Часті питання</a></li>
+            <li><a href="#">Контакти </a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__content">
+        <div class="header__content-left">
+          <h1>
+            <span class="header__typed">Сучасні</span>
+            <span> сайти </span>під ключ
+          </h1>
+
+          <p>
+            Створюємо стильні, швидкі й ефективні сайти, які приносять
+            результат та підкреслюють вашу унікальність.
+          </p>
+          <a class="btn" href="#">Залишити заявку</a>
+        </div>
+        <div class="header__content-right"></div>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu-overlay"></div>
+
+  <div class="mobile-menu">
+    <div class="mobile-menu__header">
+      <span class="mobile-menu__title">Меню</span>
+      <span class="mobile-menu__close">&times;</span>
+    </div>
+
+    <ul>
+      <li><a href="#">Про нас</a></li>
+      <li><a href="#">Послуги</a></li>
+      <li><a href="#">Приклади</a></li>
+      <li><a href="#">Вартість</a></li>
+      <li><a href="#">Часті питання</a></li>
+      <li><a href="#">Контакти</a></li>
+    </ul>
+  </div>
+  <main>
+    <section class="about">
+      <div class="container">
+        <div class="about__container">
+          <div class="about__left">
+            <div class="about__wrapper">
+              <div class="about__item">
+                <h4><span class="counter" data-target="120">0</span>+</h4>
+                <span>розроблених сайтів</span>
+              </div>
+              <div class="about__item">
+                <h4><span class="counter" data-target="8">0</span>+</h4>
+                <span>досвіду років</span>
+              </div>
+              <div class="about__item">
+                <h4><span class="counter" data-target="25">0</span>+</h4>
+                <span>експертів з досвідом роботи</span>
+              </div>
+              <div class="about__item">
+                <h4><span class="counter" data-target="75">0</span>%</h4>
+                <span>клієнтів, що повертаються і рекомендують нас</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__right">
+            <div class="about__content">
+              <h2 class="about__title">Про нас</h2>
+              <p>
+                Escape — це більше, ніж веб-розробка. Ми створюємо комплексні
+                рішення для бізнесу: від корпоративних сайтів та
+                інтернет-магазинів до нативних мобільних додатків. А щоб ваш
+                проект одразу почав приносити дохід, ми розробляємо та
+                впроваджуємо стратегії просування й реклами. Один партнер -
+                вирішення усіх цифрових задач.
+              </p>
+            </div>
+            <div class="about__right-reviews">
+              <div class="swiper reviews-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="review-card">
+                      <p class="review-text">
+                        "Співпраця з Escape перевершила наші очікування. Вони
+                        не просто створили сайт, а розробили інструмент, який
+                        збільшив наші онлайн-продажі на 40% за перші три
+                        місяці. Команда завжди на зв'язку та пропонує
+                        креативні рішення."
+                      </p>
+                      <div class="review-author">
+                        <div class="review-author__info">
+                          <h5>Олексій Данилюк</h5>
+                          <span>CEO "ТехноСвіт"</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="review-card">
+                      <p class="review-text">
+                        "Замовляли розробку мобільного додатку для служби
+                        доставки. Вражені швидкістю роботи та увагою до
+                        деталей UX/UI. Додаток працює стабільно, клієнти
+                        задоволені, а ми отримали зручну адмін-панель."
+                      </p>
+                      <div class="review-author">
+                        <div class="review-author__info">
+                          <h5>Марина Коваль</h5>
+                          <span>Маркетинг-директор "QuickEat"</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="review-card">
+                      <p class="review-text">
+                        "Дякуємо за комплексний підхід! Запустили
+                        інтернет-магазин і одразу налаштували рекламну
+                        кампанію. Результат пішов з першого тижня.
+                        Професіонали своєї справи."
+                      </p>
+                      <div class="review-author">
+                        <div class="review-author__info">
+                          <h5>Ігор Петренко</h5>
+                          <span>Власник мережі "StyleHub"</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-nav-wrapper">
+                  <div class="swiper-button-prev reviews-prev"></div>
+                  <div class="swiper-button-next reviews-next"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="consult" class="consult">
+      <div class="container">
+        <div class="consult__wrapper">
+          <div class="consult__content">
+            <h2 class="consult__title">Обговоримо ваш майбутній проект?</h2>
+            <p class="consult__subtitle">
+              Заповніть коротку форму. Ми проаналізуємо ваш запит та
+              звʼяжемось, щоб запропонувати найкраще рішення для вашого
+              бізнесу.
+            </p>
+          </div>
+
+          <form class="consult__form">
+            <div class="form-group">
+              <input type="text" class="consult__input" name="name" placeholder="Ваше ім'я" required />
+            </div>
+
+            <div class="form-group">
+              <input type="tel" class="consult__input" name="phone" placeholder="Номер телефону" required />
+            </div>
+
+            <button type="submit" class="consult__btn">
+              Отримати консультацію
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="services">
+      <img src="./images/Ellipse_shadow.svg" alt="" />
+      <img src="./images/Ellipse_shadow.svg" alt="" />
+      <div class="container">
+        <h2 class="services__title">Послуги</h2>
+
+        <div class="services__grid">
+          <div class="service-card">
+            <h3 class="service-card__title">Web-розробка</h3>
+            <p class="service-card__description">
+              Розробка сучасних сайтів з акцентом на швидкість, адаптивність
+              та конверсію.
+            </p>
+            <ul class="service-card__list">
+              <li>Корпоративні сайти</li>
+              <li>Інтернет-магазини</li>
+              <li>Лендинги</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3 class="service-card__title">UI/UX Дизайн</h3>
+            <p class="service-card__description">
+              Створення стильних та зручних інтерфейсів, що підвищують довіру
+              та продажі.
+            </p>
+            <ul class="service-card__list">
+              <li>UI/UX Прототипування</li>
+              <li>Редизайн сайтів</li>
+              <li>Адаптивний дизайн</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3 class="service-card__title">Брендинг</h3>
+            <p class="service-card__description">
+              Формування впізнаваної айдентики, яка виділяє ваш бізнес серед
+              конкурентів.
+            </p>
+            <ul class="service-card__list">
+              <li>Фірмовий стиль</li>
+              <li>Логотипи</li>
+              <li>Гайдлайни бренду</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3 class="service-card__title">Інтернет-маркетинг</h3>
+            <p class="service-card__description">
+              Комплексне просування з фокусом на результат: трафік, заявки,
+              продажі.
+            </p>
+            <ul class="service-card__list">
+              <li>SEO-оптимізація</li>
+              <li>PPC Google Ads</li>
+              <li>SMM-просування</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3 class="service-card__title">Технічна підтримка</h3>
+            <p class="service-card__description">
+              Постійний супровід, оновлення та оптимізація ваших веб-ресурсів.
+            </p>
+            <ul class="service-card__list">
+              <li>Підтримка сайтів</li>
+              <li>Оновлення та правки</li>
+              <li>Оптимізація швидкості</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <h3 class="service-card__title">Візуальне ТЗ</h3>
+            <p class="service-card__description">
+              Створення детального візуального технічного завдання, що
+              прискорює розробку.
+            </p>
+            <ul class="service-card__list">
+              <li>Аналіз задачі</li>
+              <li>Візуальні кейси</li>
+              <li>Пояснення логіки проєкту</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="portfolio">
+      <div class="container">
+        <h2 class="portfolio__title">Наші останні роботи</h2>
+
+        <div class="swiper portfolio-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/1.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/2.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/3.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/4.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/5.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/6.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/7.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/8.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/10.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/11.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/12.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/13.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="swiper-slide portfolio__card">
+              <div class="img-inner scroll-img">
+                <img src="./images/portfolio/14.png" alt="Technology landing page" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section class="steps">
+      <div class="container">
+        <h2 class="steps__title">Етапи співпраці</h2>
+
+        <div class="steps__wrapper">
+          <div class="step">
+            <div class="step__number">01</div>
+            <h3 class="step__name">Знайомство та брифування</h3>
+            <p class="step__text">
+              Обговорюємо ваші цілі, задачі та вимоги до майбутнього сайту.
+            </p>
+          </div>
+
+          <div class="step step2">
+            <div class="step__number">02</div>
+            <h3 class="step__name">Дизайн</h3>
+            <p class="step__text">
+              Створюємо сучасний дизайн з урахуванням вашого бренду та
+              побажань.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">03</div>
+            <h3 class="step__name">Розробка</h3>
+            <p class="step__text">
+              Верстаємо та програмуємо сайт, додаємо функціонал та анімації.
+            </p>
+          </div>
+
+          <div class="step step4">
+            <div class="step__number">04</div>
+            <h3 class="step__name">Тестування та запуск</h3>
+            <p class="step__text">
+              Перевіряємо швидкість, безпеку та UX, публікуємо сайт в
+              інтернеті.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="price">
+      <div id="modal" class="modal">
+        <div class="modal__content">
+          <button class="modal__close">✕</button>
+
+          <h3>Залишити заявку</h3>
+
+          <form class="modal__form">
+            <input id="order-type" type="text" readonly />
+
+            <input type="text" placeholder="Ваше ім’я" required />
+            <input type="tel" placeholder="Телефон" required />
+
+            <button type="submit">Надіслати</button>
+          </form>
+        </div>
+      </div>
 
       <div class="container">
-        <div class="header__top">
-          <div class="header__hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="logo">
-            <!-- <img src="" alt="Logo" /> -->
-            <span>Escape</span>
-          </div>
-          <nav class="nav">
-            <ul>
-              <li><a href="#">Про нас</a></li>
-              <li><a href="#">Послуги</a></li>
-              <li><a href="#">Приклади</a></li>
-              <li><a href="#">Вартість</a></li>
-              <li><a href="#">Часті питання</a></li>
-              <li><a href="#">Контакти </a></li>
+        <h2 class="price__title">Вартість</h2>
+
+        <div class="price__wrapper">
+          <!-- CARD 1 -->
+          <div class="price__card">
+            <h4 class="price__card-title">Landing page (візитівка)</h4>
+            <h2 class="price__card-price">$750 <span>/ сайт</span></h2>
+
+            <ul class="price__content">
+              <li>веб-дизайн сайту;</li>
+              <li>веб-розробка сайту;</li>
+              <li>налаштування адміністративної панелі сайту;</li>
+              <li>наповнення сайту контентом;</li>
+              <li>мобільна версія сайту;</li>
+              <li>оптимізація сайту під різні пристрої;</li>
+              <li>запровадження системи “Якір”;</li>
+              <li>підключення домену;</li>
+              <li>підключення хостингу;</li>
+              <li>підключення шифрування "http" для безпеки сайту;</li>
+              <li>тестування сайту;</li>
+              <li>налаштування первинної SEO-оптимізації сайту;</li>
+              <li>
+                консультація з реклами та генерації заявок у Google, Facebook
+                та Instagram.
+              </li>
             </ul>
-          </nav>
-        </div>
 
-        <div class="header__content">
-          <div class="header__content-left">
-            <h1>
-              <span class="header__typed">Сучасні</span>
-              <span> сайти </span>під ключ
-            </h1>
-
-            <p>
-              Створюємо стильні, швидкі й ефективні сайти, які приносять
-              результат та підкреслюють вашу унікальність.
-            </p>
-            <a class="btn" href="#">Залишити заявку</a>
+            <a href="#" class="price__btn" data-type="Landing page (візитівка)">Замовити</a>
           </div>
-          <div class="header__content-right"></div>
+
+          <!-- CARD 2 -->
+          <div class="price__card price__card--active">
+            <div class="price__label">популярний</div>
+
+            <h4 class="price__card-title">Корпоративний сайт</h4>
+            <h2 class="price__card-price">$850 <span>/ сайт</span></h2>
+
+            <ul class="price__content">
+              <li>веб-дизайн сайту;</li>
+              <li>веб-розробка сайту;</li>
+              <li>налаштування адміністративної панелі сайту;</li>
+              <li>наповнення сайту контентом;</li>
+              <li>розробка окремих сторінок кожного пункту “Меню”;</li>
+              <li>дизайн кожної окремої сторінки сайту;</li>
+              <li>мобільна версія сайту;</li>
+              <li>оптимізація сайту під різні пристрої;</li>
+              <li>запровадження системи “Якір”;</li>
+              <li>підключення домену;</li>
+              <li>підключення хостингу;</li>
+              <li>підключення шифрування "http" для безпеки сайту;</li>
+              <li>тестування сайту;</li>
+              <li>налаштування первинної SEO-оптимізації сайту;</li>
+              <li>
+                консультація з реклами та генерації заявок у Google, Facebook
+                та Instagram.
+              </li>
+            </ul>
+
+            <a href="#" class="price__btn" data-type="Корпоративний сайт">Замовити</a>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="price__card">
+            <h4 class="price__card-title">Інтернет-магазин</h4>
+            <h2 class="price__card-price">$1350 <span>/ сайт</span></h2>
+
+            <ul class="price__content">
+              <li>веб-дизайн сайту;</li>
+              <li>веб-розробка сайту;</li>
+              <li>налаштування адміністративної панелі сайту;</li>
+              <li>розробка функції кошика;</li>
+              <li>
+                впровадження платіжних систем та можливості покупки онлайн;
+              </li>
+              <li>розробка карток товару з унікальним циклом;</li>
+              <li>впровадження системи порівняння та фільтрів товару;</li>
+              <li>наповнення сайту контентом;</li>
+              <li>розробка окремих сторінок кожного пункту “Меню”;</li>
+              <li>мобільна версія сайту;</li>
+              <li>оптимізація сайту під різні пристрої;</li>
+              <li>підключення домену;</li>
+              <li>підключення хостингу;</li>
+              <li>підключення шифрування "http" для безпеки сайту;</li>
+              <li>тестування сайту;</li>
+              <li>налаштування первинної SEO-оптимізації сайту;</li>
+              <li>
+                консультація з реклами та генерації заявок у Google, Facebook
+                та Instagram.
+              </li>
+            </ul>
+
+            <a href="#" class="price__btn" data-type="Інтернет-магазин">Замовити</a>
+          </div>
         </div>
       </div>
-    </header>
-    <div class="mobile-menu-overlay"></div>
+    </section>
+  </main>
 
-    <div class="mobile-menu">
-      <div class="mobile-menu__header">
-        <span class="mobile-menu__title">Меню</span>
-        <span class="mobile-menu__close">&times;</span>
-      </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./js/telegram.js"></script>
+  <script src="./js/index.js"></script>
+</body>
 
-      <ul>
-        <li><a href="#">Про нас</a></li>
-        <li><a href="#">Послуги</a></li>
-        <li><a href="#">Приклади</a></li>
-        <li><a href="#">Вартість</a></li>
-        <li><a href="#">Часті питання</a></li>
-        <li><a href="#">Контакти</a></li>
-      </ul>
-    </div>
-    <main>
-      <section class="about">
-        <div class="container">
-          <div class="about__container">
-            <div class="about__left">
-              <div class="about__wrapper">
-                <div class="about__item">
-                  <h4><span class="counter" data-target="120">0</span>+</h4>
-                  <span>розроблених сайтів</span>
-                </div>
-                <div class="about__item">
-                  <h4><span class="counter" data-target="8">0</span>+</h4>
-                  <span>досвіду років</span>
-                </div>
-                <div class="about__item">
-                  <h4><span class="counter" data-target="25">0</span>+</h4>
-                  <span>експертів з досвідом роботи</span>
-                </div>
-                <div class="about__item">
-                  <h4><span class="counter" data-target="75">0</span>%</h4>
-                  <span>клієнтів, що повертаються і рекомендують нас</span>
-                </div>
-              </div>
-            </div>
-            <div class="about__right">
-              <div class="about__content">
-                <h2 class="about__title">Про нас</h2>
-                <p>
-                  Escape — це більше, ніж веб-розробка. Ми створюємо комплексні
-                  рішення для бізнесу: від корпоративних сайтів та
-                  інтернет-магазинів до нативних мобільних додатків. А щоб ваш
-                  проект одразу почав приносити дохід, ми розробляємо та
-                  впроваджуємо стратегії просування й реклами. Один партнер -
-                  вирішення усіх цифрових задач.
-                </p>
-              </div>
-              <div class="about__right-reviews">
-                <div class="swiper reviews-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="review-card">
-                        <p class="review-text">
-                          "Співпраця з Escape перевершила наші очікування. Вони
-                          не просто створили сайт, а розробили інструмент, який
-                          збільшив наші онлайн-продажі на 40% за перші три
-                          місяці. Команда завжди на зв'язку та пропонує
-                          креативні рішення."
-                        </p>
-                        <div class="review-author">
-                          <div class="review-author__info">
-                            <h5>Олексій Данилюк</h5>
-                            <span>CEO "ТехноСвіт"</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                      <div class="review-card">
-                        <p class="review-text">
-                          "Замовляли розробку мобільного додатку для служби
-                          доставки. Вражені швидкістю роботи та увагою до
-                          деталей UX/UI. Додаток працює стабільно, клієнти
-                          задоволені, а ми отримали зручну адмін-панель."
-                        </p>
-                        <div class="review-author">
-                          <div class="review-author__info">
-                            <h5>Марина Коваль</h5>
-                            <span>Маркетинг-директор "QuickEat"</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                      <div class="review-card">
-                        <p class="review-text">
-                          "Дякуємо за комплексний підхід! Запустили
-                          інтернет-магазин і одразу налаштували рекламну
-                          кампанію. Результат пішов з першого тижня.
-                          Професіонали своєї справи."
-                        </p>
-                        <div class="review-author">
-                          <div class="review-author__info">
-                            <h5>Ігор Петренко</h5>
-                            <span>Власник мережі "StyleHub"</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="swiper-nav-wrapper">
-                    <div class="swiper-button-prev reviews-prev"></div>
-                    <div class="swiper-button-next reviews-next"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="consult" class="consult">
-        <div class="container">
-          <div class="consult__wrapper">
-            <div class="consult__content">
-              <h2 class="consult__title">Обговоримо ваш майбутній проект?</h2>
-              <p class="consult__subtitle">
-                Заповніть коротку форму. Ми проаналізуємо ваш запит та
-                звʼяжемось, щоб запропонувати найкраще рішення для вашого
-                бізнесу.
-              </p>
-            </div>
-
-            <form
-              class="consult__form"
-              action="https://formspree.io/f/xpwygegv"
-              method="POST"
-            >
-              <!-- тут нужно поменять formspree на мою!! -->
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="consult__input"
-                  name="name"
-                  placeholder="Ваше ім'я"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <input
-                  type="tel"
-                  class="consult__input"
-                  name="phone"
-                  placeholder="Номер телефону"
-                  required
-                />
-              </div>
-
-              <button type="submit" class="consult__btn">
-                Отримати консультацію
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-      <section class="services">
-        <img src="./images/Ellipse_shadow.svg" alt="" />
-        <img src="./images/Ellipse_shadow.svg" alt="" />
-        <div class="container">
-          <h2 class="services__title">Послуги</h2>
-
-          <div class="services__grid">
-            <div class="service-card">
-              <h3 class="service-card__title">Web-розробка</h3>
-              <p class="service-card__description">
-                Розробка сучасних сайтів з акцентом на швидкість, адаптивність
-                та конверсію.
-              </p>
-              <ul class="service-card__list">
-                <li>Корпоративні сайти</li>
-                <li>Інтернет-магазини</li>
-                <li>Лендинги</li>
-              </ul>
-            </div>
-
-            <div class="service-card">
-              <h3 class="service-card__title">UI/UX Дизайн</h3>
-              <p class="service-card__description">
-                Створення стильних та зручних інтерфейсів, що підвищують довіру
-                та продажі.
-              </p>
-              <ul class="service-card__list">
-                <li>UI/UX Прототипування</li>
-                <li>Редизайн сайтів</li>
-                <li>Адаптивний дизайн</li>
-              </ul>
-            </div>
-
-            <div class="service-card">
-              <h3 class="service-card__title">Брендинг</h3>
-              <p class="service-card__description">
-                Формування впізнаваної айдентики, яка виділяє ваш бізнес серед
-                конкурентів.
-              </p>
-              <ul class="service-card__list">
-                <li>Фірмовий стиль</li>
-                <li>Логотипи</li>
-                <li>Гайдлайни бренду</li>
-              </ul>
-            </div>
-
-            <div class="service-card">
-              <h3 class="service-card__title">Інтернет-маркетинг</h3>
-              <p class="service-card__description">
-                Комплексне просування з фокусом на результат: трафік, заявки,
-                продажі.
-              </p>
-              <ul class="service-card__list">
-                <li>SEO-оптимізація</li>
-                <li>PPC Google Ads</li>
-                <li>SMM-просування</li>
-              </ul>
-            </div>
-
-            <div class="service-card">
-              <h3 class="service-card__title">Технічна підтримка</h3>
-              <p class="service-card__description">
-                Постійний супровід, оновлення та оптимізація ваших веб-ресурсів.
-              </p>
-              <ul class="service-card__list">
-                <li>Підтримка сайтів</li>
-                <li>Оновлення та правки</li>
-                <li>Оптимізація швидкості</li>
-              </ul>
-            </div>
-
-            <div class="service-card">
-              <h3 class="service-card__title">Візуальне ТЗ</h3>
-              <p class="service-card__description">
-                Створення детального візуального технічного завдання, що
-                прискорює розробку.
-              </p>
-              <ul class="service-card__list">
-                <li>Аналіз задачі</li>
-                <li>Візуальні кейси</li>
-                <li>Пояснення логіки проєкту</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="portfolio">
-        <div class="container">
-          <h2 class="portfolio__title">Наші останні роботи</h2>
-
-          <div class="swiper portfolio-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/1.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/2.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/3.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/4.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/5.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/6.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/7.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/8.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/10.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/11.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/12.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/13.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide portfolio__card">
-                <div class="img-inner scroll-img">
-                  <img
-                    src="./images/portfolio/14.png"
-                    alt="Technology landing page"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      <section class="steps">
-        <div class="container">
-          <h2 class="steps__title">Етапи співпраці</h2>
-
-          <div class="steps__wrapper">
-            <div class="step">
-              <div class="step__number">01</div>
-              <h3 class="step__name">Знайомство та брифування</h3>
-              <p class="step__text">
-                Обговорюємо ваші цілі, задачі та вимоги до майбутнього сайту.
-              </p>
-            </div>
-
-            <div class="step step2">
-              <div class="step__number">02</div>
-              <h3 class="step__name">Дизайн</h3>
-              <p class="step__text">
-                Створюємо сучасний дизайн з урахуванням вашого бренду та
-                побажань.
-              </p>
-            </div>
-
-            <div class="step">
-              <div class="step__number">03</div>
-              <h3 class="step__name">Розробка</h3>
-              <p class="step__text">
-                Верстаємо та програмуємо сайт, додаємо функціонал та анімації.
-              </p>
-            </div>
-
-            <div class="step step4">
-              <div class="step__number">04</div>
-              <h3 class="step__name">Тестування та запуск</h3>
-              <p class="step__text">
-                Перевіряємо швидкість, безпеку та UX, публікуємо сайт в
-                інтернеті.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="price">
-        <div id="modal" class="modal">
-          <div class="modal__content">
-            <button class="modal__close" onclick="closeModal()">✕</button>
-
-            <h3>Залишити заявку</h3>
-
-            <form class="modal__form">
-              <input id="order-type" type="text" readonly />
-
-              <input type="text" placeholder="Ваше ім’я" required />
-              <input type="tel" placeholder="Телефон" required />
-
-              <button type="submit">Надіслати</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="container">
-          <h2 class="price__title">Вартість</h2>
-
-          <div class="price__wrapper">
-            <!-- CARD 1 -->
-            <div class="price__card">
-              <h4 class="price__card-title">Landing page (візитівка)</h4>
-              <h2 class="price__card-price">$750 <span>/ сайт</span></h2>
-
-              <ul class="price__content">
-                <li>веб-дизайн сайту;</li>
-                <li>веб-розробка сайту;</li>
-                <li>налаштування адміністративної панелі сайту;</li>
-                <li>наповнення сайту контентом;</li>
-                <li>мобільна версія сайту;</li>
-                <li>оптимізація сайту під різні пристрої;</li>
-                <li>запровадження системи “Якір”;</li>
-                <li>підключення домену;</li>
-                <li>підключення хостингу;</li>
-                <li>підключення шифрування "http" для безпеки сайту;</li>
-                <li>тестування сайту;</li>
-                <li>налаштування первинної SEO-оптимізації сайту;</li>
-                <li>
-                  консультація з реклами та генерації заявок у Google, Facebook
-                  та Instagram.
-                </li>
-              </ul>
-
-              <a
-                href="#"
-                class="price__btn"
-                data-type="Landing page (візитівка)"
-                onclick="openModal(event)"
-                >Замовити</a
-              >
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="price__card price__card--active">
-              <div class="price__label">популярний</div>
-
-              <h4 class="price__card-title">Корпоративний сайт</h4>
-              <h2 class="price__card-price">$850 <span>/ сайт</span></h2>
-
-              <ul class="price__content">
-                <li>веб-дизайн сайту;</li>
-                <li>веб-розробка сайту;</li>
-                <li>налаштування адміністративної панелі сайту;</li>
-                <li>наповнення сайту контентом;</li>
-                <li>розробка окремих сторінок кожного пункту “Меню”;</li>
-                <li>дизайн кожної окремої сторінки сайту;</li>
-                <li>мобільна версія сайту;</li>
-                <li>оптимізація сайту під різні пристрої;</li>
-                <li>запровадження системи “Якір”;</li>
-                <li>підключення домену;</li>
-                <li>підключення хостингу;</li>
-                <li>підключення шифрування "http" для безпеки сайту;</li>
-                <li>тестування сайту;</li>
-                <li>налаштування первинної SEO-оптимізації сайту;</li>
-                <li>
-                  консультація з реклами та генерації заявок у Google, Facebook
-                  та Instagram.
-                </li>
-              </ul>
-
-              <a
-                href="#"
-                class="price__btn"
-                data-type="Корпоративний сайт"
-                onclick="openModal(event)"
-                >Замовити</a
-              >
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="price__card">
-              <h4 class="price__card-title">Інтернет-магазин</h4>
-              <h2 class="price__card-price">$1350 <span>/ сайт</span></h2>
-
-              <ul class="price__content">
-                <li>веб-дизайн сайту;</li>
-                <li>веб-розробка сайту;</li>
-                <li>налаштування адміністративної панелі сайту;</li>
-                <li>розробка функції кошика;</li>
-                <li>
-                  впровадження платіжних систем та можливості покупки онлайн;
-                </li>
-                <li>розробка карток товару з унікальним циклом;</li>
-                <li>впровадження системи порівняння та фільтрів товару;</li>
-                <li>наповнення сайту контентом;</li>
-                <li>розробка окремих сторінок кожного пункту “Меню”;</li>
-                <li>мобільна версія сайту;</li>
-                <li>оптимізація сайту під різні пристрої;</li>
-                <li>підключення домену;</li>
-                <li>підключення хостингу;</li>
-                <li>підключення шифрування "http" для безпеки сайту;</li>
-                <li>тестування сайту;</li>
-                <li>налаштування первинної SEO-оптимізації сайту;</li>
-                <li>
-                  консультація з реклами та генерації заявок у Google, Facebook
-                  та Instagram.
-                </li>
-              </ul>
-
-              <a
-                href="#"
-                class="price__btn"
-                data-type="Інтернет-магазин"
-                onclick="openModal(event)"
-                >Замовити</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <script>
-      // ====== ОТКРЫТИЕ МОДАЛКИ ======
-      function openModal(event) {
-        event.preventDefault();
-        const type = event.target.dataset.type;
-
-        document.querySelector("#order-type").value = type;
-        document.querySelector("#modal").classList.add("active");
-      }
-
-      // ====== ЗАКРЫТИЕ МОДАЛКИ ======
-      function closeModal() {
-        document.querySelector("#modal").classList.remove("active");
-      }
-
-      // ====== ЗАКРЫТИЕ ПО КЛИКУ ВНЕ КОНТЕНТА ======
-      window.addEventListener("click", (e) => {
-        const modal = document.querySelector("#modal");
-        const content = document.querySelector(".modal__content");
-
-        // если клик по фону
-        if (e.target === modal) {
-          modal.classList.remove("active");
-        }
-      });
-
-      // ====== ЗАКРЫТИЕ ПО ESC ======
-      window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          closeModal();
-        }
-      });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./js/index.js"></script>
-  </body>
 </html>

@@ -1167,24 +1167,3 @@ a:focus {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-.success-popup {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%) translateY(50px);
-  background: #6a4df4;
-  color: #fff;
-  padding: 16px 30px;
-  font-size: 18px;
-  border-radius: 12px;
-  opacity: 0;
-  transition: 0.3s ease;
-  z-index: 99999;
-}
-
-.success-popup.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-
-/* price end */
