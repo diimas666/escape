@@ -53,6 +53,9 @@
     display: block;
     width: 100%;
   }
+  .steps__title {
+    font-size: var(--fz-26);
+  }
 }
 @media screen and (max-width: 458px) {
   .container {

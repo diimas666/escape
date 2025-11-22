@@ -687,12 +687,12 @@ a:focus {
 /* ≤576px */
 @media (max-width: 576px) {
   .services__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
   }
 
   .services__title {
-    font-size: var(--fz-36);
+    font-size: var(--fz-35);
   }
 
   .service-card {
@@ -790,7 +790,7 @@ a:focus {
 }
 
 .portfolio__card .img-inner::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 
@@ -855,3 +855,72 @@ a:focus {
   }
 }
 /* portdolio end */
+
+/* steps start  */
+.steps {
+  padding: 70px 0;
+  background: #f8f9ff;
+}
+
+.steps__title {
+  text-align: center;
+  font-size: var(--fz-40);
+  margin-bottom: 50px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.steps__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.step {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 26px rgba(0, 0, 0, 0.08);
+  border: 1px solid linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%);
+  border-radius: 0;
+}
+
+.step__number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #7b61ff;
+  margin-bottom: 10px;
+}
+
+.step__name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.step__text {
+  font-size: 16px;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.step2 {
+  background: linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%);
+  color: #f8f9ff;
+}
+.step2 .step__name {
+  font-style: italic;
+}
+.step4 {
+  background: linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%);
+  color: #f8f9ff;
+}
+.step4 .step__name {
+  font-style: italic;
+}
+/* steps end  */
