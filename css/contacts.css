@@ -68,7 +68,7 @@
 
 .contacts__item {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 20px;
 }
 
@@ -94,7 +94,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .contacts__details p,
