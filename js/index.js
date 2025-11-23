@@ -1,4 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // ====== PRELOADER ======
+  const preloader = document.querySelector(".preloader");
+  const video = document.querySelector(".header__video");
+
+  if (preloader) {
+    const hidePreloader = () => {
+      preloader.classList.add("loaded");
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500); // Wait for transition to finish
+    };
+
+    if (video) {
+      // If video is already ready
+      if (video.readyState >= 3) {
+        hidePreloader();
+      } else {
+        // Wait for video to load
+        video.addEventListener("canplaythrough", hidePreloader, { once: true });
+        video.addEventListener("load", hidePreloader, { once: true });
+
+        // Fallback if video takes too long
+        setTimeout(hidePreloader, 5000);
+      }
+    } else {
+      // No video, hide immediately
+      hidePreloader();
+    }
+  }
+
   // ====== TYPED ANIMATION ======
   const typedEl = document.querySelector(".header__typed");
 
