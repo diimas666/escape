@@ -159,4 +159,17 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
+
+  // ====== FIXED HEADER ON SCROLL ======
+  const headerTop = document.querySelector(".header__top");
+
+  if (headerTop) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        headerTop.classList.add("header__top--fixed");
+      } else {
+        headerTop.classList.remove("header__top--fixed");
+      }
+    });
+  }
 });
