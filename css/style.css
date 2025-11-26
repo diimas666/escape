@@ -87,6 +87,7 @@ a:focus {
 }
 
 .header__top {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -197,9 +198,11 @@ a:focus {
 
 .header__content-left h1 .header__typed {
   font-style: italic;
-  background: linear-gradient(90deg,
-      rgba(28, 196, 204, 1) 0%,
-      rgba(1, 129, 203, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(28, 196, 204, 1) 0%,
+    rgba(1, 129, 203, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -507,9 +510,11 @@ a:focus {
   right: -10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle,
-      rgba(210, 212, 255, 0.15) 0%,
-      rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(210, 212, 255, 0.15) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -1103,7 +1108,6 @@ a:focus {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;

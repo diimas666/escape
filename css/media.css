@@ -24,6 +24,8 @@
   .header__hamburger {
     display: block;
     cursor: pointer;
+    right: 20px;
+    top: 10px;
   }
 
   .header__hamburger span {
