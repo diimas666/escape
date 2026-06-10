@@ -1,30 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   // ====== PRELOADER ======
   const preloader = document.querySelector(".preloader");
-  const video = document.querySelector(".header__video");
+  const heroImage = document.querySelector(".header__image");
 
   if (preloader) {
     const hidePreloader = () => {
       preloader.classList.add("loaded");
       setTimeout(() => {
         preloader.style.display = "none";
-      }, 500); // Wait for transition to finish
+      }, 500);
     };
 
-    if (video) {
-      // If video is already ready
-      if (video.readyState >= 3) {
+    if (heroImage) {
+      if (heroImage.complete) {
         hidePreloader();
       } else {
-        // Wait for video to load
-        video.addEventListener("canplaythrough", hidePreloader, { once: true });
-        video.addEventListener("load", hidePreloader, { once: true });
-
-        // Fallback if video takes too long
-        setTimeout(hidePreloader, 5000);
+        heroImage.addEventListener("load", hidePreloader, { once: true });
+        heroImage.addEventListener("error", hidePreloader, { once: true });
+        setTimeout(hidePreloader, 3000);
       }
     } else {
-      // No video, hide immediately
       hidePreloader();
     }
   }
@@ -33,8 +28,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const typedEl = document.querySelector(".header__typed");
 
   if (typedEl) {
-    // Words to type
-    const phrases = ["Сучасні", "Швидкі", "Ефективні"];
+    const typedWrap = typedEl.closest(".header__typed-wrap");
+    const phrases = ["Преміальні", "Конверсійні", "Унікальні"];
+
+    if (typedWrap) {
+      const measure = document.createElement("span");
+      const typedStyle = getComputedStyle(typedEl);
+      measure.style.cssText =
+        "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none;";
+      measure.style.font = typedStyle.font;
+      measure.style.fontStyle = typedStyle.fontStyle;
+      measure.style.fontWeight = typedStyle.fontWeight;
+      measure.style.fontSize = typedStyle.fontSize;
+      document.body.appendChild(measure);
+
+      let maxWidth = 0;
+      phrases.forEach((phrase) => {
+        measure.textContent = phrase;
+        maxWidth = Math.max(maxWidth, measure.offsetWidth);
+      });
+
+      measure.remove();
+      typedWrap.style.minWidth = `${maxWidth + 8}px`;
+    }
 
     let phraseIndex = 0;
     let charIndex = 0;
@@ -74,6 +90,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
     type();
   }
+
+  // ====== HEADER ENTRANCE ======
+  const headerBlocks = document.querySelectorAll(
+    ".header__badge, .header__title, .header__lead, .header__features, .header__actions, .header__visual"
+  );
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    headerBlocks.forEach((el, index) => {
+      el.classList.add("header-reveal");
+      el.style.setProperty("--header-delay", `${0.35 + index * 0.12}s`);
+    });
+  }
+
+  // ====== SCROLL REVEAL ======
+  const initScrollReveal = () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const revealElements = new Set();
+
+    const addReveal = (el, delay = 0, variant = "") => {
+      if (!el || revealElements.has(el)) return;
+      el.classList.add("reveal");
+      if (variant) el.classList.add(variant);
+      if (delay) el.style.setProperty("--reveal-delay", `${delay}ms`);
+      revealElements.add(el);
+    };
+
+    document
+      .querySelectorAll(
+        "section .section-label, section h2, section [class*='__subtitle'], section [class*='subtitle']"
+      )
+      .forEach((el) => addReveal(el));
+
+    document.querySelectorAll(".why__header").forEach((el) => addReveal(el));
+
+    const staggerGroups = [
+      { parent: ".about__metrics-grid", child: ".about__metric-card" },
+      { parent: ".about__right", child: ".about__content", variant: "reveal--left" },
+      { parent: ".about__right", child: ".about__reviews", variant: "reveal--left" },
+      { parent: ".why__grid", child: ".why__card" },
+      { parent: ".services__grid", child: ".service-card" },
+      { parent: ".steps__wrapper", child: ".step" },
+      { parent: ".price__wrapper", child: ".price__card" },
+      { parent: ".faq__wrapper", child: ".faq__item" },
+    ];
+
+    staggerGroups.forEach(({ parent, child, variant }) => {
+      document.querySelectorAll(`${parent} ${child}`).forEach((el, index) => {
+        addReveal(el, index * 90, variant);
+      });
+    });
+
+    addReveal(document.querySelector(".consult__wrapper"), 0, "reveal--scale");
+    addReveal(document.querySelector(".portfolio__slider"), 100);
+    addReveal(document.querySelector(".portfolio__controls"), 200);
+    addReveal(document.querySelector(".contacts__info"), 0, "reveal--right");
+    addReveal(document.querySelector(".contacts__form-wrapper"), 120, "reveal--left");
+    addReveal(document.querySelector(".footer"), 0);
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  };
+
+  initScrollReveal();
 
   // ====== MOBILE MENU ======
   const burger = document.querySelector(".header__hamburger");
@@ -150,41 +241,188 @@ document.addEventListener("DOMContentLoaded", function () {
       spaceBetween: 30,
       loop: true,
       grabCursor: true,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      speed: 600,
       autoHeight: true,
       navigation: {
         nextEl: ".reviews-next",
         prevEl: ".reviews-prev",
       },
+      pagination: {
+        el: ".reviews-pagination",
+        clickable: true,
+      },
       autoplay: {
-        delay: 5000,
+        delay: 6000,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
     });
   }
 
   // ====== SWIPER PORTFOLIO ======
-  if (document.querySelector(".portfolio-slider")) {
+  const portfolioWrapper = document.getElementById("portfolio-wrapper");
+  const portfolioEl = document.querySelector(".portfolio-slider");
+
+  if (portfolioWrapper && portfolioEl && typeof portfolioProjects !== "undefined") {
+    const basePath = "./images/portfolio/";
+
+    const renderPortfolioSlide = (project, index) => {
+      const desktopSrc = `${basePath}${project.desktop}`;
+      const alt = `${project.title} — ${project.desc}`;
+
+      return `
+        <div class="swiper-slide">
+          <article class="portfolio__card">
+            <div class="portfolio__card-visual">
+              <div class="portfolio__devices portfolio__devices--single">
+                <div class="portfolio__device portfolio__device--desktop">
+                  <div class="portfolio__browser">
+                    <div class="portfolio__browser-bar">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="portfolio__browser-screen">
+                      <img src="${desktopSrc}" alt="${alt}" loading="${index < 3 ? "eager" : "lazy"}" data-full="${desktopSrc}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="portfolio__card-zoom" aria-label="Переглянути повністю">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="portfolio__card-meta">
+              <span class="portfolio__card-tag">${project.tag}</span>
+              <h3 class="portfolio__card-name">${project.title}</h3>
+              <p class="portfolio__card-desc">${project.desc}</p>
+            </div>
+          </article>
+        </div>
+      `;
+    };
+
+    portfolioWrapper.innerHTML = portfolioProjects.map(renderPortfolioSlide).join("");
+
+    const slides = portfolioEl.querySelectorAll(".swiper-slide");
+    const progressBar = document.querySelector(".portfolio__progress-bar");
+    const currentEl = document.querySelector(".portfolio__current");
+    const totalEl = document.querySelector(".portfolio__total");
+    const lightbox = document.getElementById("portfolio-lightbox");
+    const lightboxImg = lightbox?.querySelector(".portfolio-lightbox__img");
+    const lightboxClose = lightbox?.querySelector(".portfolio-lightbox__close");
+    const lightboxBackdrop = lightbox?.querySelector(".portfolio-lightbox__backdrop");
+
+    const openLightbox = (src) => {
+      if (!lightbox || !lightboxImg || !src) return;
+      lightboxImg.src = src;
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeLightbox = () => {
+      if (!lightbox) return;
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightboxBackdrop?.addEventListener("click", closeLightbox);
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox?.classList.contains("active")) {
+        closeLightbox();
+      }
+    });
+
+    portfolioEl.querySelectorAll(".portfolio__card-zoom").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const desktopImg = btn.closest(".portfolio__card")?.querySelector(".portfolio__browser-screen img");
+        if (desktopImg) {
+          openLightbox(desktopImg.dataset.full || desktopImg.src);
+        }
+      });
+    });
+
+    if (totalEl) {
+      totalEl.textContent = String(portfolioProjects.length).padStart(2, "0");
+    }
+
+    const updatePortfolioUI = (swiper) => {
+      const realIndex = swiper.realIndex + 1;
+      const progress = (realIndex / portfolioProjects.length) * 100;
+
+      if (currentEl) {
+        currentEl.textContent = String(realIndex).padStart(2, "0");
+      }
+
+      if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+      }
+    };
+
     new Swiper(".portfolio-slider", {
-      slidesPerView: 3,
-      spaceBetween: 24,
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
       loop: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+      speed: 700,
+      spaceBetween: 0,
+      coverflowEffect: {
+        rotate: 8,
+        stretch: 0,
+        depth: 160,
+        modifier: 1.8,
+        slideShadows: false,
       },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+      navigation: {
+        nextEl: ".portfolio__btn--next",
+        prevEl: ".portfolio__btn--prev",
+      },
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
       },
       breakpoints: {
         0: {
-          slidesPerView: 1,
+          coverflowEffect: {
+            rotate: 0,
+            depth: 80,
+            modifier: 1.2,
+          },
         },
         768: {
-          slidesPerView: 2,
+          coverflowEffect: {
+            rotate: 6,
+            depth: 120,
+            modifier: 1.5,
+          },
         },
         1200: {
-          slidesPerView: 3,
+          coverflowEffect: {
+            rotate: 8,
+            depth: 160,
+            modifier: 1.8,
+          },
+        },
+      },
+      on: {
+        init(swiper) {
+          updatePortfolioUI(swiper);
+        },
+        slideChange(swiper) {
+          updatePortfolioUI(swiper);
         },
       },
     });

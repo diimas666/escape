@@ -1,9 +1,7 @@
 :root {
-  /* Шрифт */
-  /* для заголовков  */
+  /* Шрифти */
   --font-Montserrat: "Montserrat", sans-serif;
   --font-Inter: "Inter", sans-serif;
-  /* для текста  */
 
   /* Розміри шрифтів */
   --fz-48: 48px;
@@ -19,13 +17,39 @@
   --fz-14: 14px;
   --fz-12: 12px;
 
-  /* Кольори */
-  --color-primary: #080d20;
-  --color-dark-primary: #ced5f4;
-  --color-light-primary: #f9faff;
-  --color-btn: #d0cdf1;
-  --color-white: #fff;
-  --сolor-light-gold: #f4d485;
-  --color-tertiary: #fafafa;
+  /* Фіолетово-чорна палітра */
+  --color-bg-dark: #06040c;
+  --color-bg-section: #0c0818;
+  --color-bg-card: #120d1f;
+  --color-primary: #0a0612;
+  --color-white: #ffffff;
+  --color-text: #e8e0f5;
+  --color-text-muted: rgba(232, 224, 245, 0.65);
+  --color-text-dark: #1a0f2e;
+
+  /* Акценти */
+  --color-purple: #9333ea;
+  --color-purple-light: #a855f7;
+  --color-purple-dark: #6d28d9;
+  --color-violet: #7c3aed;
+  --color-accent: #c084fc;
+
+  /* Градієнти */
+  --gradient-primary: linear-gradient(135deg, #9333ea 0%, #7c3aed 50%, #6d28d9 100%);
+  --gradient-hero: linear-gradient(160deg, #0a0612 0%, #1a0533 40%, #0c0618 100%);
+  --gradient-card: linear-gradient(145deg, rgba(147, 51, 234, 0.12) 0%, rgba(109, 40, 217, 0.05) 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(147, 51, 234, 0.25) 0%, transparent 60%);
+  --gradient-text: linear-gradient(135deg, #c084fc 0%, #a855f7 50%, #9333ea 100%);
+
+  /* Тіні та рамки */
+  --shadow-card: 0 8px 40px rgba(109, 40, 217, 0.15);
+  --shadow-glow: 0 0 60px rgba(147, 51, 234, 0.2);
+  --border-subtle: 1px solid rgba(168, 85, 247, 0.15);
+  --border-accent: 1px solid rgba(168, 85, 247, 0.35);
+
+  /* Legacy aliases */
+  --color-dark-primary: #c084fc;
+  --color-light-primary: #f3e8ff;
+  --color-btn: #9333ea;
+  --color-tertiary: #120d1f;
 }
-  /* background: linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%); */

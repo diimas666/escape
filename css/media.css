@@ -9,8 +9,12 @@
   .about__container {
     flex-direction: column;
   }
-  .about__wrapper {
-    gap: 30px;
+  .about__left {
+    flex: none;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    position: static;
   }
   .about__right {
     width: 100%;
@@ -30,31 +34,66 @@
 
   .header__hamburger span {
     height: 3px;
-    background: linear-gradient(90deg, #1cc4cc 0%, #0181cb 100%);
-
+    background: var(--gradient-primary);
     margin: 6px 0;
     width: 100%;
     display: block;
     border-radius: 3px;
   }
+
+  .header__cta-btn {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 668px) {
-  .header__content-left h1 {
-    min-height: 140px;
+@media screen and (max-width: 992px) {
+  .header__cta-btn {
+    display: none;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .header__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .header__content-right {
+    order: -1;
+  }
+
+  .header__visual {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 550px) {
-  .about__wrapper {
+  .about__metrics-grid {
     grid-template-columns: 1fr;
   }
-  .about__item {
-    padding: 20px 20px;
-    text-align: center;
-    align-items: center;
-    display: block;
-    width: 100%;
+
+  .about__metric-card {
+    padding: 22px 18px;
   }
+
+  .about__metric-value {
+    font-size: 40px;
+  }
+
+  .reviews-showcase__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviews-showcase__note {
+    text-align: left;
+  }
+
+  .review-card__verified {
+    display: none;
+  }
+
   .steps__title {
     font-size: var(--fz-26);
   }
@@ -64,7 +103,11 @@
     padding: 0 15px;
   }
   .header__content {
-    margin-top: 200px;
+    margin-top: 120px;
+  }
+
+  .header__visual {
+    max-width: 320px;
   }
   .header__content-left h1 {
     font-size: var(--fz-40);
@@ -75,7 +118,7 @@
 }
 @media screen and (max-width: 375px) {
   .header__content {
-    margin-top: 100px;
+    margin-top: 80px;
   }
   .about__title {
     font-size: var(--fz-40);

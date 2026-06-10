@@ -1,0 +1,98 @@
+const portfolioProjects = [
+  {
+    title: "Romanova",
+    tag: "Landing Page",
+    desc: "Сайт особистого психолога",
+    desktop: "mock/01.png",
+  },
+  {
+    title: "CloudNex",
+    tag: "Стартап",
+    desc: "IT SaaS-платформа",
+    desktop: "mock/02.png",
+  },
+  {
+    title: "GreenBite",
+    tag: "Сервіс",
+    desc: "Доставка органічної їжі",
+    desktop: "mock/03.png",
+  },
+  {
+    title: "LawPoint",
+    tag: "Корпоративний",
+    desc: "Юридична компанія",
+    desktop: "mock/04.png",
+  },
+  {
+    title: "LuxeStyle",
+    tag: "Інтернет-магазин",
+    desc: "Преміум-бутік одягу",
+    desktop: "mock/05.png",
+  },
+  {
+    title: "FinEdge",
+    tag: "Стартап",
+    desc: "Фінтех і мобільний банкінг",
+    desktop: "mock/06.png",
+  },
+  {
+    title: "QuickEat",
+    tag: "Landing Page",
+    desc: "Сервіс доставки їжі",
+    desktop: "mock/07.png",
+  },
+  {
+    title: "ConsultPro",
+    tag: "Корпоративний",
+    desc: "Бізнес-консалтинг",
+    desktop: "mock/08.png",
+  },
+  {
+    title: "FitPulse",
+    tag: "Landing Page",
+    desc: "Фітнес-студія",
+    desktop: "mock/09.png",
+  },
+  {
+    title: "SmileDent",
+    tag: "Сервіс",
+    desc: "Стоматологічна клініка",
+    desktop: "mock/10.png",
+  },
+  {
+    title: "ArchForm",
+    tag: "Портфоліо",
+    desc: "Архітектурне бюро",
+    desktop: "mock/11.png",
+  },
+  {
+    title: "EduMind",
+    tag: "Корпоративний",
+    desc: "Платформа онлайн-курсів",
+    desktop: "mock/12.png",
+  },
+  {
+    title: "AutoPrime",
+    tag: "Сервіс",
+    desc: "Автосервіс і діагностика",
+    desktop: "mock/13.png",
+  },
+  {
+    title: "BellaStudio",
+    tag: "Landing Page",
+    desc: "Салон краси та SPA",
+    desktop: "mock/14.png",
+  },
+  {
+    title: "EventCraft",
+    tag: "Landing Page",
+    desc: "Організація весіль і подій",
+    desktop: "mock/15.png",
+  },
+  {
+    title: "CoffeeRoom",
+    tag: "Landing Page",
+    desc: "Кав'ярня та обсмажування",
+    desktop: "mock/16.png",
+  },
+];
