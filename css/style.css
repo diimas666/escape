@@ -53,6 +53,16 @@ a:focus {
 }
 
 /* header start  */
+.logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo:hover,
+.logo:focus {
+  color: var(--color-white);
+}
+
 .logo span {
   display: block;
   font-size: 30px;
@@ -75,11 +85,60 @@ a:focus {
   border-radius: 2px;
 }
 
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: calc(12px + env(safe-area-inset-top, 0px)) 0 12px;
+  background: rgba(6, 4, 12, 0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: var(--border-subtle);
+  box-shadow: 0 4px 30px rgba(109, 40, 217, 0.15);
+  box-sizing: border-box;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    padding 0.3s ease;
+}
+
+.site-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 993px) {
+  .site-header {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    padding: calc(30px + env(safe-area-inset-top, 0px)) 0 0;
+  }
+
+  .site-header.site-header--scrolled {
+    background: rgba(6, 4, 12, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: var(--border-subtle);
+    box-shadow: 0 4px 30px rgba(109, 40, 217, 0.15);
+    padding: 14px 0;
+  }
+}
+
+.header__top-spacer {
+  height: var(--site-header-height, 72px);
+  flex-shrink: 0;
+}
+
 .header {
   position: relative;
   min-height: 100vh;
-  padding: 30px 0 80px;
-  overflow: hidden;
+  padding: 0 0 80px;
+  overflow: visible;
   background: var(--gradient-hero);
 }
 
@@ -87,6 +146,8 @@ a:focus {
   position: absolute;
   inset: 0;
   z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .header__image {
@@ -130,48 +191,49 @@ a:focus {
   z-index: 4;
 }
 
-.header__top--fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(6, 4, 12, 0.92);
-  backdrop-filter: blur(16px);
-  padding: 15px 30px;
-  box-shadow: 0 4px 30px rgba(109, 40, 217, 0.15);
-  animation: slideDown 0.3s ease forwards;
-  border-bottom: var(--border-subtle);
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
 .header__hamburger {
-  display: none;
-  width: 50px;
-  height: 40px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  /* лучше опустить вниз */
-  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 12px;
+  background: rgba(147, 51, 234, 0.18);
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .header__hamburger span {
   width: 100%;
   height: 3px;
   display: block;
-  margin: 6px 0;
+  margin: 3px 0;
   border-radius: 3px;
-  background: var(--gradient-primary);
+  background: linear-gradient(90deg, #e9d5ff 0%, #a855f7 100%);
+}
+
+@media (min-width: 993px) {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .site-header .nav {
+    display: none;
+  }
+
+  .header__top {
+    min-height: 52px;
+  }
 }
 
 .header__cta-btn {
@@ -423,7 +485,7 @@ a:focus {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease;
-  z-index: 998;
+  z-index: 1098;
 }
 
 .mobile-menu {
@@ -435,7 +497,7 @@ a:focus {
   background: linear-gradient(180deg, #1a0533 0%, #0a0612 100%);
   border-left: var(--border-accent);
   padding: 20px;
-  z-index: 999;
+  z-index: 1100;
   transition: 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -724,7 +786,9 @@ a:focus {
   color: var(--color-text);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(168, 85, 247, 0.15);
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .about__highlights li:hover {
@@ -815,7 +879,9 @@ a:focus {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: border-color 0.3s ease, background 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .review-card:hover {
@@ -1211,7 +1277,9 @@ a:focus {
   color: var(--color-text);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(168, 85, 247, 0.15);
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .why__card:hover .why__tags li {

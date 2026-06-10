@@ -69,25 +69,13 @@
       </div>
     </div>
 
-    <header class="header">
-      <div class="header__bg">
-        <img class="header__image" src="./images/header-bg.png" alt="" fetchpriority="high" />
-        <div class="header__overlay"></div>
-        <div class="header__glow"></div>
-      </div>
-
+    <div class="site-header" id="site-header">
       <div class="container">
         <div class="header__top">
-          <div class="header__hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="logo">
-            <!-- <img src="" alt="Logo" /> -->
+          <a class="logo" href="#">
             <span>Escape</span>
-          </div>
-          <nav class="nav">
+          </a>
+          <nav class="nav" aria-label="Головна навігація">
             <ul>
               <li><a href="#about">Про нас</a></li>
               <li><a href="#why">Чому ми</a></li>
@@ -99,7 +87,24 @@
             </ul>
           </nav>
           <a class="header__cta-btn" href="#contacts">Безкоштовна консультація</a>
+          <button class="header__hamburger" type="button" aria-label="Відкрити меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="header__bg">
+        <img class="header__image" src="./images/header-bg.png" alt="" fetchpriority="high" />
+        <div class="header__overlay"></div>
+        <div class="header__glow"></div>
+      </div>
+
+      <div class="container">
+        <div class="header__top-spacer" aria-hidden="true"></div>
 
         <div class="header__content">
           <div class="header__content-left">
@@ -188,9 +193,9 @@
                   <div class="about__metric-card">
                     <div class="about__metric-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/>
-                        <path d="M3 9H21" stroke="currentColor" stroke-width="1.7"/>
-                        <path d="M8 14H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                        <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7" />
+                        <path d="M3 9H21" stroke="currentColor" stroke-width="1.7" />
+                        <path d="M8 14H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
                       </svg>
                     </div>
                     <div class="about__metric-value" aria-label="120 плюс">
@@ -202,8 +207,8 @@
                   <div class="about__metric-card">
                     <div class="about__metric-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
-                        <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
+                        <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
                       </svg>
                     </div>
                     <div class="about__metric-value" aria-label="8 плюс">
@@ -215,10 +220,20 @@
                   <div class="about__metric-card">
                     <div class="about__metric-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.7"/>
-                        <circle cx="17" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7"/>
-                        <path d="M4 19C4 16.24 6.24 14 9 14C11.76 14 14 16.24 14 19" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                        <path d="M14 17.5C14.6 16.4 15.7 15.5 17 15.5C19.2 15.5 21 17.3 21 19.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="1.7" />
+                        <circle cx="17" cy="10" r="2.5" stroke="currentColor" stroke-width="1.7" />
+                        <path
+                          d="M4 19C4 16.24 6.24 14 9 14C11.76 14 14 16.24 14 19"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="M14 17.5C14.6 16.4 15.7 15.5 17 15.5C19.2 15.5 21 17.3 21 19.5"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                        />
                       </svg>
                     </div>
                     <div class="about__metric-value" aria-label="25 плюс">
@@ -230,8 +245,19 @@
                   <div class="about__metric-card about__metric-card--accent">
                     <div class="about__metric-icon" aria-hidden="true">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path
+                          d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M9 12L11 14L15 10"
+                          stroke="currentColor"
+                          stroke-width="1.7"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
                       </svg>
                     </div>
                     <div class="about__metric-value" aria-label="75 відсотків">
@@ -248,8 +274,8 @@
                 <span class="section-label">Хто ми</span>
                 <h2 class="about__title">Про <span class="about__title-accent">Escape</span></h2>
                 <p class="about__text">
-                  <strong>Escape</strong> — веб-студія, яка створює сайти та мобільні додатки, що працюють на ваш бізнес.
-                  За 8 років ми запустили понад 120 проєктів для компаній з України та Європи.
+                  <strong>Escape</strong> — веб-студія, яка створює сайти та мобільні додатки, що працюють на ваш
+                  бізнес. За 8 років ми запустили понад 120 проєктів для компаній з України та Європи.
                 </p>
                 <p class="about__text">
                   Ми будуємо цифрову воронку продажів: від першого кліку до заявки. Унікальний дизайн, швидка реалізація
@@ -281,8 +307,18 @@
                       <div class="swiper-slide">
                         <article class="review-card">
                           <div class="review-card__top">
-                            <svg class="review-card__quote" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                              <path d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z" fill="currentColor"/>
+                            <svg
+                              class="review-card__quote"
+                              width="32"
+                              height="32"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z"
+                                fill="currentColor"
+                              />
                             </svg>
                             <div class="review-card__stars" aria-label="5 зірок">★★★★★</div>
                           </div>
@@ -313,14 +349,24 @@
                       <div class="swiper-slide">
                         <article class="review-card">
                           <div class="review-card__top">
-                            <svg class="review-card__quote" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                              <path d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z" fill="currentColor"/>
+                            <svg
+                              class="review-card__quote"
+                              width="32"
+                              height="32"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z"
+                                fill="currentColor"
+                              />
                             </svg>
                             <div class="review-card__stars" aria-label="5 зірок">★★★★★</div>
                           </div>
                           <p class="review-text">
-                            Замовляли розробку мобільного додатку для служби доставки. Вражені швидкістю роботи та увагою
-                            до деталей UX/UI. Додаток працює стабільно, клієнти задоволені.
+                            Замовляли розробку мобільного додатку для служби доставки. Вражені швидкістю роботи та
+                            увагою до деталей UX/UI. Додаток працює стабільно, клієнти задоволені.
                           </p>
                           <footer class="review-author">
                             <div class="review-author__avatar-wrap">
@@ -345,8 +391,18 @@
                       <div class="swiper-slide">
                         <article class="review-card">
                           <div class="review-card__top">
-                            <svg class="review-card__quote" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                              <path d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z" fill="currentColor"/>
+                            <svg
+                              class="review-card__quote"
+                              width="32"
+                              height="32"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              aria-hidden="true"
+                            >
+                              <path
+                                d="M7 7H4C4 11.42 7.58 15 12 15V18C8.13 18 5 14.87 5 11V7H7ZM17 7H14C14 11.42 17.58 15 22 15V18C18.13 18 15 14.87 15 11V7H17Z"
+                                fill="currentColor"
+                              />
                             </svg>
                             <div class="review-card__stars" aria-label="5 зірок">★★★★★</div>
                           </div>
@@ -380,12 +436,24 @@
                       <div class="swiper-nav-wrapper">
                         <button class="reviews-prev" type="button" aria-label="Попередній відгук">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path
+                              d="M15 18L9 12L15 6"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
                           </svg>
                         </button>
                         <button class="reviews-next" type="button" aria-label="Наступний відгук">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path
+                              d="M9 18L15 12L9 6"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
                           </svg>
                         </button>
                       </div>
@@ -417,7 +485,12 @@
               <div class="why__card-head">
                 <div class="why__card-icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3L14.5 9.5H22L16 14L18.5 21.5L12 17L5.5 21.5L8 14L2 9.5H9.5L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path
+                      d="M12 3L14.5 9.5H22L16 14L18.5 21.5L12 17L5.5 21.5L8 14L2 9.5H9.5L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
                 <span class="why__card-num">01</span>
@@ -437,7 +510,12 @@
               <div class="why__card-head">
                 <div class="why__card-icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d="M13 2L4 14H11L10 22L20 10H13L13 2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path
+                      d="M13 2L4 14H11L10 22L20 10H13L13 2Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
                 <span class="why__card-num">02</span>
@@ -461,9 +539,13 @@
               <div class="why__card-head">
                 <div class="why__card-icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M8 7V5.5C8 4.12 9.12 3 10.5 3H13.5C14.88 3 16 4.12 16 5.5V7" stroke="currentColor" stroke-width="1.7"/>
-                    <path d="M3 12H21" stroke="currentColor" stroke-width="1.7"/>
+                    <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.7" />
+                    <path
+                      d="M8 7V5.5C8 4.12 9.12 3 10.5 3H13.5C14.88 3 16 4.12 16 5.5V7"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                    />
+                    <path d="M3 12H21" stroke="currentColor" stroke-width="1.7" />
                   </svg>
                 </div>
                 <span class="why__card-num">03</span>
@@ -487,8 +569,19 @@
               <div class="why__card-head">
                 <div class="why__card-icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path
+                      d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 12L11 14L15 10"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
                   </svg>
                 </div>
                 <span class="why__card-num">04</span>
@@ -613,7 +706,12 @@
               <div class="service-card__head">
                 <div class="service-card__icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 4H14L20 10V20C20 20.55 19.55 21 19 21H5C4.45 21 4 20.55 4 20V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                    <path
+                      d="M4 4H14L20 10V20C20 20.55 19.55 21 19 21H5C4.45 21 4 20.55 4 20V4Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
                     <path d="M14 4V10H20" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
                     <path d="M8 14H16M8 17H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
                   </svg>
@@ -681,16 +779,19 @@
               <div class="service-card__head">
                 <div class="service-card__icon" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" />
+                    <path
+                      d="M12 3L4 7V11C4 16.5 7.5 20.5 12 21C16.5 20.5 20 16.5 20 11V7L12 3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
                     <path d="M12 9V13M12 16H12.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
                   </svg>
                 </div>
                 <span class="service-card__num">06</span>
               </div>
               <h3 class="service-card__title">Технічна <span>підтримка</span></h3>
-              <p class="service-card__description">
-                Постійний супровід, оновлення та оптимізація ваших веб-ресурсів.
-              </p>
+              <p class="service-card__description">Постійний супровід, оновлення та оптимізація ваших веб-ресурсів.</p>
               <ul class="service-card__tags">
                 <li>Підтримка сайтів</li>
                 <li>Оновлення та правки</li>
@@ -946,10 +1047,7 @@
                 Не питання — надішліть його нам на пошту, і ми оцінимо вартість та строки готовності.
               </p>
             </div>
-            <a
-              class="design-offer__btn"
-              href="mailto:uu36548@gmail.com?subject=Оцінка%20готового%20дизайну"
-            >
+            <a class="design-offer__btn" href="mailto:uu36548@gmail.com?subject=Оцінка%20готового%20дизайну">
               Надіслати на пошту
             </a>
           </div>

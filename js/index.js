@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (typedWrap) {
       const measure = document.createElement("span");
       const typedStyle = getComputedStyle(typedEl);
-      measure.style.cssText =
-        "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none;";
+      measure.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap;pointer-events:none;";
       measure.style.font = typedStyle.font;
       measure.style.fontStyle = typedStyle.fontStyle;
       measure.style.fontWeight = typedStyle.fontWeight;
@@ -93,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ====== HEADER ENTRANCE ======
   const headerBlocks = document.querySelectorAll(
-    ".header__badge, .header__title, .header__lead, .header__features, .header__actions, .header__visual"
+    ".header__badge, .header__title, .header__lead, .header__features, .header__actions, .header__visual",
   );
 
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -119,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document
       .querySelectorAll(
-        "section .section-label, section h2, section [class*='__subtitle'], section [class*='subtitle']"
+        "section .section-label, section h2, section [class*='__subtitle'], section [class*='subtitle']",
       )
       .forEach((el) => addReveal(el));
 
@@ -158,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
 
     revealElements.forEach((el) => revealObserver.observe(el));
@@ -172,20 +171,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.querySelector(".mobile-menu-overlay");
   const closeBtn = document.querySelector(".mobile-menu__close");
 
+  const closeMobileMenu = () => {
+    mobileMenu?.classList.remove("active");
+    overlay?.classList.remove("active");
+    burger?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  const openMobileMenu = () => {
+    mobileMenu?.classList.add("active");
+    overlay?.classList.add("active");
+    burger?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  };
+
   if (burger && mobileMenu && overlay && closeBtn) {
     burger.addEventListener("click", () => {
-      mobileMenu.classList.add("active");
-      overlay.classList.add("active");
+      if (mobileMenu.classList.contains("active")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
-    closeBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
-      overlay.classList.remove("active");
-    });
+    closeBtn.addEventListener("click", closeMobileMenu);
+    overlay.addEventListener("click", closeMobileMenu);
 
-    overlay.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
-      overlay.classList.remove("active");
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
     });
   }
 
@@ -428,16 +441,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ====== FIXED HEADER ON SCROLL ======
-  const headerTop = document.querySelector(".header__top");
+  // ====== FIXED SITE HEADER ======
+  const siteHeader = document.querySelector(".site-header");
+  const headerSpacer = document.querySelector(".header__top-spacer");
+  const MOBILE_HEADER_BREAKPOINT = 992;
 
-  if (headerTop) {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        headerTop.classList.add("header__top--fixed");
-      } else {
-        headerTop.classList.remove("header__top--fixed");
-      }
-    });
-  }
+  const syncSiteHeader = () => {
+    if (!siteHeader) return;
+
+    const isMobile = window.innerWidth <= MOBILE_HEADER_BREAKPOINT;
+    const isScrolled = window.scrollY > 50;
+
+    siteHeader.classList.toggle("site-header--scrolled", isMobile || isScrolled);
+
+    const headerHeight = siteHeader.offsetHeight;
+    document.documentElement.style.setProperty("--site-header-height", `${headerHeight}px`);
+
+    if (headerSpacer) {
+      headerSpacer.style.height = `${headerHeight}px`;
+    }
+  };
+
+  syncSiteHeader();
+  window.addEventListener("scroll", syncSiteHeader, { passive: true });
+  window.addEventListener("resize", syncSiteHeader);
 });
