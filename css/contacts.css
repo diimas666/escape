@@ -56,6 +56,203 @@
     justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
+    position: relative;
+    padding: 24px;
+    border-radius: 28px;
+    isolation: isolate;
+    animation: contacts-wrapper-glow 6s ease-in-out infinite;
+}
+
+.contacts__electric {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.contacts__flash {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    background: radial-gradient(
+        ellipse at 50% 50%,
+        rgba(220, 240, 255, 0.45) 0%,
+        rgba(168, 85, 247, 0.12) 45%,
+        transparent 75%
+    );
+    animation: contacts-flash 6s ease-in-out infinite;
+}
+
+.contacts__arc {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 15%,
+        #ffffff 35%,
+        #c4b5fd 50%,
+        #ffffff 65%,
+        rgba(255, 255, 255, 0.2) 85%,
+        transparent 100%
+    );
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.9),
+        0 0 30px rgba(168, 85, 247, 0.7),
+        0 0 60px rgba(147, 51, 234, 0.4);
+    animation: contacts-arc 6s ease-in-out infinite;
+}
+
+.contacts__arc--top {
+    top: 0;
+}
+
+.contacts__arc--bottom {
+    bottom: 0;
+    animation-delay: 0.04s;
+}
+
+.contacts__bolt {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 70px;
+    color: #eef6ff;
+    opacity: 0;
+    filter:
+        drop-shadow(0 0 4px #ffffff)
+        drop-shadow(0 0 14px rgba(200, 230, 255, 0.95))
+        drop-shadow(0 0 28px rgba(168, 85, 247, 0.75));
+    animation: contacts-bolt 6s ease-in-out infinite;
+}
+
+.contacts__bolt--1 {
+    left: 12%;
+}
+
+.contacts__bolt--2 {
+    left: 48%;
+    transform: translateX(-50%);
+    animation-delay: 0.03s;
+}
+
+.contacts__bolt--3 {
+    right: 14%;
+    animation-delay: 0.06s;
+}
+
+.contacts__wrapper > .contacts__info,
+.contacts__wrapper > .contacts__form-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes contacts-flash {
+    0%,
+    84%,
+    100% {
+        opacity: 0;
+    }
+
+    85% {
+        opacity: 0.55;
+    }
+
+    85.6% {
+        opacity: 0.08;
+    }
+
+    86.2% {
+        opacity: 0.75;
+    }
+
+    87% {
+        opacity: 0;
+    }
+}
+
+@keyframes contacts-arc {
+    0%,
+    84%,
+    100% {
+        opacity: 0;
+        transform: scaleX(0.3);
+    }
+
+    85% {
+        opacity: 0.9;
+        transform: scaleX(1);
+    }
+
+    86.5% {
+        opacity: 0.15;
+        transform: scaleX(0.85);
+    }
+
+    87% {
+        opacity: 0.6;
+        transform: scaleX(1);
+    }
+
+    88% {
+        opacity: 0;
+        transform: scaleX(0.5);
+    }
+}
+
+@keyframes contacts-bolt {
+    0%,
+    84%,
+    100% {
+        opacity: 0;
+        transform: scaleY(0.85);
+    }
+
+    85% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    85.5% {
+        opacity: 0.15;
+        transform: scaleY(0.95);
+    }
+
+    86% {
+        opacity: 1;
+        transform: scaleY(1.02);
+    }
+
+    87.5% {
+        opacity: 0;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes contacts-wrapper-glow {
+    0%,
+    84%,
+    100% {
+        box-shadow: none;
+    }
+
+    85%,
+    86% {
+        box-shadow:
+            0 0 0 1px rgba(220, 240, 255, 0.5),
+            0 0 50px rgba(168, 85, 247, 0.35),
+            inset 0 0 60px rgba(200, 230, 255, 0.08);
+    }
+
+    87% {
+        box-shadow: none;
+    }
 }
 
 .contacts__info {
