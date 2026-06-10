@@ -2,6 +2,91 @@
 .faq {
     padding: 100px 0;
     background: var(--color-bg-section);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq .container {
+    position: relative;
+    z-index: 1;
+}
+
+.faq__orb {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: faq-orb-drift 14s ease-in-out infinite alternate;
+}
+
+.faq__orb-core {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 38% 32%,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(255, 255, 255, 0.55) 18%,
+        rgba(220, 210, 255, 0.2) 42%,
+        transparent 68%
+    );
+    animation: faq-orb-pulse 6s ease-in-out infinite;
+}
+
+.faq__orb-glow {
+    position: absolute;
+    inset: -40%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(168, 85, 247, 0.12) 45%, transparent 72%);
+    filter: blur(28px);
+    animation: faq-orb-shine 6s ease-in-out infinite;
+}
+
+@keyframes faq-orb-drift {
+    0% {
+        left: 6%;
+        top: 28%;
+    }
+
+    50% {
+        left: 50%;
+        top: 62%;
+    }
+
+    100% {
+        left: 88%;
+        top: 35%;
+    }
+}
+
+@keyframes faq-orb-pulse {
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(0.92);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes faq-orb-shine {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 0.95;
+        transform: scale(1.2);
+    }
 }
 
 .faq .section-label {
@@ -100,6 +185,11 @@
 }
 
 @media (max-width: 768px) {
+    .faq__orb {
+        width: 160px;
+        height: 160px;
+    }
+
     .faq__title {
         font-size: 36px;
         margin-bottom: 40px;
