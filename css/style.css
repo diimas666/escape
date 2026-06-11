@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   background: var(--color-bg-dark);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 .section-label {
@@ -245,7 +247,7 @@ a:focus {
   position: relative;
   min-height: 100vh;
   padding: 0 0 80px;
-  overflow: visible;
+  overflow-x: clip;
   background: var(--gradient-hero);
 }
 
@@ -629,15 +631,16 @@ a:focus {
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 70%;
+  right: 0;
+  width: min(70%, 320px);
   height: 100%;
   background: linear-gradient(180deg, #1a0533 0%, #0a0612 100%);
   border-left: var(--border-accent);
   padding: 20px;
   padding-top: calc(20px + env(safe-area-inset-top, 0px));
   z-index: 10001;
-  transition: 0.3s ease;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
 }
@@ -677,7 +680,7 @@ a:focus {
 
 /* ACTIVE STATE */
 .mobile-menu.active {
-  right: 0;
+  transform: translateX(0);
 }
 
 .mobile-menu-overlay.active {
@@ -2160,6 +2163,7 @@ a:focus {
 .portfolio {
   background: var(--color-bg-section);
   padding: 100px 0;
+  overflow-x: clip;
 }
 
 .portfolio__title {
@@ -2185,10 +2189,11 @@ a:focus {
 .portfolio__slider {
   position: relative;
   padding: 20px 0 0;
+  overflow-x: clip;
 }
 
 .portfolio-slider {
-  overflow: visible;
+  overflow: hidden;
   padding: 40px 0 20px;
 }
 
