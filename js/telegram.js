@@ -110,8 +110,13 @@ async function sendTelegram(e) {
     }
 
     message += `\n🌐 Сторінка: ${window.location.href}
-⏰ Час: ${new Date().toLocaleString()}
-`;
+⏰ Час: ${new Date().toLocaleString()}`;
+
+    if (window.EscapeAnalytics) {
+        message += `\n${window.EscapeAnalytics.formatTrafficForTelegram()}`;
+    }
+
+    message += "\n";
 
     try {
         const response = await fetch(API_URL, {
@@ -124,6 +129,17 @@ async function sendTelegram(e) {
         });
 
         if (response.ok) {
+            if (window.EscapeAnalytics) {
+                let formType = "contacts";
+                if (form.classList.contains("modal__form")) formType = "price_modal";
+                else if (form.classList.contains("consult__form")) formType = "consult";
+
+                window.EscapeAnalytics.trackLead({
+                    serviceType: type,
+                    formType,
+                });
+            }
+
             if (form.classList.contains("modal__form")) {
                 closeModal();
             }
