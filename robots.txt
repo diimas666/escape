@@ -1,0 +1,7 @@
+# Escape — robots.txt
+# Замініть SITE_URL на ваш продакшн-домен у Sitemap (також у sitemap.xml та index.html)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://escape-webshop.com/sitemap.xml

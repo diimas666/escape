@@ -4,6 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Escape | Преміальні сайти під ключ — веб-студія</title>
+
+    <!-- SEO: замініть SITE_URL на ваш продакшн-домен (також у sitemap.xml та robots.txt) -->
+    <!-- SITE_URL: https://escape-webshop.com -->
+    <meta
+      name="description"
+      content="Escape — веб-студія преміум-класу в Україні. Розробка сайтів, інтернет-магазинів і мобільних додатків під ключ. Дизайн, SEO, запуск від 5 днів. Безкоштовна консультація."
+    />
+    <meta
+      name="keywords"
+      content="веб-студія, розробка сайтів, сайт під ключ, інтернет-магазин, лендинг, UI/UX дизайн, SEO, мобільні додатки, Україна"
+    />
+    <meta name="author" content="Escape" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://escape-webshop.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="Escape" />
+    <meta property="og:title" content="Escape | Преміальні сайти під ключ — веб-студія" />
+    <meta
+      property="og:description"
+      content="Створюємо сайти та мобільні додатки, що продають. Дизайн рівня топ-агенцій, швидкість завантаження за 2 секунди, 120+ проєктів. Безкоштовна консультація."
+    />
+    <meta property="og:url" content="https://escape-webshop.com/" />
+    <meta property="og:image" content="https://escape-webshop.com/images/hero-visual.png" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Escape — преміальна веб-розробка, сайти та мобільні додатки" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Escape | Преміальні сайти під ключ — веб-студія" />
+    <meta
+      name="twitter:description"
+      content="Створюємо сайти та мобільні додатки, що продають. Дизайн, швидкість, конверсія. 120+ проєктів. Безкоштовна консультація."
+    />
+    <meta name="twitter:image" content="https://escape-webshop.com/images/hero-visual.png" />
+    <meta name="twitter:image:alt" content="Escape — преміальна веб-розробка" />
+
     <!-- Favicon (Google потребує мін. 48×48 і доступний URL) -->
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="48x48" href="./favicon_io/favicon-48x48.png" />
@@ -44,6 +84,166 @@
       gtag("js", new Date());
       gtag("config", "G-CZF6ZZN5TP");
       gtag("config", "AW-16537770108");
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://escape-webshop.com/#website",
+            "url": "https://escape-webshop.com/",
+            "name": "Escape",
+            "description": "Веб-студія преміум-класу. Розробка сайтів, інтернет-магазинів і мобільних додатків під ключ.",
+            "inLanguage": "uk-UA",
+            "publisher": { "@id": "https://escape-webshop.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://escape-webshop.com/#organization",
+            "name": "Escape",
+            "url": "https://escape-webshop.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://escape-webshop.com/favicon_io/android-chrome-512x512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://escape-webshop.com/images/hero-visual.png",
+            "description": "Веб-студія, яка створює сайти та мобільні додатки для бізнесу в Україні та Європі.",
+            "email": "uu36548@gmail.com",
+            "telephone": "+380993066855",
+            "sameAs": [
+              "https://www.instagram.com/escapeshop9/",
+              "https://t.me/dimass6666"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+380993066855",
+              "contactType": "customer service",
+              "email": "uu36548@gmail.com",
+              "availableLanguage": ["Ukrainian", "Russian"],
+              "areaServed": ["UA", "EU"]
+            }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://escape-webshop.com/#business",
+            "name": "Escape — веб-студія",
+            "url": "https://escape-webshop.com/",
+            "image": "https://escape-webshop.com/images/hero-visual.png",
+            "description": "Розробка сайтів, інтернет-магазинів, лендингів, мобільних додатків, UI/UX дизайну та SEO-просування під ключ.",
+            "priceRange": "$300–$1350",
+            "telephone": "+380993066855",
+            "email": "uu36548@gmail.com",
+            "parentOrganization": { "@id": "https://escape-webshop.com/#organization" },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Ukraine"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Послуги веб-розробки",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Landing page (візитівка)",
+                    "description": "Односторінковий сайт з дизайном, розробкою, SEO та підключенням домену."
+                  },
+                  "price": "300",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Корпоративний сайт",
+                    "description": "Багатосторінковий корпоративний сайт з унікальним дизайном кожної сторінки."
+                  },
+                  "price": "550",
+                  "priceCurrency": "USD"
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Інтернет-магазин",
+                    "description": "Повноцінний інтернет-магазин з кошиком, оплатою та фільтрами товарів."
+                  },
+                  "price": "1350",
+                  "priceCurrency": "USD"
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://escape-webshop.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Скільки часу займає розробка сайту?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Терміни залежать від складності проекту. Landing Page зазвичай займає 5-7 днів, корпоративний сайт — 14-20 днів, а інтернет-магазин — від 25 днів. Ми завжди чітко прописуємо дедлайни в договорі."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Яка вартість розробки?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Вартість стартує від $300 за Landing page (візитівка). Корпоративний сайт — від $550, інтернет-магазин — від $1350. Остаточна ціна формується після обговорення всіх деталей та функціоналу."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Що потрібно від мене для початку роботи?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Нам знадобиться заповнений бриф (ми допоможемо з цим), логотип (якщо є), тексти та фотографії. Якщо контенту немає — ми можемо взяти це на себе."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Чи надаєте ви підтримку після запуску?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Так, ми надаємо 6 місяців безкоштовної технічної підтримки після здачі проекту. Також ви можете замовити у нас постійний супровід та оновлення сайту."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Чи буде сайт працювати на мобільних пристроях?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Звісно! Всі наші сайти мають адаптивний дизайн, що коректно відображається на смартфонах, планшетах та десктопах. Це стандарт нашої роботи."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Чи робите ви SEO-оптимізацію?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Так, ми проводимо базову SEO-оптимізацію: налаштовуємо мета-теги, карту сайту, швидкість завантаження. Для глибокого просування пропонуємо окремі пакети послуг."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Які гарантії ви надаєте?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Ми працюємо за договором, де прописані всі умови, терміни та вартість. Оплата розбивається на етапи, що гарантує безпеку для обох сторін."
+                }
+              }
+            ]
+          }
+        ]
+      }
     </script>
   </head>
 
@@ -664,6 +864,20 @@
                 <input type="tel" class="consult__input" name="phone" placeholder="Номер телефону" required />
               </div>
 
+              <label class="form-consent">
+                <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
+                <span class="form-consent__text"
+                  >Погоджуюсь з
+                  <a
+                    href="./privacy.html"
+                    class="form-consent__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >політикою конфіденційності</a
+                  ></span
+                >
+              </label>
+
               <button type="submit" class="consult__btn">Отримати консультацію</button>
             </form>
           </div>
@@ -953,6 +1167,20 @@
 
               <input type="text" placeholder="Ваше ім’я" required />
               <input type="tel" placeholder="Телефон" required />
+
+              <label class="form-consent">
+                <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
+                <span class="form-consent__text"
+                  >Погоджуюсь з
+                  <a
+                    href="./privacy.html"
+                    class="form-consent__link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >політикою конфіденційності</a
+                  ></span
+                >
+              </label>
 
               <button type="submit">Надіслати</button>
             </form>
@@ -1410,6 +1638,20 @@
                   <textarea name="message" class="contacts__textarea" placeholder="Опишіть ваше питання..."></textarea>
                 </div>
 
+                <label class="form-consent">
+                  <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
+                  <span class="form-consent__text"
+                    >Погоджуюсь з
+                    <a
+                      href="./privacy.html"
+                      class="form-consent__link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >політикою конфіденційності</a
+                    ></span
+                  >
+                </label>
+
                 <button type="submit" class="contacts__btn">Надіслати повідомлення</button>
               </form>
             </div>
@@ -1447,7 +1689,10 @@
         </div>
 
         <div class="footer__bottom">
-          <p class="footer__copyright">© 2025 Escape. Всі права захищені.</p>
+          <p class="footer__copyright">
+            © 2026 Escape. Всі права захищені.
+            <a class="footer__legal-link" href="./privacy.html">Політика конфіденційності</a>
+          </p>
           <div class="footer__socials">
             <a
               class="footer__social-link"

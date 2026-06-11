@@ -1697,6 +1697,42 @@ a:focus {
   transform: translateY(0);
 }
 
+/* form consent checkbox */
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-consent__checkbox {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-purple);
+  cursor: pointer;
+}
+
+.form-consent__text {
+  font-family: var(--font-Inter);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.form-consent__link {
+  color: var(--color-purple-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.form-consent__link:hover {
+  color: var(--color-accent);
+}
+
 /* Адаптив для мобільних (Media Queries) */
 /* Додайте це в кінці або у файл media.css */
 @media (max-width: 992px) {
@@ -2684,6 +2720,19 @@ a:focus {
   color: var(--color-accent);
 }
 
+.footer__legal-link {
+  display: inline-block;
+  margin-left: 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.3s ease;
+}
+
+.footer__legal-link:hover {
+  color: var(--color-accent);
+}
+
 .footer__bottom {
   display: flex;
   justify-content: space-between;
@@ -2744,6 +2793,12 @@ a:focus {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+
+  .footer__legal-link {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
   }
 }
 
@@ -3085,7 +3140,7 @@ a:focus {
 }
 
 /* Инпуты */
-.modal__form input {
+.modal__form input:not([type="checkbox"]) {
   width: 100%;
   padding: 12px 16px;
   border-radius: 12px;
@@ -3094,6 +3149,10 @@ a:focus {
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   font-size: 16px;
+}
+
+.modal__form .form-consent {
+  margin-bottom: 15px;
 }
 
 /* Кнопка */

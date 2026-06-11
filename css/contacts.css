@@ -364,6 +364,10 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
+.contacts__form .form-consent__text {
+    color: var(--color-text-muted);
+}
+
 .contacts__btn {
     margin-top: 10px;
     padding: 18px;

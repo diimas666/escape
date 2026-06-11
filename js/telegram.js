@@ -1,7 +1,5 @@
-// === TELEGRAM CONFIG ===
-const BOT_TOKEN = "8500980559:AAF89iZlK7aezv73nfJhWt162UDMxNuYkUE";
-const CHAT_ID = "1965536609";
-const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+// === API (токен лише на сервері — Vercel Environment Variables) ===
+const API_URL = "/api/telegram";
 
 // === DOM ELEMENTS ===
 const modal = document.querySelector("#modal");
@@ -94,6 +92,13 @@ async function sendTelegram(e) {
         return;
     }
 
+    const privacyCheckbox = form.querySelector('input[name="privacy"]');
+    if (!privacyCheckbox || !privacyCheckbox.checked) {
+        alert("Потрібно погодитись з обробкою персональних даних");
+        isSubmitting = false;
+        return;
+    }
+
     // Construct Message
     let message = `📩 НОВА ЗАЯВКА
 ---------------------------
@@ -122,13 +127,12 @@ async function sendTelegram(e) {
         const response = await fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                chat_id: CHAT_ID,
-                text: message,
-            }),
+            body: JSON.stringify({ text: message }),
         });
 
-        if (response.ok) {
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && result.ok) {
             if (window.EscapeAnalytics) {
                 let formType = "contacts";
                 if (form.classList.contains("modal__form")) formType = "price_modal";
