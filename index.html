@@ -851,7 +851,7 @@
               <ul class="consult__benefits">
                 <li>Безкоштовний аудит вашої ніші</li>
                 <li>Індивідуальна пропозиція за 24 години</li>
-                <li>Знижка 10% при замовленні цього місяця</li>
+                <li class="consult__benefit-promo">Знижка 10% на Landing page до 30 червня</li>
               </ul>
             </div>
 
@@ -1155,6 +1155,56 @@
         </div>
       </section>
 
+      <section class="june-promo" id="june-promo" aria-labelledby="june-promo-title">
+        <div class="container">
+          <div class="june-promo__inner">
+            <div class="june-promo__glow" aria-hidden="true"></div>
+
+            <div class="june-promo__badge">Акція до 30 червня</div>
+
+            <div class="june-promo__main">
+              <div class="june-promo__content">
+                <h2 class="june-promo__title" id="june-promo-title">
+                  Знижка <span class="june-promo__accent">10%</span> на Landing page
+                </h2>
+                <p class="june-promo__text">
+                  Лендинг під ключ за <strong class="june-promo__price-new">$270</strong>
+                  <span class="june-promo__price-old">$300</span> — лише до кінця червня. Дизайн, розробка, SEO та
+                  запуск включені.
+                </p>
+              </div>
+
+              <div class="june-promo__timer" aria-live="polite">
+                <p class="june-promo__timer-label">До кінця акції залишилось</p>
+                <div class="june-promo__timer-grid">
+                  <div class="june-promo__timer-item">
+                    <span class="june-promo__timer-value" id="promo-days">00</span>
+                    <span class="june-promo__timer-unit">днів</span>
+                  </div>
+                  <span class="june-promo__timer-sep" aria-hidden="true">:</span>
+                  <div class="june-promo__timer-item">
+                    <span class="june-promo__timer-value" id="promo-hours">00</span>
+                    <span class="june-promo__timer-unit">год</span>
+                  </div>
+                  <span class="june-promo__timer-sep" aria-hidden="true">:</span>
+                  <div class="june-promo__timer-item">
+                    <span class="june-promo__timer-value" id="promo-minutes">00</span>
+                    <span class="june-promo__timer-unit">хв</span>
+                  </div>
+                  <span class="june-promo__timer-sep" aria-hidden="true">:</span>
+                  <div class="june-promo__timer-item">
+                    <span class="june-promo__timer-value" id="promo-seconds">00</span>
+                    <span class="june-promo__timer-unit">сек</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a class="june-promo__cta" href="#contacts">Отримати знижку 10%</a>
+          </div>
+        </div>
+      </section>
+
       <section class="price" id="price">
         <div id="modal" class="modal">
           <div class="modal__content">
@@ -1196,9 +1246,14 @@
 
           <div class="price__wrapper">
             <!-- CARD 1 -->
-            <div class="price__card">
+            <div class="price__card" id="landing-price-card">
+              <div class="price__promo-badge" id="landing-promo-badge" hidden>−10%</div>
               <h4 class="price__card-title">Landing page (візитівка)</h4>
-              <h2 class="price__card-price">$300 <span>/ сайт</span></h2>
+              <h2 class="price__card-price">
+                <span class="price__card-price-old" id="landing-price-old" hidden>$300</span>
+                <span class="price__card-price-current" id="landing-price-current">$300</span>
+                <span>/ сайт</span>
+              </h2>
 
               <ul class="price__content">
                 <li>веб-дизайн сайту;</li>
@@ -1726,6 +1781,7 @@
     <script src="./js/analytics.js"></script>
     <script src="./js/telegram.js"></script>
     <script src="./js/faq.js"></script>
+    <script src="./js/promo-timer.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

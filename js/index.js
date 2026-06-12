@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     addReveal(document.querySelector(".consult__wrapper"), 0, "reveal--scale");
+    addReveal(document.querySelector(".june-promo__inner"), 0, "reveal--scale");
     addReveal(document.querySelector(".portfolio__slider"), 100);
     addReveal(document.querySelector(".portfolio__controls"), 200);
     addReveal(document.querySelector(".contacts__info"), 0, "reveal--right");
