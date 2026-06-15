@@ -6,7 +6,14 @@ const modal = document.querySelector("#modal");
 const modalForm = document.querySelector(".modal__form");
 const consultForm = document.querySelector(".consult__form");
 const orderTypeInput = document.querySelector("#order-type");
-const closeBtn = document.querySelector(".modal__close");
+const closeBtn = document.querySelector(".modal__close:not(.ads-modal__close)");
+
+const adsModal = document.querySelector("#ads-modal");
+const adsModalForm = document.querySelector(".ads-modal__form");
+const adsOrderTypeInput = document.querySelector("#ads-order-type");
+const adsCloseBtn = document.querySelector(".ads-modal__close");
+const openAdsBtns = document.querySelectorAll(".ads__btn");
+
 const openBtns = document.querySelectorAll(".price__btn");
 
 // === STATE ===
@@ -23,6 +30,15 @@ function closeModal() {
     if (modal) modal.classList.remove("active");
 }
 
+function openAdsModal(tariff) {
+    if (adsOrderTypeInput) adsOrderTypeInput.value = tariff;
+    if (adsModal) adsModal.classList.add("active");
+}
+
+function closeAdsModal() {
+    if (adsModal) adsModal.classList.remove("active");
+}
+
 function showSuccessPopup() {
     let popup = document.querySelector(".success-popup");
     if (!popup) {
@@ -32,7 +48,7 @@ function showSuccessPopup() {
         document.body.appendChild(popup);
     }
 
-    popup.offsetHeight; // Trigger reflow
+    popup.offsetHeight;
     popup.classList.add("show");
 
     setTimeout(() => {
@@ -48,15 +64,24 @@ async function sendTelegram(e) {
     if (isSubmitting) return;
     isSubmitting = true;
 
-    // Determine data based on form
+    const isAdsForm = form.classList.contains("ads-modal__form");
+
     let type = "Консультація";
+    let tariff = "";
     let name = "";
     let phone = "";
     let email = "";
     let userMessage = "";
 
-    if (form.classList.contains("modal__form")) {
+    if (form.classList.contains("modal__form") && !isAdsForm) {
         type = orderTypeInput.value.trim() || "Замовлення";
+        const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
+        const phoneInput = form.querySelector('input[placeholder="Телефон"]');
+        name = nameInput ? nameInput.value.trim() : "";
+        phone = phoneInput ? phoneInput.value.trim() : "";
+    } else if (isAdsForm) {
+        type = "Реклама";
+        tariff = adsOrderTypeInput ? adsOrderTypeInput.value.trim() : "";
         const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
         const phoneInput = form.querySelector('input[placeholder="Телефон"]');
         name = nameInput ? nameInput.value.trim() : "";
@@ -79,7 +104,6 @@ async function sendTelegram(e) {
         userMessage = msgInput ? msgInput.value.trim() : "";
     }
 
-    // Validation
     if (name.length < 2) {
         alert("Введіть коректне ім’я");
         isSubmitting = false;
@@ -99,12 +123,22 @@ async function sendTelegram(e) {
         return;
     }
 
-    // Construct Message
-    let message = `📩 НОВА ЗАЯВКА
+    let message;
+
+    if (isAdsForm) {
+        message = `📣 РЕКЛАМА — НОВА ЗАЯВКА
+---------------------------
+🏷 Категорія: Реклама
+📦 Тарифний план: ${tariff || "не вказано"}
+👤 Ім’я: ${name}
+📞 Телефон: ${phone}`;
+    } else {
+        message = `📩 НОВА ЗАЯВКА
 ---------------------------
 🔶 Послуга: ${type}
 👤 Ім’я: ${name}
 📞 Телефон: ${phone}`;
+    }
 
     if (email) {
         message += `\n📧 Email: ${email}`;
@@ -135,17 +169,21 @@ async function sendTelegram(e) {
         if (response.ok && result.ok) {
             if (window.EscapeAnalytics) {
                 let formType = "contacts";
-                if (form.classList.contains("modal__form")) formType = "price_modal";
+                if (isAdsForm) formType = "ads_modal";
+                else if (form.classList.contains("modal__form")) formType = "price_modal";
                 else if (form.classList.contains("consult__form")) formType = "consult";
 
                 window.EscapeAnalytics.trackLead({
-                    serviceType: type,
+                    serviceType: isAdsForm ? `Реклама — ${tariff}` : type,
                     formType,
                 });
             }
 
-            if (form.classList.contains("modal__form")) {
+            if (form.classList.contains("modal__form") && !isAdsForm) {
                 closeModal();
+            }
+            if (isAdsForm) {
+                closeAdsModal();
             }
             showSuccessPopup();
             form.reset();
@@ -163,7 +201,6 @@ async function sendTelegram(e) {
 // === EVENT LISTENERS ===
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Open Modal Buttons
     if (openBtns) {
         openBtns.forEach((btn) => {
             btn.addEventListener("click", (e) => {
@@ -174,28 +211,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Close Button
+    if (openAdsBtns) {
+        openAdsBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const tariff = btn.dataset.tariff;
+                openAdsModal(tariff);
+            });
+        });
+    }
+
     if (closeBtn) {
         closeBtn.addEventListener("click", closeModal);
     }
 
-    // Click Outside
+    if (adsCloseBtn) {
+        adsCloseBtn.addEventListener("click", closeAdsModal);
+    }
+
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             closeModal();
         }
-    });
-
-    // Escape Key
-    window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            closeModal();
+        if (e.target === adsModal) {
+            closeAdsModal();
         }
     });
 
-    // Forms Submit
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeModal();
+            closeAdsModal();
+        }
+    });
+
     if (modalForm) {
         modalForm.addEventListener("submit", sendTelegram);
+    }
+    if (adsModalForm) {
+        adsModalForm.addEventListener("submit", sendTelegram);
     }
     if (consultForm) {
         consultForm.addEventListener("submit", sendTelegram);
