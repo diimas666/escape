@@ -641,6 +641,22 @@
         <span class="mobile-menu__close">&times;</span>
       </div>
 
+      <div class="mobile-menu__lang-row">
+        <div class="lang-switcher mobile-menu__lang">
+          <button type="button" class="lang-switcher__trigger" aria-haspopup="true" aria-expanded="false">
+            <span class="lang-switcher__current">UA</span>
+            <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+              <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </button>
+          <ul class="lang-switcher__menu">
+            <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
+            <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
+            <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
+          </ul>
+        </div>
+      </div>
+
       <ul>
         <li><a href="#about"><span data-i18n="nav.about">Про нас</span></a></li>
         <li><a href="#why"><span data-i18n="nav.why">Чому ми</span></a></li>
@@ -654,17 +670,6 @@
         <li><a href="#contacts"><span data-i18n="nav.contacts">Контакти</span></a></li>
       </ul>
 
-      <div class="lang-switcher mobile-menu__lang">
-              <button type="button" class="lang-switcher__trigger" aria-haspopup="true">
-                <span class="lang-switcher__current">UA</span>
-                <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-              </button>
-              <ul class="lang-switcher__menu">
-                <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
-                <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
-                <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
-              </ul>
-            </div>
       <div class="mobile-menu__socials">
         <a
           class="mobile-menu__social-link"

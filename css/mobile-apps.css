@@ -528,6 +528,10 @@
   border-color: rgba(168, 85, 247, 0.55);
 }
 
+.mobile-apps__cta .mobile-apps__btn {
+  width: auto;
+}
+
 /* mobile modal extras */
 .mobile-modal__intro {
   font-family: var(--font-Inter);
@@ -632,9 +636,8 @@
 
   .mobile-apps__cta-actions {
     flex-direction: column;
-    align-items: stretch;
-    max-width: 360px;
-    margin: 0 auto;
+    align-items: center;
+    gap: 16px;
   }
 }
 

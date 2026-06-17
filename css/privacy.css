@@ -27,10 +27,6 @@
   gap: 16px;
 }
 
-.privacy-page .lang-switcher__trigger {
-  min-width: 64px;
-}
-
 .privacy-header__logo {
   font-family: var(--font-Montserrat);
   font-size: 24px;

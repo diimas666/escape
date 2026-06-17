@@ -17,6 +17,7 @@
   }
 
   function t(key, lang) {
+    if (!key) return "";
     const value = getNested(dict(lang), key);
     return value ?? "";
   }
@@ -298,6 +299,11 @@
       if (label && data.label) label.textContent = data.label;
       card.querySelector(".mobile-apps__card-name") && (card.querySelector(".mobile-apps__card-name").textContent = data.name);
       card.querySelector(".mobile-apps__card-desc") && (card.querySelector(".mobile-apps__card-desc").textContent = data.desc);
+      const priceEl = card.querySelector(".mobile-apps__card-price");
+      if (priceEl && data.price) {
+        const unit = data.priceUnit ? ` <span>${data.priceUnit}</span>` : "";
+        priceEl.innerHTML = `${data.price}${unit}`;
+      }
       const list = card.querySelector(".mobile-apps__card-list");
       if (list && data.features) list.innerHTML = data.features.map((f) => `<li>${f}</li>`).join("");
       card.querySelector(".mobile-apps__btn") && (card.querySelector(".mobile-apps__btn").textContent = data.btn);
@@ -567,6 +573,8 @@
     const metaTitle = document.querySelector('meta[property="og:title"]');
     if (metaTitle && b.title) metaTitle.setAttribute("content", `${b.label} | Escape`);
   }
+
+  function updateLangSwitcher(lang) {
     const labels = { uk: "UA", en: "EN", ru: "RU" };
     document.querySelectorAll(".lang-switcher__current").forEach((el) => {
       el.textContent = labels[lang] || "UA";
@@ -608,19 +616,29 @@
     document.querySelectorAll(".lang-switcher__option").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
+        e.stopPropagation();
         setLang(btn.dataset.lang);
+        btn.closest(".lang-switcher")?.classList.remove("is-open");
       });
     });
     document.querySelectorAll(".lang-switcher").forEach((switcher) => {
       const trigger = switcher.querySelector(".lang-switcher__trigger");
       if (!trigger) return;
+      switcher.addEventListener("click", (e) => e.stopPropagation());
       trigger.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        switcher.classList.toggle("is-open");
+        const isOpen = switcher.classList.contains("is-open");
+        document.querySelectorAll(".lang-switcher.is-open").forEach((s) => s.classList.remove("is-open"));
+        if (!isOpen) switcher.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", String(!isOpen));
       });
     });
     document.addEventListener("click", () => {
-      document.querySelectorAll(".lang-switcher.is-open").forEach((s) => s.classList.remove("is-open"));
+      document.querySelectorAll(".lang-switcher.is-open").forEach((s) => {
+        s.classList.remove("is-open");
+        s.querySelector(".lang-switcher__trigger")?.setAttribute("aria-expanded", "false");
+      });
     });
   }
 
