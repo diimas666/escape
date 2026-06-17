@@ -102,6 +102,7 @@
     <link rel="stylesheet" href="./css/faq.css" />
     <link rel="stylesheet" href="./css/ads.css" />
     <link rel="stylesheet" href="./css/mobile-apps.css" />
+    <link rel="stylesheet" href="./css/i18n.css" />
     <link rel="stylesheet" href="./css/contacts.css" />
     <link rel="stylesheet" href="./css/media.css" />
     <!-- Google Analytics 4 + Google Ads -->
@@ -484,9 +485,9 @@
       </div>
     </div>
 
-    <nav class="mobile-bar" aria-label="Мобільна навігація">
+    <nav class="mobile-bar" data-i18n-aria="nav.mobileNav" aria-label="Мобільна навігація">
       <a class="mobile-bar__logo" href="#">Escape</a>
-      <button class="mobile-bar__menu" type="button" aria-label="Відкрити меню" aria-expanded="false">
+      <button class="mobile-bar__menu" type="button" data-i18n-aria="nav.openMenu" aria-label="Відкрити меню" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -501,11 +502,11 @@
           </a>
           <nav class="nav" aria-label="Головна навігація">
             <ul>
-              <li><a href="#about">Про нас</a></li>
-              <li><a href="#why">Чому ми</a></li>
+              <li><a href="#about"><span data-i18n="nav.about">Про нас</span></a></li>
+              <li><a href="#why"><span data-i18n="nav.why">Чому ми</span></a></li>
               <li class="nav__dropdown">
                 <a href="#services" class="nav__dropdown-trigger">
-                  Послуги
+                  <span data-i18n="nav.services">Послуги</span>
                   <svg class="nav__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
                     <path
                       d="M2 3.5L5 6.5L8 3.5"
@@ -517,19 +518,33 @@
                   </svg>
                 </a>
                 <ul class="nav__dropdown-menu">
-                  <li><a href="#services">Усі послуги</a></li>
-                  <li><a href="#mobile-apps">Мобільні додатки</a></li>
-                  <li><a href="#price">Вартість</a></li>
-                  <li><a href="#ads">Реклама</a></li>
+                  <li><a href="#services"><span data-i18n="nav.servicesAll">Усі послуги</span></a></li>
+                  <li><a href="#mobile-apps"><span data-i18n="nav.mobileApps">Мобільні додатки</span></a></li>
+                  <li><a href="#price"><span data-i18n="nav.price">Вартість</span></a></li>
+                  <li><a href="#ads"><span data-i18n="nav.ads">Реклама</span></a></li>
                 </ul>
               </li>
-              <li><a href="#portfolio">Приклади</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="./blog.html">Блог</a></li>
-              <li><a href="#contacts">Контакти</a></li>
+              <li><a href="#portfolio"><span data-i18n="nav.portfolio">Приклади</span></a></li>
+              <li><a href="#faq"><span data-i18n="nav.faq">FAQ</span></a></li>
+              <li><a href="./blog.html"><span data-i18n="nav.blog">Блог</span></a></li>
+              <li><a href="#contacts"><span data-i18n="nav.contacts">Контакти</span></a></li>
             </ul>
           </nav>
           <div class="header__top-actions">
+            <div class="lang-switcher">
+              <button type="button" class="lang-switcher__trigger" aria-haspopup="true" aria-expanded="false">
+                <span class="lang-switcher__current">UA</span>
+                <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                  <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                </svg>
+              </button>
+              <ul class="lang-switcher__menu">
+                <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
+              </ul>
+            </div>
+
             <a
               class="header__social-link"
               href="https://www.instagram.com/escapeshop9/"
@@ -544,8 +559,8 @@
               </svg>
             </a>
             <a class="header__cta-btn" href="#contacts">
-              <span class="header__cta-btn-text header__cta-btn-text--full">Безкоштовна консультація</span>
-              <span class="header__cta-btn-text header__cta-btn-text--short">Консультація</span>
+              <span class="header__cta-btn-text header__cta-btn-text--full" data-i18n="nav.ctaFull">Безкоштовна консультація</span>
+              <span class="header__cta-btn-text header__cta-btn-text--short" data-i18n="nav.ctaShort">Консультація</span>
             </a>
             <button class="header__hamburger" type="button" aria-label="Відкрити меню" aria-expanded="false">
               <span></span>
@@ -622,23 +637,34 @@
 
     <div class="mobile-menu">
       <div class="mobile-menu__header">
-        <span class="mobile-menu__title">Меню</span>
+        <span class="mobile-menu__title" data-i18n="nav.menu">Меню</span>
         <span class="mobile-menu__close">&times;</span>
       </div>
 
       <ul>
-        <li><a href="#about">Про нас</a></li>
-        <li><a href="#why">Чому ми</a></li>
-        <li><a href="#services">Послуги</a></li>
-        <li><a href="#portfolio">Приклади</a></li>
-        <li><a href="#mobile-apps">Мобільні додатки</a></li>
-        <li><a href="#ads">Реклама</a></li>
-        <li><a href="#price">Вартість</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="./blog.html">Блог</a></li>
-        <li><a href="#contacts">Контакти</a></li>
+        <li><a href="#about"><span data-i18n="nav.about">Про нас</span></a></li>
+        <li><a href="#why"><span data-i18n="nav.why">Чому ми</span></a></li>
+        <li><a href="#services"><span data-i18n="nav.services">Послуги</span></a></li>
+        <li><a href="#portfolio"><span data-i18n="nav.portfolio">Приклади</span></a></li>
+        <li><a href="#mobile-apps"><span data-i18n="nav.mobileApps">Мобільні додатки</span></a></li>
+        <li><a href="#ads"><span data-i18n="nav.ads">Реклама</span></a></li>
+        <li><a href="#price"><span data-i18n="nav.price">Вартість</span></a></li>
+        <li><a href="#faq"><span data-i18n="nav.faq">FAQ</span></a></li>
+        <li><a href="./blog.html"><span data-i18n="nav.blog">Блог</span></a></li>
+        <li><a href="#contacts"><span data-i18n="nav.contacts">Контакти</span></a></li>
       </ul>
 
+      <div class="lang-switcher mobile-menu__lang">
+              <button type="button" class="lang-switcher__trigger" aria-haspopup="true">
+                <span class="lang-switcher__current">UA</span>
+                <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              </button>
+              <ul class="lang-switcher__menu">
+                <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
+              </ul>
+            </div>
       <div class="mobile-menu__socials">
         <a
           class="mobile-menu__social-link"
@@ -753,15 +779,15 @@
               <div class="about__content">
                 <span class="section-label">Хто ми</span>
                 <h2 class="about__title">Про <span class="about__title-accent">Escape</span></h2>
-                <p class="about__text">
+                <p class="about__text" data-about-intro="0">
                   <strong>Escape</strong> — веб-студія, яка створює сайти та мобільні додатки, що працюють на ваш
                   бізнес. За 8 років ми запустили понад 120 проєктів для компаній з України та Європи.
                 </p>
-                <p class="about__text">
+                <p class="about__text" data-about-intro="1">
                   Ми будуємо цифрову воронку продажів: від першого кліку до заявки. Унікальний дизайн, швидка реалізація
                   та SEO-фундамент — у кожному проєкті.
                 </p>
-                <ul class="about__highlights">
+                <ul class="about__highlights" data-about-highlights>
                   <li>Корпоративні сайти та інтернет-магазини</li>
                   <li>Мобільні додатки та PWA-рішення</li>
                   <li>SEO, Google Ads та SMM-просування</li>
@@ -784,7 +810,7 @@
 
                   <div class="swiper reviews-slider">
                     <div class="swiper-wrapper">
-                      <div class="swiper-slide">
+                      <div class="swiper-slide" data-review="1">
                         <article class="review-card">
                           <div class="review-card__top">
                             <svg
@@ -826,7 +852,7 @@
                         </article>
                       </div>
 
-                      <div class="swiper-slide">
+                      <div class="swiper-slide" data-review="2">
                         <article class="review-card">
                           <div class="review-card__top">
                             <svg
@@ -868,7 +894,7 @@
                         </article>
                       </div>
 
-                      <div class="swiper-slide">
+                      <div class="swiper-slide" data-review="3">
                         <article class="review-card">
                           <div class="review-card__top">
                             <svg
@@ -1387,8 +1413,8 @@
               <input id="mobile-order-type" type="text" readonly hidden />
               <input id="mobile-package" type="text" readonly />
 
-              <input type="text" placeholder="Ваше ім’я" required />
-              <input type="tel" placeholder="Телефон" required />
+              <input type="text" name="name" placeholder="Ваше ім’я" required />
+              <input type="tel" name="phone" placeholder="Телефон" required />
 
               <label class="form-consent">
                 <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
@@ -1753,8 +1779,8 @@
             <h3>Замовити рекламу</h3>
             <form class="ads-modal__form modal__form">
               <input id="ads-order-type" type="text" readonly />
-              <input type="text" placeholder="Ваше ім’я" required />
-              <input type="tel" placeholder="Телефон" required />
+              <input type="text" name="name" placeholder="Ваше ім’я" required />
+              <input type="tel" name="phone" placeholder="Телефон" required />
               <label class="form-consent">
                 <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
                 <span class="form-consent__text"
@@ -2006,8 +2032,8 @@
             <form class="modal__form">
               <input id="order-type" type="text" readonly />
 
-              <input type="text" placeholder="Ваше ім’я" required />
-              <input type="tel" placeholder="Телефон" required />
+              <input type="text" name="name" placeholder="Ваше ім’я" required />
+              <input type="tel" name="phone" placeholder="Телефон" required />
 
               <label class="form-consent">
                 <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
@@ -2164,7 +2190,7 @@
 
           <div class="faq__wrapper">
             <!-- Item 1 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="1">
               <div class="faq__question">
                 <h3>Скільки часу займає розробка сайту?</h3>
                 <div class="faq__icon">
@@ -2188,7 +2214,7 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="2">
               <div class="faq__question">
                 <h3>Яка вартість розробки?</h3>
                 <div class="faq__icon">
@@ -2212,7 +2238,7 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="3">
               <div class="faq__question">
                 <h3>Що потрібно від мене для початку роботи?</h3>
                 <div class="faq__icon">
@@ -2236,7 +2262,7 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="4">
               <div class="faq__question">
                 <h3>Чи надаєте ви підтримку після запуску?</h3>
                 <div class="faq__icon">
@@ -2260,7 +2286,7 @@
             </div>
 
             <!-- Item 5 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="5">
               <div class="faq__question">
                 <h3>Чи буде сайт працювати на мобільних пристроях?</h3>
                 <div class="faq__icon">
@@ -2284,7 +2310,7 @@
             </div>
 
             <!-- Item 6 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="6">
               <div class="faq__question">
                 <h3>Чи робите ви SEO-оптимізацію?</h3>
                 <div class="faq__icon">
@@ -2308,7 +2334,7 @@
             </div>
 
             <!-- Item 7 -->
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="7">
               <div class="faq__question">
                 <h3>Які гарантії ви надаєте?</h3>
                 <div class="faq__icon">
@@ -2333,7 +2359,7 @@
 
             <h3 class="faq__group-title">Питання про мобільні додатки</h3>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="8">
               <div class="faq__question">
                 <h3>Скільки коштує розробка мобільного додатку?</h3>
                 <div class="faq__icon">
@@ -2358,7 +2384,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="9">
               <div class="faq__question">
                 <h3>Скільки часу займає розробка мобільного додатку?</h3>
                 <div class="faq__icon">
@@ -2382,7 +2408,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="10">
               <div class="faq__question">
                 <h3>Чи потрібно робити окремі додатки для iOS та Android?</h3>
                 <div class="faq__icon">
@@ -2405,7 +2431,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="11">
               <div class="faq__question">
                 <h3>Чи можете зробити додаток для інтернет-магазину?</h3>
                 <div class="faq__icon">
@@ -2429,7 +2455,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="12">
               <div class="faq__question">
                 <h3>Чи допомагаєте з публікацією в App Store та Google Play?</h3>
                 <div class="faq__icon">
@@ -2453,7 +2479,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="13">
               <div class="faq__question">
                 <h3>Що входить у процес розробки мобільного додатку?</h3>
                 <div class="faq__icon">
@@ -2477,7 +2503,7 @@
               </div>
             </div>
 
-            <div class="faq__item">
+            <div class="faq__item" data-faq-item="14">
               <div class="faq__question">
                 <h3>Чи надаєте підтримку після запуску додатку?</h3>
                 <div class="faq__icon">
@@ -2566,7 +2592,7 @@
                   </svg>
                 </div>
                 <div class="contacts__details">
-                  <h4>Телефон</h4>
+                  <h4 data-i18n-channel="phone">Телефон</h4>
                   <a href="tel:+380999999999">+38 (099) 306 68 55</a>
                 </div>
               </div>
@@ -2591,7 +2617,7 @@
                   </svg>
                 </div>
                 <div class="contacts__details">
-                  <h4>Email</h4>
+                  <h4 data-i18n-channel="email">Email</h4>
                   <a href="mailto:uu36548@gmail.com">uu36548@gmail.com</a>
                 </div>
               </div>
@@ -2606,7 +2632,7 @@
                   </svg>
                 </div>
                 <div class="contacts__details">
-                  <h4>Telegram</h4>
+                  <h4 data-i18n-channel="telegram">Telegram</h4>
                   <a href="https://t.me/dimass6666" target="_blank">Написати в Telegram</a>
                 </div>
               </div>
@@ -2620,7 +2646,7 @@
                   </svg>
                 </div>
                 <div class="contacts__details">
-                  <h4>Instagram</h4>
+                  <h4 data-i18n-channel="instagram">Instagram</h4>
                   <a href="https://www.instagram.com/escapeshop9/" target="_blank" rel="noopener noreferrer"
                     >@escapeshop9</a
                   >
@@ -2679,16 +2705,16 @@
 
           <nav class="footer__nav">
             <ul>
-              <li><a href="#about">Про нас</a></li>
-              <li><a href="#why">Чому ми</a></li>
-              <li><a href="#services">Послуги</a></li>
-              <li><a href="#portfolio">Приклади</a></li>
-              <li><a href="#mobile-apps">Мобільні додатки</a></li>
-              <li><a href="#ads">Реклама</a></li>
-              <li><a href="#price">Вартість</a></li>
-              <li><a href="#faq">Часті питання</a></li>
-              <li><a href="./blog.html">Блог</a></li>
-              <li><a href="#contacts">Контакти</a></li>
+              <li><a href="#about"><span data-i18n="nav.about">Про нас</span></a></li>
+              <li><a href="#why"><span data-i18n="nav.why">Чому ми</span></a></li>
+              <li><a href="#services"><span data-i18n="footer.services">Послуги</span></a></li>
+              <li><a href="#portfolio"><span data-i18n="nav.portfolio">Приклади</span></a></li>
+              <li><a href="#mobile-apps"><span data-i18n="nav.mobileApps">Мобільні додатки</span></a></li>
+              <li><a href="#ads"><span data-i18n="nav.ads">Реклама</span></a></li>
+              <li><a href="#price"><span data-i18n="nav.price">Вартість</span></a></li>
+              <li><a href="#faq"><span data-i18n="footer.faq">Часті питання</span></a></li>
+              <li><a href="./blog.html"><span data-i18n="nav.blog">Блог</span></a></li>
+              <li><a href="#contacts"><span data-i18n="nav.contacts">Контакти</span></a></li>
             </ul>
           </nav>
 
@@ -2734,6 +2760,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/translations.js"></script>
+    <script src="./js/i18n.js"></script>
     <script src="./js/portfolio-data.js"></script>
     <script src="./js/analytics.js"></script>
     <script src="./js/telegram.js"></script>

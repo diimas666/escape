@@ -26,6 +26,14 @@ const openBtns = document.querySelectorAll(".price__btn");
 // === STATE ===
 let isSubmitting = false;
 
+function i18n(key) {
+    return window.EscapeI18n?.t(key) || "";
+}
+
+function getFormField(form, name) {
+    return form.querySelector(`[name="${name}"]`);
+}
+
 // === FUNCTIONS ===
 
 function openModal(type) {
@@ -58,13 +66,14 @@ function closeMobileModal() {
 
 function showSuccessPopup() {
     let popup = document.querySelector(".success-popup");
+    const message = i18n("form.success") || "Заявку успішно надіслано!";
     if (!popup) {
         popup = document.createElement("div");
         popup.className = "success-popup";
-        popup.innerText = "Заявку успішно надіслано!";
         document.body.appendChild(popup);
     }
 
+    popup.innerText = message;
     popup.offsetHeight;
     popup.classList.add("show");
 
@@ -94,22 +103,22 @@ async function sendTelegram(e) {
 
     if (form.classList.contains("modal__form") && !isAdsForm && !isMobileForm) {
         type = orderTypeInput.value.trim() || "Замовлення";
-        const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
-        const phoneInput = form.querySelector('input[placeholder="Телефон"]');
+        const nameInput = getFormField(form, "name");
+        const phoneInput = getFormField(form, "phone");
         name = nameInput ? nameInput.value.trim() : "";
         phone = phoneInput ? phoneInput.value.trim() : "";
     } else if (isMobileForm) {
         type = "Мобільний додаток";
         packageName = mobilePackageInput ? mobilePackageInput.value.trim() : "";
-        const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
-        const phoneInput = form.querySelector('input[placeholder="Телефон"]');
+        const nameInput = getFormField(form, "name");
+        const phoneInput = getFormField(form, "phone");
         name = nameInput ? nameInput.value.trim() : "";
         phone = phoneInput ? phoneInput.value.trim() : "";
     } else if (isAdsForm) {
         type = "Реклама";
         tariff = adsOrderTypeInput ? adsOrderTypeInput.value.trim() : "";
-        const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
-        const phoneInput = form.querySelector('input[placeholder="Телефон"]');
+        const nameInput = getFormField(form, "name");
+        const phoneInput = getFormField(form, "phone");
         name = nameInput ? nameInput.value.trim() : "";
         phone = phoneInput ? phoneInput.value.trim() : "";
     } else if (form.classList.contains("consult__form")) {
@@ -131,20 +140,20 @@ async function sendTelegram(e) {
     }
 
     if (name.length < 2) {
-        alert("Введіть коректне ім’я");
+        alert(i18n("form.errors.name") || "Введіть коректне ім’я");
         isSubmitting = false;
         return;
     }
 
     if (!/^\+?\d{9,14}$/.test(phone)) {
-        alert("Введіть коректний номер телефону");
+        alert(i18n("form.errors.phone") || "Введіть коректний номер телефону");
         isSubmitting = false;
         return;
     }
 
     const privacyCheckbox = form.querySelector('input[name="privacy"]');
     if (!privacyCheckbox || !privacyCheckbox.checked) {
-        alert("Потрібно погодитись з обробкою персональних даних");
+        alert(i18n("form.errors.privacy") || "Потрібно погодитись з обробкою персональних даних");
         isSubmitting = false;
         return;
     }
@@ -229,7 +238,7 @@ async function sendTelegram(e) {
         }
     } catch (error) {
         console.error(error);
-        alert("Помилка надсилання. Спробуйте ще раз!");
+        alert(i18n("form.errors.sendError") || "Помилка надсилання. Спробуйте ще раз!");
     } finally {
         isSubmitting = false;
     }

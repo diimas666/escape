@@ -26,10 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ====== TYPED ANIMATION ======
   const typedEl = document.querySelector(".header__typed");
+  let typedTimeoutId = null;
 
-  if (typedEl) {
+  const initTypedAnimation = (phrases) => {
+    if (!typedEl || !phrases?.length) return;
+
+    if (typedTimeoutId) {
+      clearTimeout(typedTimeoutId);
+      typedTimeoutId = null;
+    }
+
     const typedWrap = typedEl.closest(".header__typed-wrap");
-    const phrases = ["Преміальні", "Конверсійні", "Унікальні"];
 
     if (typedWrap) {
       const measure = document.createElement("span");
@@ -67,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         charIndex++;
 
         if (charIndex === currentPhrase.length) {
-          setTimeout(() => {
+          typedTimeoutId = setTimeout(() => {
             isDeleting = true;
             type();
           }, delayBetweenWords);
@@ -84,10 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const timeout = isDeleting ? backSpeed : typeSpeed;
-      setTimeout(type, timeout);
+      typedTimeoutId = setTimeout(type, timeout);
     }
 
+    typedEl.textContent = "";
     type();
+  };
+
+  if (typedEl) {
+    const initialPhrases = window.__escapeTypedWords || ["Преміальні", "Конверсійні", "Унікальні"];
+    initTypedAnimation(initialPhrases);
   }
 
   // ====== HEADER ENTRANCE ======
@@ -288,13 +301,57 @@ document.addEventListener("DOMContentLoaded", function () {
   // ====== SWIPER PORTFOLIO ======
   const portfolioWrapper = document.getElementById("portfolio-wrapper");
   const portfolioEl = document.querySelector(".portfolio-slider");
+  let portfolioSwiper = null;
+
+  const getLocalizedPortfolioProjects = () => {
+    const i18nProjects = window.__escapePortfolioI18n || [];
+    return portfolioProjects.map((project, index) => ({
+      ...project,
+      tag: i18nProjects[index]?.tag || project.tag,
+      desc: i18nProjects[index]?.desc || project.desc,
+    }));
+  };
+
+  const bindPortfolioZoom = () => {
+    portfolioEl?.querySelectorAll(".portfolio__card-zoom").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const desktopImg = btn.closest(".portfolio__card")?.querySelector(".portfolio__browser-screen img");
+        if (desktopImg) {
+          openLightbox(desktopImg.dataset.full || desktopImg.src);
+        }
+      });
+    });
+  };
+
+  const openLightbox = (src) => {
+    const lightbox = document.getElementById("portfolio-lightbox");
+    const lightboxImg = lightbox?.querySelector(".portfolio-lightbox__img");
+    if (!lightbox || !lightboxImg || !src) return;
+    lightboxImg.src = src;
+    lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeLightbox = () => {
+    const lightbox = document.getElementById("portfolio-lightbox");
+    if (!lightbox) return;
+    lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
 
   if (portfolioWrapper && portfolioEl && typeof portfolioProjects !== "undefined") {
     const basePath = "./images/portfolio/";
+    const lightbox = document.getElementById("portfolio-lightbox");
+    const lightboxClose = lightbox?.querySelector(".portfolio-lightbox__close");
+    const lightboxBackdrop = lightbox?.querySelector(".portfolio-lightbox__backdrop");
 
     const renderPortfolioSlide = (project, index) => {
       const desktopSrc = `${basePath}${project.desktop}`;
       const alt = `${project.title} — ${project.desc}`;
+      const zoomLabel = window.EscapeI18n?.t("portfolio.viewFull") || "Переглянути повністю";
 
       return `
         <div class="swiper-slide">
@@ -312,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
                 </div>
               </div>
-              <button type="button" class="portfolio__card-zoom" aria-label="Переглянути повністю">
+              <button type="button" class="portfolio__card-zoom" aria-label="${zoomLabel}">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M15 3H21V9M9 21H3V15M21 3L14 10M3 21L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -328,58 +385,12 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     };
 
-    portfolioWrapper.innerHTML = portfolioProjects.map(renderPortfolioSlide).join("");
-
-    const slides = portfolioEl.querySelectorAll(".swiper-slide");
-    const progressBar = document.querySelector(".portfolio__progress-bar");
-    const currentEl = document.querySelector(".portfolio__current");
-    const totalEl = document.querySelector(".portfolio__total");
-    const lightbox = document.getElementById("portfolio-lightbox");
-    const lightboxImg = lightbox?.querySelector(".portfolio-lightbox__img");
-    const lightboxClose = lightbox?.querySelector(".portfolio-lightbox__close");
-    const lightboxBackdrop = lightbox?.querySelector(".portfolio-lightbox__backdrop");
-
-    const openLightbox = (src) => {
-      if (!lightbox || !lightboxImg || !src) return;
-      lightboxImg.src = src;
-      lightbox.classList.add("active");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    };
-
-    const closeLightbox = () => {
-      if (!lightbox) return;
-      lightbox.classList.remove("active");
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    };
-
-    lightboxClose?.addEventListener("click", closeLightbox);
-    lightboxBackdrop?.addEventListener("click", closeLightbox);
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox?.classList.contains("active")) {
-        closeLightbox();
-      }
-    });
-
-    portfolioEl.querySelectorAll(".portfolio__card-zoom").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        const desktopImg = btn.closest(".portfolio__card")?.querySelector(".portfolio__browser-screen img");
-        if (desktopImg) {
-          openLightbox(desktopImg.dataset.full || desktopImg.src);
-        }
-      });
-    });
-
-    if (totalEl) {
-      totalEl.textContent = String(portfolioProjects.length).padStart(2, "0");
-    }
-
     const updatePortfolioUI = (swiper) => {
+      const projects = getLocalizedPortfolioProjects();
       const realIndex = swiper.realIndex + 1;
-      const progress = (realIndex / portfolioProjects.length) * 100;
+      const progress = (realIndex / projects.length) * 100;
+      const currentEl = document.querySelector(".portfolio__current");
+      const progressBar = document.querySelector(".portfolio__progress-bar");
 
       if (currentEl) {
         currentEl.textContent = String(realIndex).padStart(2, "0");
@@ -390,65 +401,96 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
-    new Swiper(".portfolio-slider", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      loop: true,
-      speed: 700,
-      spaceBetween: 0,
-      coverflowEffect: {
-        rotate: 8,
-        stretch: 0,
-        depth: 160,
-        modifier: 1.8,
-        slideShadows: false,
-      },
-      navigation: {
-        nextEl: ".portfolio__btn--next",
-        prevEl: ".portfolio__btn--prev",
-      },
-      autoplay: {
-        delay: 4500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-      },
-      breakpoints: {
-        0: {
-          coverflowEffect: {
-            rotate: 0,
-            depth: 80,
-            modifier: 1.2,
+    const initPortfolioSwiper = () => {
+      if (portfolioSwiper) {
+        portfolioSwiper.destroy(true, true);
+        portfolioSwiper = null;
+      }
+
+      portfolioSwiper = new Swiper(".portfolio-slider", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        speed: 700,
+        spaceBetween: 0,
+        coverflowEffect: {
+          rotate: 8,
+          stretch: 0,
+          depth: 160,
+          modifier: 1.8,
+          slideShadows: false,
+        },
+        navigation: {
+          nextEl: ".portfolio__btn--next",
+          prevEl: ".portfolio__btn--prev",
+        },
+        autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+        breakpoints: {
+          0: {
+            coverflowEffect: {
+              rotate: 0,
+              depth: 80,
+              modifier: 1.2,
+            },
+          },
+          768: {
+            coverflowEffect: {
+              rotate: 6,
+              depth: 120,
+              modifier: 1.5,
+            },
+          },
+          1200: {
+            coverflowEffect: {
+              rotate: 8,
+              depth: 160,
+              modifier: 1.8,
+            },
           },
         },
-        768: {
-          coverflowEffect: {
-            rotate: 6,
-            depth: 120,
-            modifier: 1.5,
+        on: {
+          init(swiper) {
+            updatePortfolioUI(swiper);
+          },
+          slideChange(swiper) {
+            updatePortfolioUI(swiper);
           },
         },
-        1200: {
-          coverflowEffect: {
-            rotate: 8,
-            depth: 160,
-            modifier: 1.8,
-          },
-        },
-      },
-      on: {
-        init(swiper) {
-          updatePortfolioUI(swiper);
-        },
-        slideChange(swiper) {
-          updatePortfolioUI(swiper);
-        },
-      },
+      });
+    };
+
+    window.renderPortfolioSlides = () => {
+      const projects = getLocalizedPortfolioProjects();
+      portfolioWrapper.innerHTML = projects.map(renderPortfolioSlide).join("");
+
+      const totalEl = document.querySelector(".portfolio__total");
+      if (totalEl) {
+        totalEl.textContent = String(projects.length).padStart(2, "0");
+      }
+
+      bindPortfolioZoom();
+      initPortfolioSwiper();
+    };
+
+    window.renderPortfolioSlides();
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightboxBackdrop?.addEventListener("click", closeLightbox);
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox?.classList.contains("active")) {
+        closeLightbox();
+      }
     });
   }
 
@@ -476,4 +518,13 @@ document.addEventListener("DOMContentLoaded", function () {
   syncSiteHeader();
   window.addEventListener("scroll", syncSiteHeader, { passive: true });
   window.addEventListener("resize", syncSiteHeader);
+
+  window.addEventListener("escape:langchange", (e) => {
+    if (window.__escapeTypedWords) {
+      initTypedAnimation(window.__escapeTypedWords);
+    }
+    if (typeof window.renderPortfolioSlides === "function") {
+      window.renderPortfolioSlides();
+    }
+  });
 });

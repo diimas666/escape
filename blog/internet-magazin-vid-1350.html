@@ -7,10 +7,20 @@
     <link rel="canonical" href="https://escape-webshop.com/blog/internet-magazin-vid-1350.html" />
     <link rel="icon" href="../favicon.ico" sizes="any" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/normalize.css" /><link rel="stylesheet" href="../css/variables.css" /><link rel="stylesheet" href="../css/style.css" /><link rel="stylesheet" href="../css/blog.css" />
+    <link rel="stylesheet" href="../css/normalize.css" /><link rel="stylesheet" href="../css/variables.css" /><link rel="stylesheet" href="../css/style.css" /><link rel="stylesheet" href="../css/blog.css" /><link rel="stylesheet" href="../css/i18n.css" />
   </head>
-  <body class="blog-page blog-article-page">
-    <header class="blog-header"><div class="container blog-header__inner"><a class="blog-header__logo" href="../index.html">Escape</a><a class="blog-header__back" href="../blog.html">← До блогу</a></div></header>
+  <body class="blog-page blog-article-page" data-blog-slug="internet-magazin-vid-1350">
+    <header class="blog-header"><div class="container blog-header__inner"><a class="blog-header__logo" href="../index.html">Escape</a><div class="blog-header__actions">            <div class="lang-switcher">
+              <button type="button" class="lang-switcher__trigger" aria-haspopup="true" aria-expanded="false">
+                <span class="lang-switcher__current">UA</span>
+                <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+              </button>
+              <ul class="lang-switcher__menu">
+                <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
+                <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
+              </ul>
+            </div><a class="blog-header__back" href="../blog.html" data-i18n="blog.backToBlog">← До блогу</a></div></div></header>
     <main><article class="blog-article"><div class="container blog-article__container">
       <div class="blog-article__image-wrap"><img class="blog-article__image" src="../images/instagram/escape-instagram-ecommerce-4x5.png" alt="Інтернет-магазин" width="820" height="461" /></div>
       <span class="blog-article__category">E-commerce</span>
@@ -37,6 +47,10 @@
       </div>
       <div class="blog-article__cta"><h2 class="blog-article__cta-title">Замовити магазин</h2><p class="blog-article__cta-text">Розрахуємо вартість під ваш каталог та функціонал.</p><a class="blog-article__cta-btn" href="../index.html#contacts">Замовити магазин</a></div>
     </div></article></main>
-    <footer class="blog-footer"><div class="container"><p>© 2026 Escape. <a href="../blog.html">Блог</a> · <a href="../index.html">На головну</a></p></div></footer>
+    <footer class="blog-footer"><div class="container"><p>© 2026 Escape. <a href="../blog.html" data-i18n="blog.label">Блог</a> · <a href="../index.html" data-i18n="blog.homeLink">На головну</a></p></div></footer>
+    <script src="../js/translations.js"></script>
+    <script src="../js/blog-articles-i18n.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/blog-article.js"></script>
   </body>
 </html>

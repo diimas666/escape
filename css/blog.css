@@ -22,6 +22,16 @@
   gap: 20px;
 }
 
+.blog-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.blog-page .lang-switcher__trigger {
+  min-width: 64px;
+}
+
 .blog-header__logo {
   font-family: var(--font-Montserrat);
   font-size: 24px;

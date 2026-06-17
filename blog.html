@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="./css/variables.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/blog.css" />
+    <link rel="stylesheet" href="./css/i18n.css" />
 
     <script type="application/ld+json">
       {
@@ -66,16 +67,31 @@
     <header class="blog-header">
       <div class="container blog-header__inner">
         <a class="blog-header__logo" href="./index.html">Escape</a>
-        <a class="blog-header__back" href="./index.html">← На головну</a>
+        <div class="blog-header__actions">
+          <div class="lang-switcher">
+            <button type="button" class="lang-switcher__trigger" aria-haspopup="true" aria-expanded="false">
+              <span class="lang-switcher__current">UA</span>
+              <svg class="lang-switcher__caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" />
+              </svg>
+            </button>
+            <ul class="lang-switcher__menu">
+              <li><button type="button" class="lang-switcher__option is-active" data-lang="uk">UA — Українська</button></li>
+              <li><button type="button" class="lang-switcher__option" data-lang="en">EN — English</button></li>
+              <li><button type="button" class="lang-switcher__option" data-lang="ru">RU — Русский</button></li>
+            </ul>
+          </div>
+          <a class="blog-header__back" href="./index.html" data-i18n="blog.backHome">← На головну</a>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="blog-hero">
         <div class="container">
-          <span class="blog-hero__label">Блог</span>
-          <h1 class="blog-hero__title">Корисні статті для вашого бізнесу</h1>
-          <p class="blog-hero__desc">
+          <span class="blog-hero__label" data-i18n="blog.label">Блог</span>
+          <h1 class="blog-hero__title" data-i18n="blog.title">Корисні статті для вашого бізнесу</h1>
+          <p class="blog-hero__desc" data-i18n="blog.desc">
             Ділимося досвідом у веб-розробці, SEO, дизайні та конверсії — щоб ваш сайт працював на результат, а Google
             приводив клієнтів.
           </p>
@@ -91,11 +107,13 @@
 
     <footer class="blog-footer">
       <div class="container">
-        <p>© 2026 Escape. <a href="./index.html">На головну</a> · <a href="./privacy.html">Політика конфіденційності</a></p>
+        <p>© 2026 Escape. <a href="./index.html" data-i18n="blog.homeLink">На головну</a> · <a href="./privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a></p>
       </div>
     </footer>
 
-    <script src="./js/blog-data.js"></script>
+    <script src="./js/translations.js"></script>
+    <script src="./js/blog-articles-i18n.js"></script>
+    <script src="./js/i18n.js"></script>
     <script src="./js/blog.js"></script>
   </body>
 </html>
