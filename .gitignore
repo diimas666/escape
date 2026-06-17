@@ -3,37 +3,12 @@
 .env.*.local
 .vercel
 
-# Monorepo / Node
+# Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# React Native (apps/mobile)
-apps/mobile/.metro-health-check*
-apps/mobile/coverage/
-apps/mobile/ios/Pods/
-apps/mobile/ios/build/
-apps/mobile/android/.gradle/
-apps/mobile/android/app/build/
-apps/mobile/android/build/
-apps/mobile/android/.cxx/
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-*.hprof
-.cxx/
-*.keystore
-!apps/mobile/android/app/debug.keystore
-
 # macOS
 .DS_Store
-
-# Xcode
-*.xcuserstate
-*.xcworkspace/xcuserdata/
-DerivedData/

@@ -184,6 +184,19 @@
     color: var(--color-text-muted);
 }
 
+.faq__group-title {
+    font-family: var(--font-Montserrat);
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 600;
+    color: var(--color-white);
+    text-align: center;
+    margin: 48px 0 28px;
+}
+
+.faq__group-title:first-of-type {
+    margin-top: 0;
+}
+
 @media (max-width: 768px) {
     .faq__orb {
         width: 160px;

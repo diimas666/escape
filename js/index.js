@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
       { parent: ".about__right", child: ".about__reviews", variant: "reveal--left" },
       { parent: ".why__grid", child: ".why__card" },
       { parent: ".services__grid", child: ".service-card" },
+      { parent: ".mobile-apps__stages", child: ".mobile-apps__stage" },
+      { parent: ".mobile-apps__pricing", child: ".mobile-apps__card" },
       { parent: ".steps__wrapper", child: ".step" },
       { parent: ".price__wrapper", child: ".price__card" },
       { parent: ".faq__wrapper", child: ".faq__item" },
@@ -142,6 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     addReveal(document.querySelector(".consult__wrapper"), 0, "reveal--scale");
+    addReveal(document.querySelector(".mobile-apps__highlight"), 0, "reveal--scale");
+    addReveal(document.querySelector(".mobile-apps__cta"), 100);
     addReveal(document.querySelector(".june-promo__inner"), 0, "reveal--scale");
     addReveal(document.querySelector(".portfolio__slider"), 100);
     addReveal(document.querySelector(".portfolio__controls"), 200);

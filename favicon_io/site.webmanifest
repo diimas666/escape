@@ -1,6 +1,8 @@
 {
-  "name": "Escape — веб-студія",
+  "name": "Escape — сайти, мобільні додатки та Google Ads",
   "short_name": "Escape",
+  "description": "Веб-студія в Україні: розробка сайтів, інтернет-магазинів, мобільних додатків, Google Ads та SEO.",
+  "lang": "uk-UA",
   "icons": [
     {
       "src": "./android-chrome-192x192.png",

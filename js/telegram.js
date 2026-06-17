@@ -3,16 +3,23 @@ const API_URL = "/api/telegram";
 
 // === DOM ELEMENTS ===
 const modal = document.querySelector("#modal");
-const modalForm = document.querySelector(".modal__form");
+const modalForm = document.querySelector("#modal .modal__form");
 const consultForm = document.querySelector(".consult__form");
 const orderTypeInput = document.querySelector("#order-type");
-const closeBtn = document.querySelector(".modal__close:not(.ads-modal__close)");
+const closeBtn = document.querySelector("#modal .modal__close");
 
 const adsModal = document.querySelector("#ads-modal");
 const adsModalForm = document.querySelector(".ads-modal__form");
 const adsOrderTypeInput = document.querySelector("#ads-order-type");
 const adsCloseBtn = document.querySelector(".ads-modal__close");
 const openAdsBtns = document.querySelectorAll(".ads__btn");
+
+const mobileModal = document.querySelector("#mobile-modal");
+const mobileModalForm = document.querySelector(".mobile-modal__form");
+const mobileOrderTypeInput = document.querySelector("#mobile-order-type");
+const mobilePackageInput = document.querySelector("#mobile-package");
+const mobileCloseBtn = document.querySelector(".mobile-modal__close");
+const openMobileBtns = document.querySelectorAll(".mobile-apps__btn");
 
 const openBtns = document.querySelectorAll(".price__btn");
 
@@ -37,6 +44,16 @@ function openAdsModal(tariff) {
 
 function closeAdsModal() {
     if (adsModal) adsModal.classList.remove("active");
+}
+
+function openMobileModal(packageName) {
+    if (mobileOrderTypeInput) mobileOrderTypeInput.value = "Мобільний додаток";
+    if (mobilePackageInput) mobilePackageInput.value = packageName || "Індивідуальний розрахунок";
+    if (mobileModal) mobileModal.classList.add("active");
+}
+
+function closeMobileModal() {
+    if (mobileModal) mobileModal.classList.remove("active");
 }
 
 function showSuccessPopup() {
@@ -65,16 +82,25 @@ async function sendTelegram(e) {
     isSubmitting = true;
 
     const isAdsForm = form.classList.contains("ads-modal__form");
+    const isMobileForm = form.classList.contains("mobile-modal__form");
 
     let type = "Консультація";
     let tariff = "";
+    let packageName = "";
     let name = "";
     let phone = "";
     let email = "";
     let userMessage = "";
 
-    if (form.classList.contains("modal__form") && !isAdsForm) {
+    if (form.classList.contains("modal__form") && !isAdsForm && !isMobileForm) {
         type = orderTypeInput.value.trim() || "Замовлення";
+        const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
+        const phoneInput = form.querySelector('input[placeholder="Телефон"]');
+        name = nameInput ? nameInput.value.trim() : "";
+        phone = phoneInput ? phoneInput.value.trim() : "";
+    } else if (isMobileForm) {
+        type = "Мобільний додаток";
+        packageName = mobilePackageInput ? mobilePackageInput.value.trim() : "";
         const nameInput = form.querySelector('input[placeholder="Ваше ім’я"]');
         const phoneInput = form.querySelector('input[placeholder="Телефон"]');
         name = nameInput ? nameInput.value.trim() : "";
@@ -132,6 +158,13 @@ async function sendTelegram(e) {
 📦 Тарифний план: ${tariff || "не вказано"}
 👤 Ім’я: ${name}
 📞 Телефон: ${phone}`;
+    } else if (isMobileForm) {
+        message = `📱 МОБІЛЬНИЙ ДОДАТОК — НОВА ЗАЯВКА
+---------------------------
+🔶 Послуга: Мобільний додаток (iOS / Android)
+📦 Пакет: ${packageName || "не вказано"}
+👤 Ім’я: ${name}
+📞 Телефон: ${phone}`;
     } else {
         message = `📩 НОВА ЗАЯВКА
 ---------------------------
@@ -170,20 +203,24 @@ async function sendTelegram(e) {
             if (window.EscapeAnalytics) {
                 let formType = "contacts";
                 if (isAdsForm) formType = "ads_modal";
+                else if (isMobileForm) formType = "mobile_modal";
                 else if (form.classList.contains("modal__form")) formType = "price_modal";
                 else if (form.classList.contains("consult__form")) formType = "consult";
 
                 window.EscapeAnalytics.trackLead({
-                    serviceType: isAdsForm ? `Реклама — ${tariff}` : type,
+                    serviceType: isAdsForm ? `Реклама — ${tariff}` : isMobileForm ? `Мобільний додаток — ${packageName}` : type,
                     formType,
                 });
             }
 
-            if (form.classList.contains("modal__form") && !isAdsForm) {
+            if (form.classList.contains("modal__form") && !isAdsForm && !isMobileForm) {
                 closeModal();
             }
             if (isAdsForm) {
                 closeAdsModal();
+            }
+            if (isMobileForm) {
+                closeMobileModal();
             }
             showSuccessPopup();
             form.reset();
@@ -221,12 +258,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if (openMobileBtns) {
+        openMobileBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const packageName = btn.dataset.package;
+                openMobileModal(packageName);
+            });
+        });
+    }
+
     if (closeBtn) {
         closeBtn.addEventListener("click", closeModal);
     }
 
     if (adsCloseBtn) {
         adsCloseBtn.addEventListener("click", closeAdsModal);
+    }
+
+    if (mobileCloseBtn) {
+        mobileCloseBtn.addEventListener("click", closeMobileModal);
     }
 
     window.addEventListener("click", (e) => {
@@ -236,12 +287,16 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target === adsModal) {
             closeAdsModal();
         }
+        if (e.target === mobileModal) {
+            closeMobileModal();
+        }
     });
 
     window.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
             closeModal();
             closeAdsModal();
+            closeMobileModal();
         }
     });
 
@@ -250,6 +305,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (adsModalForm) {
         adsModalForm.addEventListener("submit", sendTelegram);
+    }
+    if (mobileModalForm) {
+        mobileModalForm.addEventListener("submit", sendTelegram);
     }
     if (consultForm) {
         consultForm.addEventListener("submit", sendTelegram);
