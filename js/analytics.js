@@ -1,8 +1,8 @@
 (function () {
   const CONFIG = {
     GA4_ID: "G-CZF6ZZN5TP",
-    GADS_ID: "AW-16537770108",
-    GADS_LEAD_CONVERSION: "AW-16537770108/RqqdCLTmxKgZEPyw6c09",
+    GADS_ID: "AW-11236629410",
+    GADS_LEAD_CONVERSION: "AW-11236629410/eqc7CLj4wrscEKK3he4p",
     // Вставте ID пікселя з Meta Events Manager для відстеження Instagram / Facebook
     META_PIXEL_ID: "",
     STORAGE_KEY: "escape_traffic",
