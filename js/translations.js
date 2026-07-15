@@ -3,7 +3,7 @@ window.ESCAPE_I18N = {
     meta: {
       title: "Escape | Сайти під ключ, мобільні додатки, Google Ads та SEO — Україна",
       description:
-        "Escape — веб-студія в Україні. Розробка сайтів та інтернет-магазинів під ключ, мобільні додатки iOS/Android на React Native, налаштування Google Ads, таргет у Facebook та Instagram, SEO-просування. Від $300. Безкоштовна консультація.",
+        "Escape — веб-студія в Україні. Розробка сайтів та інтернет-магазинів під ключ, мобільні додатки iOS/Android на React Native, налаштування Google Ads, таргет у Facebook та Instagram, SEO-просування. Від $600. Безкоштовна консультація.",
     },
     nav: {
       about: "Про нас",
@@ -220,12 +220,12 @@ window.ESCAPE_I18N = {
         },
       ],
       pricingTitle: "Вартість розробки",
-      pricingNote: "Прозора ціна в договорі — від $1 200 до $5 000",
+      pricingNote: "Прозора ціна в договорі — від $1 500 до $5 300",
       pricingCards: [
         {
           name: "Стартовий",
           desc: "Простий додаток для старту: каталог, контакти, базовий функціонал",
-          price: "$1 200",
+          price: "$1 500",
           priceUnit: "/ додаток",
           features: [
             "Дизайн до 8 екранів",
@@ -240,7 +240,7 @@ window.ESCAPE_I18N = {
           name: "Бізнес",
           label: "популярний",
           desc: "Повноцінний інтернет-магазин у смартфоні вашого клієнта",
-          price: "$2 500",
+          price: "$2 800",
           priceUnit: "/ додаток",
           features: [
             "UI/UX дизайн до 15 екранів",
@@ -254,7 +254,7 @@ window.ESCAPE_I18N = {
         {
           name: "Преміум",
           desc: "Максимальний функціонал для масштабного e-commerce",
-          price: "$5 000",
+          price: "$5 300",
           priceUnit: "/ додаток",
           features: [
             "Безлімітний дизайн та анімації",
@@ -305,7 +305,7 @@ window.ESCAPE_I18N = {
     junePromo: {
       badge: "Акція до 30 червня",
       title: "Знижка 10% на Landing page",
-      text: "Лендинг під ключ за $270 $300 — лише до кінця червня. Дизайн, розробка, SEO та запуск включені.",
+      text: "Лендинг під ключ за $540 $600 — лише до кінця червня. Дизайн, розробка, SEO та запуск включені.",
       cta: "Отримати знижку 10%",
       timerLabel: "До кінця акції залишилось",
       days: "днів",
@@ -342,14 +342,14 @@ window.ESCAPE_I18N = {
       ],
       budgetLabel: "Пакет START — прозора оплата",
       budgetText:
-        "50% від $200 — $100 одразу йде на ваш рекламний бюджет у Google Ads. Решта — налаштування, аудит та ведення кампанії.",
+        "50% від $500 — $250 одразу йде на ваш рекламний бюджет у Google Ads. Решта — налаштування, аудит та ведення кампанії.",
       budgetSub: "Ви бачите, куди йдуть гроші: половина — реальна реклама, а не «послуги в повітрі».",
       pricingTitle: "Обери свій пакет розвитку",
       packages: [
         {
           name: "START",
           desc: "Ідеально для перших етапів розвитку бізнесу",
-          price: "$200",
+          price: "$500",
           priceUnit: "/ міс",
           features: [
             "базовий аудит сайту;",
@@ -363,7 +363,7 @@ window.ESCAPE_I18N = {
           name: "PRO",
           label: "Top Pick",
           desc: "Для бізнесів, які готові масштабуватися",
-          price: "$400",
+          price: "$700",
           priceUnit: "/ міс",
           features: [
             "повне SEO: метатеги, аналітика, робота з кодом;",
@@ -376,7 +376,7 @@ window.ESCAPE_I18N = {
         {
           name: "PREMIUM",
           desc: "Максимальний результат під ключ",
-          price: "від $600",
+          price: "від $900",
           priceUnit: "/ міс",
           features: [
             "Google Ads + таргет Meta (Facebook, Instagram);",
@@ -399,7 +399,7 @@ window.ESCAPE_I18N = {
         },
         {
           q: "Чим відрізняються пакети START, PRO та PREMIUM?",
-          a: "START ($200/міс) — базовий аудит, ключові слова та запуск Google Ads (50% суми йде на рекламний бюджет). PRO ($400/міс) — повне SEO, метатеги, ведення Google Ads і аналіз конкурентів. PREMIUM (від $600/міс) — Google Ads + таргет Meta + наскрізна аналітика + щотижневі звіти.",
+          a: "START ($500/міс) — базовий аудит, ключові слова та запуск Google Ads (50% суми йде на рекламний бюджет). PRO ($700/міс) — повне SEO, метатеги, ведення Google Ads і аналіз конкурентів. PREMIUM (від $900/міс) — Google Ads + таргет Meta + наскрізна аналітика + щотижневі звіти.",
         },
         {
           q: "Налаштовуєте лише ви таргет у Facebook та Instagram?",
@@ -428,7 +428,7 @@ window.ESCAPE_I18N = {
       cards: [
         {
           title: "Landing page (візитівка)",
-          price: "$300",
+          price: "$600",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайту;",
@@ -450,7 +450,7 @@ window.ESCAPE_I18N = {
         {
           title: "Корпоративний сайт",
           label: "популярний",
-          price: "$550",
+          price: "$850",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайту;",
@@ -473,7 +473,7 @@ window.ESCAPE_I18N = {
         },
         {
           title: "Інтернет-магазин",
-          price: "$1350",
+          price: "$1650",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайту;",
@@ -515,7 +515,7 @@ window.ESCAPE_I18N = {
       q1: "Скільки часу займає розробка сайту?",
       a1: "Терміни залежать від складності проекту. Landing Page зазвичай займає 5-7 днів, корпоративний сайт — 14-20 днів, а інтернет-магазин — від 25 днів. Ми завжди чітко прописуємо дедлайни в договорі.",
       q2: "Яка вартість розробки?",
-      a2: "Вартість стартує від $300 за Landing page (візитівка). Корпоративний сайт — від $550, інтернет-магазин — від $1350. Остаточна ціна формується після обговорення всіх деталей та функціоналу.",
+      a2: "Вартість стартує від $600 за Landing page (візитівка). Корпоративний сайт — від $850, інтернет-магазин — від $1650. Остаточна ціна формується після обговорення всіх деталей та функціоналу.",
       q3: "Що потрібно від мене для початку роботи?",
       a3: "Нам знадобиться заповнений бриф (ми допоможемо з цим), логотип (якщо є), тексти та фотографії. Якщо контенту немає — ми можемо взяти це на себе.",
       q4: "Чи надаєте ви підтримку після запуску?",
@@ -527,7 +527,7 @@ window.ESCAPE_I18N = {
       q7: "Які гарантії ви надаєте?",
       a7: "Ми працюємо за договором, де прописані всі умови, терміни та вартість. Оплата розбивається на етапи, що гарантує безпеку для обох сторін.",
       q8: "Скільки коштує розробка мобільного додатку?",
-      a8: "Вартість стартує від $1 200 за стартовий пакет (каталог, базовий функціонал, Google Play). Повноцінний додаток для інтернет-магазину — від $2 500, преміум-рішення з інтеграціями CRM, Nova Poshta та платежами — до $5 000. Точну ціну розраховуємо після обговорення функціоналу.",
+      a8: "Вартість стартує від $1 500 за стартовий пакет (каталог, базовий функціонал, Google Play). Повноцінний додаток для інтернет-магазину — від $2 800, преміум-рішення з інтеграціями CRM, Nova Poshta та платежами — до $5 300. Точну ціну розраховуємо після обговорення функціоналу.",
       q9: "Скільки часу займає розробка мобільного додатку?",
       a9: "Простий додаток займає 3–4 тижні, бізнес-рішення з кошиком та оплатою — 6–8 тижнів, складний e-commerce з інтеграціями — від 10 тижнів. Терміни фіксуємо в договорі після затвердження ТЗ та дизайну.",
       q10: "Чи потрібно робити окремі додатки для iOS та Android?",
@@ -545,9 +545,9 @@ window.ESCAPE_I18N = {
       q16: "Що входить у аудит сайту перед запуском реклами?",
       a16: "Аналізуємо метатеги Title і Description, збираємо та чистимо семантичне ядро, знаходимо технічні помилки, через які Google ховає сайт, і перевіряємо готовність до конверсій.",
       q17: "Чим відрізняються пакети START, PRO та PREMIUM?",
-      a17: "START ($200/міс) — базовий аудит і запуск реклами. PRO ($400/міс) — повне SEO, метатеги, Google Ads і аналіз конкурентів. PREMIUM (від $600/міс) — Google Ads + таргет Meta + наскрізна аналітика + щотижневі звіти.",
+      a17: "START ($500/міс) — базовий аудит і запуск реклами. PRO ($700/міс) — повне SEO, метатеги, Google Ads і аналіз конкурентів. PREMIUM (від $900/міс) — Google Ads + таргет Meta + наскрізна аналітика + щотижневі звіти.",
       q18: "Скільки з пакету START йде на рекламний бюджет?",
-      a18: "50% від суми пакету START ($200/міс) одразу йде на ваш рекламний бюджет у Google Ads — ідеально для швидкого тесту ніші.",
+      a18: "50% від суми пакету START ($500/міс) одразу йде на ваш рекламний бюджет у Google Ads — ідеально для швидкого тесту ніші.",
       q19: "Як замовити безкоштовний первинний аудит?",
       a19: "Напишіть нам у Direct або залиште заявку на сайті з позначкою «АУДИТ» — надішліть посилання на сайт, і ми проведемо первинний розбір безкоштовно.",
     },
@@ -628,7 +628,7 @@ window.ESCAPE_I18N = {
     meta: {
       title: "Escape | Turnkey Websites, Mobile Apps, Google Ads & SEO — Ukraine",
       description:
-        "Escape is a web studio in Ukraine. Turnkey websites and online stores, iOS/Android mobile apps on React Native, Google Ads setup, Facebook & Instagram targeting, and SEO promotion. From $300. Free consultation.",
+        "Escape is a web studio in Ukraine. Turnkey websites and online stores, iOS/Android mobile apps on React Native, Google Ads setup, Facebook & Instagram targeting, and SEO promotion. From $600. Free consultation.",
     },
     nav: {
       about: "About",
@@ -845,12 +845,12 @@ window.ESCAPE_I18N = {
         },
       ],
       pricingTitle: "Development cost",
-      pricingNote: "Transparent contract pricing — from $1,200 to $5,000",
+      pricingNote: "Transparent contract pricing — from $1,500 to $5,300",
       pricingCards: [
         {
           name: "Starter",
           desc: "A simple app to get started: catalog, contacts, basic features",
-          price: "$1,200",
+          price: "$1,500",
           priceUnit: "/ app",
           features: [
             "Design up to 8 screens",
@@ -865,7 +865,7 @@ window.ESCAPE_I18N = {
           name: "Business",
           label: "popular",
           desc: "A full online store in your customer's smartphone",
-          price: "$2,500",
+          price: "$2,800",
           priceUnit: "/ app",
           features: [
             "UI/UX design up to 15 screens",
@@ -879,7 +879,7 @@ window.ESCAPE_I18N = {
         {
           name: "Premium",
           desc: "Maximum functionality for large-scale e-commerce",
-          price: "$5,000",
+          price: "$5,300",
           priceUnit: "/ app",
           features: [
             "Unlimited design and animations",
@@ -930,7 +930,7 @@ window.ESCAPE_I18N = {
     junePromo: {
       badge: "Promo until June 30",
       title: "10% off Landing page",
-      text: "Turnkey landing for $270 $300 — only until the end of June. Design, development, SEO, and launch included.",
+      text: "Turnkey landing for $540 $600 — only until the end of June. Design, development, SEO, and launch included.",
       cta: "Get 10% off",
       timerLabel: "Time left until the promo ends",
       days: "days",
@@ -967,14 +967,14 @@ window.ESCAPE_I18N = {
       ],
       budgetLabel: "START package — transparent pricing",
       budgetText:
-        "50% of $200 — $100 goes straight to your Google Ads budget. The rest covers setup, audit, and campaign management.",
+        "50% of $500 — $250 goes straight to your Google Ads budget. The rest covers setup, audit, and campaign management.",
       budgetSub: "You see where the money goes: half is real advertising, not 'services in the air.'",
       pricingTitle: "Choose your growth package",
       packages: [
         {
           name: "START",
           desc: "Ideal for early-stage business growth",
-          price: "$200",
+          price: "$500",
           priceUnit: "/ mo",
           features: [
             "basic website audit;",
@@ -988,7 +988,7 @@ window.ESCAPE_I18N = {
           name: "PRO",
           label: "Top Pick",
           desc: "For businesses ready to scale",
-          price: "$400",
+          price: "$700",
           priceUnit: "/ mo",
           features: [
             "full SEO: meta tags, analytics, code work;",
@@ -1001,7 +1001,7 @@ window.ESCAPE_I18N = {
         {
           name: "PREMIUM",
           desc: "Maximum turnkey results",
-          price: "from $600",
+          price: "from $900",
           priceUnit: "/ mo",
           features: [
             "Google Ads + Meta targeting (Facebook, Instagram);",
@@ -1024,7 +1024,7 @@ window.ESCAPE_I18N = {
         },
         {
           q: "How do START, PRO, and PREMIUM packages differ?",
-          a: "START ($200/mo) — basic audit, keywords, and Google Ads launch (50% goes to ad budget). PRO ($400/mo) — full SEO, meta tags, Google Ads management, and competitor analysis. PREMIUM (from $600/mo) — Google Ads + Meta targeting + end-to-end analytics + weekly reports.",
+          a: "START ($500/mo) — basic audit, keywords, and Google Ads launch (50% goes to ad budget). PRO ($700/mo) — full SEO, meta tags, Google Ads management, and competitor analysis. PREMIUM (from $900/mo) — Google Ads + Meta targeting + end-to-end analytics + weekly reports.",
         },
         {
           q: "Do you set up Facebook and Instagram targeting?",
@@ -1053,7 +1053,7 @@ window.ESCAPE_I18N = {
       cards: [
         {
           title: "Landing page",
-          price: "$300",
+          price: "$600",
           priceUnit: "/ site",
           features: [
             "website design;",
@@ -1075,7 +1075,7 @@ window.ESCAPE_I18N = {
         {
           title: "Corporate website",
           label: "popular",
-          price: "$550",
+          price: "$850",
           priceUnit: "/ site",
           features: [
             "website design;",
@@ -1098,7 +1098,7 @@ window.ESCAPE_I18N = {
         },
         {
           title: "Online store",
-          price: "$1350",
+          price: "$1650",
           priceUnit: "/ site",
           features: [
             "website design;",
@@ -1140,7 +1140,7 @@ window.ESCAPE_I18N = {
       q1: "How long does website development take?",
       a1: "Timelines depend on project complexity. A landing page usually takes 5–7 days, a corporate site — 14–20 days, and an online store — from 25 days. We always set clear deadlines in the contract.",
       q2: "How much does development cost?",
-      a2: "Pricing starts at $300 for a landing page. A corporate website — from $550, an online store — from $1350. The final price is set after discussing all details and functionality.",
+      a2: "Pricing starts at $600 for a landing page. A corporate website — from $850, an online store — from $1650. The final price is set after discussing all details and functionality.",
       q3: "What do you need from me to get started?",
       a3: "We'll need a completed brief (we'll help), a logo (if available), texts, and photos. If you don't have content — we can handle that too.",
       q4: "Do you provide support after launch?",
@@ -1152,7 +1152,7 @@ window.ESCAPE_I18N = {
       q7: "What guarantees do you provide?",
       a7: "We work under a contract with all terms, deadlines, and pricing spelled out. Payment is split into stages, which protects both parties.",
       q8: "How much does mobile app development cost?",
-      a8: "Pricing starts at $1,200 for the starter package (catalog, basic features, Google Play). A full online store app — from $2,500, a premium solution with CRM, Nova Poshta, and payments — up to $5,000. Exact pricing is calculated after discussing functionality.",
+      a8: "Pricing starts at $1,500 for the starter package (catalog, basic features, Google Play). A full online store app — from $2,800, a premium solution with CRM, Nova Poshta, and payments — up to $5,300. Exact pricing is calculated after discussing functionality.",
       q9: "How long does mobile app development take?",
       a9: "A simple app takes 3–4 weeks, a business solution with cart and payment — 6–8 weeks, complex e-commerce with integrations — from 10 weeks. Timelines are fixed in the contract after approving the spec and design.",
       q10: "Do I need separate apps for iOS and Android?",
@@ -1170,9 +1170,9 @@ window.ESCAPE_I18N = {
       q16: "What's included in a pre-launch website audit?",
       a16: "We analyze Title and Description meta tags, collect and clean the semantic core, find technical errors that hide your site from Google, and check conversion readiness.",
       q17: "How do START, PRO, and PREMIUM packages differ?",
-      a17: "START ($200/mo) — basic audit and ad launch. PRO ($400/mo) — full SEO, meta tags, Google Ads, and competitor analysis. PREMIUM (from $600/mo) — Google Ads + Meta targeting + end-to-end analytics + weekly reports.",
+      a17: "START ($500/mo) — basic audit and ad launch. PRO ($700/mo) — full SEO, meta tags, Google Ads, and competitor analysis. PREMIUM (from $900/mo) — Google Ads + Meta targeting + end-to-end analytics + weekly reports.",
       q18: "How much of the START package goes to ad budget?",
-      a18: "50% of the START package ($200/mo) goes straight to your Google Ads budget — ideal for quickly testing a niche.",
+      a18: "50% of the START package ($500/mo) goes straight to your Google Ads budget — ideal for quickly testing a niche.",
       q19: "How do I request a free initial audit?",
       a19: "Message us in Direct or leave a request on the site marked 'AUDIT' — send your website link and we'll do a free initial review.",
     },
@@ -1253,7 +1253,7 @@ window.ESCAPE_I18N = {
     meta: {
       title: "Escape | Сайты под ключ, мобильные приложения, Google Ads и SEO — Украина",
       description:
-        "Escape — веб-студия в Украине. Разработка сайтов и интернет-магазинов под ключ, мобильные приложения iOS/Android на React Native, настройка Google Ads, таргет в Facebook и Instagram, SEO-продвижение. От $300. Бесплатная консультация.",
+        "Escape — веб-студия в Украине. Разработка сайтов и интернет-магазинов под ключ, мобильные приложения iOS/Android на React Native, настройка Google Ads, таргет в Facebook и Instagram, SEO-продвижение. От $600. Бесплатная консультация.",
     },
     nav: {
       about: "О нас",
@@ -1470,12 +1470,12 @@ window.ESCAPE_I18N = {
         },
       ],
       pricingTitle: "Стоимость разработки",
-      pricingNote: "Прозрачная цена в договоре — от $1 200 до $5 000",
+      pricingNote: "Прозрачная цена в договоре — от $1 500 до $5 300",
       pricingCards: [
         {
           name: "Стартовый",
           desc: "Простое приложение для старта: каталог, контакты, базовый функционал",
-          price: "$1 200",
+          price: "$1 500",
           priceUnit: "/ приложение",
           features: [
             "Дизайн до 8 экранов",
@@ -1490,7 +1490,7 @@ window.ESCAPE_I18N = {
           name: "Бизнес",
           label: "популярный",
           desc: "Полноценный интернет-магазин в смартфоне вашего клиента",
-          price: "$2 500",
+          price: "$2 800",
           priceUnit: "/ приложение",
           features: [
             "UI/UX дизайн до 15 экранов",
@@ -1504,7 +1504,7 @@ window.ESCAPE_I18N = {
         {
           name: "Премиум",
           desc: "Максимальный функционал для масштабного e-commerce",
-          price: "$5 000",
+          price: "$5 300",
           priceUnit: "/ приложение",
           features: [
             "Безлимитный дизайн и анимации",
@@ -1555,7 +1555,7 @@ window.ESCAPE_I18N = {
     junePromo: {
       badge: "Акция до 30 июня",
       title: "Скидка 10% на Landing page",
-      text: "Лендинг под ключ за $270 $300 — только до конца июня. Дизайн, разработка, SEO и запуск включены.",
+      text: "Лендинг под ключ за $540 $600 — только до конца июня. Дизайн, разработка, SEO и запуск включены.",
       cta: "Получить скидку 10%",
       timerLabel: "До конца акции осталось",
       days: "дней",
@@ -1592,14 +1592,14 @@ window.ESCAPE_I18N = {
       ],
       budgetLabel: "Пакет START — прозрачная оплата",
       budgetText:
-        "50% от $200 — $100 сразу идёт на ваш рекламный бюджет в Google Ads. Остальное — настройка, аудит и ведение кампании.",
+        "50% от $500 — $250 сразу идёт на ваш рекламный бюджет в Google Ads. Остальное — настройка, аудит и ведение кампании.",
       budgetSub: "Вы видите, куда идут деньги: половина — реальная реклама, а не «услуги в воздухе».",
       pricingTitle: "Выбери свой пакет развития",
       packages: [
         {
           name: "START",
           desc: "Идеально для первых этапов развития бизнеса",
-          price: "$200",
+          price: "$500",
           priceUnit: "/ мес",
           features: [
             "базовый аудит сайта;",
@@ -1613,7 +1613,7 @@ window.ESCAPE_I18N = {
           name: "PRO",
           label: "Top Pick",
           desc: "Для бизнесов, готовых масштабироваться",
-          price: "$400",
+          price: "$700",
           priceUnit: "/ мес",
           features: [
             "полное SEO: метатеги, аналитика, работа с кодом;",
@@ -1626,7 +1626,7 @@ window.ESCAPE_I18N = {
         {
           name: "PREMIUM",
           desc: "Максимальный результат под ключ",
-          price: "от $600",
+          price: "от $900",
           priceUnit: "/ мес",
           features: [
             "Google Ads + таргет Meta (Facebook, Instagram);",
@@ -1649,7 +1649,7 @@ window.ESCAPE_I18N = {
         },
         {
           q: "Чем отличаются пакеты START, PRO и PREMIUM?",
-          a: "START ($200/мес) — базовый аудит, ключевые слова и запуск Google Ads (50% суммы идёт на рекламный бюджет). PRO ($400/мес) — полное SEO, метатеги, ведение Google Ads и анализ конкурентов. PREMIUM (от $600/мес) — Google Ads + таргет Meta + сквозная аналитика + еженедельные отчёты.",
+          a: "START ($500/мес) — базовый аудит, ключевые слова и запуск Google Ads (50% суммы идёт на рекламный бюджет). PRO ($700/мес) — полное SEO, метатеги, ведение Google Ads и анализ конкурентов. PREMIUM (от $900/мес) — Google Ads + таргет Meta + сквозная аналитика + еженедельные отчёты.",
         },
         {
           q: "Настраиваете ли вы таргет в Facebook и Instagram?",
@@ -1678,7 +1678,7 @@ window.ESCAPE_I18N = {
       cards: [
         {
           title: "Landing page (визитка)",
-          price: "$300",
+          price: "$600",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайта;",
@@ -1700,7 +1700,7 @@ window.ESCAPE_I18N = {
         {
           title: "Корпоративный сайт",
           label: "популярный",
-          price: "$550",
+          price: "$850",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайта;",
@@ -1723,7 +1723,7 @@ window.ESCAPE_I18N = {
         },
         {
           title: "Интернет-магазин",
-          price: "$1350",
+          price: "$1650",
           priceUnit: "/ сайт",
           features: [
             "веб-дизайн сайта;",
@@ -1765,7 +1765,7 @@ window.ESCAPE_I18N = {
       q1: "Сколько времени занимает разработка сайта?",
       a1: "Сроки зависят от сложности проекта. Landing Page обычно занимает 5-7 дней, корпоративный сайт — 14-20 дней, а интернет-магазин — от 25 дней. Мы всегда чётко прописываем дедлайны в договоре.",
       q2: "Какова стоимость разработки?",
-      a2: "Стоимость начинается от $300 за Landing page (визитка). Корпоративный сайт — от $550, интернет-магазин — от $1350. Окончательная цена формируется после обсуждения всех деталей и функционала.",
+      a2: "Стоимость начинается от $600 за Landing page (визитка). Корпоративный сайт — от $850, интернет-магазин — от $1650. Окончательная цена формируется после обсуждения всех деталей и функционала.",
       q3: "Что нужно от меня для начала работы?",
       a3: "Нам понадобится заполненный бриф (мы поможем с этим), логотип (если есть), тексты и фотографии. Если контента нет — мы можем взять это на себя.",
       q4: "Предоставляете ли вы поддержку после запуска?",
@@ -1777,7 +1777,7 @@ window.ESCAPE_I18N = {
       q7: "Какие гарантии вы предоставляете?",
       a7: "Мы работаем по договору, где прописаны все условия, сроки и стоимость. Оплата разбивается на этапы, что гарантирует безопасность для обеих сторон.",
       q8: "Сколько стоит разработка мобильного приложения?",
-      a8: "Стоимость начинается от $1 200 за стартовый пакет (каталог, базовый функционал, Google Play). Полноценное приложение для интернет-магазина — от $2 500, премиум-решение с интеграциями CRM, Nova Poshta и платежами — до $5 000. Точную цену рассчитываем после обсуждения функционала.",
+      a8: "Стоимость начинается от $1 500 за стартовый пакет (каталог, базовый функционал, Google Play). Полноценное приложение для интернет-магазина — от $2 800, премиум-решение с интеграциями CRM, Nova Poshta и платежами — до $5 300. Точную цену рассчитываем после обсуждения функционала.",
       q9: "Сколько времени занимает разработка мобильного приложения?",
       a9: "Простое приложение занимает 3–4 недели, бизнес-решение с корзиной и оплатой — 6–8 недель, сложный e-commerce с интеграциями — от 10 недель. Сроки фиксируем в договоре после утверждения ТЗ и дизайна.",
       q10: "Нужно ли делать отдельные приложения для iOS и Android?",
@@ -1795,9 +1795,9 @@ window.ESCAPE_I18N = {
       q16: "Что входит в аудит сайта перед запуском рекламы?",
       a16: "Анализируем метатеги Title и Description, собираем и чистим семантическое ядро, находим технические ошибки, из-за которых Google прячет сайт, и проверяем готовность к конверсиям.",
       q17: "Чем отличаются пакеты START, PRO и PREMIUM?",
-      a17: "START ($200/мес) — базовый аудит и запуск рекламы. PRO ($400/мес) — полное SEO, метатеги, Google Ads и анализ конкурентов. PREMIUM (от $600/мес) — Google Ads + таргет Meta + сквозная аналитика + еженедельные отчёты.",
+      a17: "START ($500/мес) — базовый аудит и запуск рекламы. PRO ($700/мес) — полное SEO, метатеги, Google Ads и анализ конкурентов. PREMIUM (от $900/мес) — Google Ads + таргет Meta + сквозная аналитика + еженедельные отчёты.",
       q18: "Сколько из пакета START идёт на рекламный бюджет?",
-      a18: "50% от суммы пакета START ($200/мес) сразу идёт на ваш рекламный бюджет в Google Ads — идеально для быстрого теста ниши.",
+      a18: "50% от суммы пакета START ($500/мес) сразу идёт на ваш рекламный бюджет в Google Ads — идеально для быстрого теста ниши.",
       q19: "Как заказать бесплатный первичный аудит?",
       a19: "Напишите нам в Direct или оставьте заявку на сайте с пометкой «АУДИТ» — пришлите ссылку на сайт, и мы проведём первичный разбор бесплатно.",
     },

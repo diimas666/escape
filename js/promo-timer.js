@@ -1,7 +1,7 @@
 (function () {
   const PROMO_END = new Date(2026, 6, 1, 0, 0, 0, 0);
   const DISCOUNT_PERCENT = 10;
-  const LANDING_BASE_PRICE = 300;
+  const LANDING_BASE_PRICE = 600;
 
   const promoSection = document.getElementById("june-promo");
   const consultBenefit = document.querySelector(".consult__benefit-promo");

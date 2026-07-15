@@ -41,7 +41,7 @@ const BLOG_ARTICLES = [
   },
   {
     slug: "chto-takoe-landing-page",
-    title: "Лендинг під ключ від $300",
+    title: "Лендинг під ключ від $600",
     excerpt:
       "Запуск за 5 днів, 6 місяців підтримки, гарантія якості та адаптив під усі пристрої. 350+ проєктів, 98% повертаються.",
     image: "./images/instagram/escape-instagram-landing-4x5.png",
@@ -81,7 +81,7 @@ const BLOG_ARTICLES = [
   },
   {
     slug: "internet-magazin-vid-1350",
-    title: "Інтернет-магазин від $1350",
+    title: "Інтернет-магазин від $1650",
     excerpt:
       "Кошик, картки товарів, фільтри та адмін-панель. Повноцінний e-commerce для вашого бізнесу під ключ.",
     image: "./images/instagram/escape-instagram-ecommerce-4x5.png",
@@ -121,7 +121,7 @@ const BLOG_ARTICLES = [
   },
   {
     slug: "sait-za-5-dniv",
-    title: "Сайт за 5 днів — лендинг під ключ від $300",
+    title: "Сайт за 5 днів — лендинг під ключ від $600",
     excerpt:
       "Дизайн, розробка, запуск і базове SEO за 5 днів. Фіксована ціна без прихованих платежів.",
     image: "./images/instagram/escape-instagram-fast-4x5.png",
@@ -131,7 +131,7 @@ const BLOG_ARTICLES = [
   },
   {
     slug: "saity-pid-klyuch",
-    title: "Сайти під ключ — лендинг від $300",
+    title: "Сайти під ключ — лендинг від $600",
     excerpt:
       "Дизайн, розробка, SEO-оптимізація та підтримка. 200+ проєктів, рейтинг 5.0 на Google, 5+ років досвіду.",
     image: "./images/instagram/escape-instagram-4x5.png",
