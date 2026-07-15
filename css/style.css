@@ -3404,6 +3404,10 @@ a:focus {
   margin-bottom: 4px;
 }
 
+.price__card-price-old[hidden] {
+  display: none !important;
+}
+
 .price__card-price-current {
   display: inline;
 }

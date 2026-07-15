@@ -37,7 +37,7 @@
     if (landingBadge) landingBadge.hidden = false;
     if (landingPriceOld) landingPriceOld.hidden = false;
     if (landingPriceCurrent) {
-      landingPriceCurrent.textContent = `$${getDiscountedPrice()}`;
+      landingPriceCurrent.innerHTML = `$${getDiscountedPrice()} <span>/ сайт</span>`;
     }
   }
 
@@ -45,7 +45,9 @@
     if (landingCard) landingCard.classList.remove("price__card--promo");
     if (landingBadge) landingBadge.hidden = true;
     if (landingPriceOld) landingPriceOld.hidden = true;
-    if (landingPriceCurrent) landingPriceCurrent.textContent = `$${LANDING_BASE_PRICE}`;
+    if (landingPriceCurrent) {
+      landingPriceCurrent.innerHTML = `$${LANDING_BASE_PRICE} <span>/ сайт</span>`;
+    }
   }
 
   function removePromoUi() {
