@@ -1,4 +1,8 @@
-const ALLOWED_HOSTS = ["escape-webshop.com", "vercel.app", "localhost"];
+const ALLOWED_HOSTS = ["escape-webshop.com", "vercel.app", "localhost", "127.0.0.1"];
+
+function isAllowedHost(hostname) {
+  return ALLOWED_HOSTS.some((allowed) => hostname === allowed || hostname.endsWith(`.${allowed}`));
+}
 
 function isAllowedRequest(req) {
   const candidates = [req.headers.origin, req.headers.referer].filter(Boolean);
@@ -10,14 +14,37 @@ function isAllowedRequest(req) {
   return candidates.some((value) => {
     try {
       const host = new URL(value).hostname;
-      return ALLOWED_HOSTS.some((allowed) => host === allowed || host.endsWith(`.${allowed}`));
+      return isAllowedHost(host);
     } catch {
       return false;
     }
   });
 }
 
+function setCorsHeaders(req, res) {
+  const origin = req.headers.origin;
+  if (!origin) return;
+
+  try {
+    const { hostname, protocol } = new URL(origin);
+    if ((protocol === "http:" || protocol === "https:") && isAllowedHost(hostname)) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      res.setHeader("Vary", "Origin");
+    }
+  } catch {
+    // ignore invalid origin
+  }
+}
+
 module.exports = async (req, res) => {
+  setCorsHeaders(req, res);
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).end();
+  }
+
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ ok: false, error: "Method not allowed" });

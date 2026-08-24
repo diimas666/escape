@@ -280,6 +280,52 @@ window.ESCAPE_I18N = {
         telegram: "Написати в Telegram",
       },
     },
+    readyApps: {
+      label: "Готові рішення",
+      titleHtml: "Купити <span>готовий додаток</span>",
+      subtitle:
+        "Готові мобільні застосунки з повним функціоналом — запускайте бізнес швидше без тривалої розробки з нуля. Ознайомтесь у App Store або залиште заявку — передзвонимо.",
+      viewInStore: "Ознайомитись в App Store",
+      cards: [
+        {
+          id: "finflow",
+          name: "FinFlow",
+          price: "$3 000",
+          btn: "Купити зараз",
+        },
+        {
+          id: "autocare",
+          name: "AutoCare",
+          price: "$2 500",
+          btn: "Купити зараз",
+        },
+        {
+          id: "bioschedule",
+          name: "BioSchedule",
+          price: "$1 800",
+          btn: "Купити зараз",
+        },
+        {
+          id: "petcare-plus",
+          name: "PetCare Plus",
+          price: "$4 000",
+          btn: "Купити зараз",
+        },
+        {
+          id: "mobistuff",
+          name: "MobiStuff",
+          price: "$1 500",
+          btn: "Купити зараз",
+        },
+      ],
+      modal: {
+        title: "Купити готовий додаток",
+        intro: "Залиште номер телефону — ми передзвонимо вам найближчим часом",
+        submit: "Надіслати заявку",
+        close: "Закрити",
+      },
+      success: "Дякуємо! Ми передзвонимо вам найближчим часом.",
+    },
     steps: {
       label: "Як ми працюємо",
       title: "Етапи співпраці",
@@ -905,6 +951,52 @@ window.ESCAPE_I18N = {
         telegram: "Message on Telegram",
       },
     },
+    readyApps: {
+      label: "Ready-made solutions",
+      titleHtml: "Buy a <span>ready-made app</span>",
+      subtitle:
+        "Ready mobile apps with full functionality — launch your business faster without long development from scratch. Check them on the App Store or leave a request — we'll call you back.",
+      viewInStore: "View on App Store",
+      cards: [
+        {
+          id: "finflow",
+          name: "FinFlow",
+          price: "$3,000",
+          btn: "Buy now",
+        },
+        {
+          id: "autocare",
+          name: "AutoCare",
+          price: "$2,500",
+          btn: "Buy now",
+        },
+        {
+          id: "bioschedule",
+          name: "BioSchedule",
+          price: "$1,800",
+          btn: "Buy now",
+        },
+        {
+          id: "petcare-plus",
+          name: "PetCare Plus",
+          price: "$4,000",
+          btn: "Buy now",
+        },
+        {
+          id: "mobistuff",
+          name: "MobiStuff",
+          price: "$1,500",
+          btn: "Buy now",
+        },
+      ],
+      modal: {
+        title: "Buy a ready-made app",
+        intro: "Leave your phone number — we'll call you back shortly",
+        submit: "Send request",
+        close: "Close",
+      },
+      success: "Thank you! We'll call you back shortly.",
+    },
     steps: {
       label: "How we work",
       title: "Stages of collaboration",
@@ -1529,6 +1621,52 @@ window.ESCAPE_I18N = {
         btn: "Оставить заявку",
         telegram: "Написать в Telegram",
       },
+    },
+    readyApps: {
+      label: "Готовые решения",
+      titleHtml: "Купить <span>готовое приложение</span>",
+      subtitle:
+        "Готовые мобильные приложения с полным функционалом — запускайте бизнес быстрее без длительной разработки с нуля. Ознакомьтесь в App Store или оставьте заявку — перезвоним.",
+      viewInStore: "Ознакомиться в App Store",
+      cards: [
+        {
+          id: "finflow",
+          name: "FinFlow",
+          price: "$3 000",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "autocare",
+          name: "AutoCare",
+          price: "$2 500",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "bioschedule",
+          name: "BioSchedule",
+          price: "$1 800",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "petcare-plus",
+          name: "PetCare Plus",
+          price: "$4 000",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "mobistuff",
+          name: "MobiStuff",
+          price: "$1 500",
+          btn: "Купить сейчас",
+        },
+      ],
+      modal: {
+        title: "Купить готовое приложение",
+        intro: "Оставьте номер телефона — мы перезвоним вам в ближайшее время",
+        submit: "Отправить заявку",
+        close: "Закрыть",
+      },
+      success: "Спасибо! Мы перезвоним вам в ближайшее время.",
     },
     steps: {
       label: "Как мы работаем",

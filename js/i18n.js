@@ -334,6 +334,28 @@
     }
   }
 
+  function applyReadyApps(lang) {
+    const r = dict(lang).readyApps;
+    if (!r) return;
+    const section = document.querySelector("#ready-apps");
+    if (!section) return;
+    section.querySelector(".ready-apps__label") && (section.querySelector(".ready-apps__label").textContent = r.label);
+    const title = section.querySelector(".ready-apps__title");
+    if (title && r.titleHtml) title.innerHTML = r.titleHtml;
+    section.querySelector(".ready-apps__subtitle") && (section.querySelector(".ready-apps__subtitle").textContent = r.subtitle);
+
+    const readyModal = document.querySelector("#ready-apps-modal");
+    if (readyModal && r.modal) {
+      readyModal.querySelector("h3") && (readyModal.querySelector("h3").textContent = r.modal.title);
+      readyModal.querySelector(".ready-apps-modal__intro") && (readyModal.querySelector(".ready-apps-modal__intro").textContent = r.modal.intro);
+      readyModal.querySelector('button[type="submit"]') && (readyModal.querySelector('button[type="submit"]').textContent = r.modal.submit);
+      const closeBtn = readyModal.querySelector(".ready-apps-modal__close");
+      if (closeBtn) closeBtn.setAttribute("aria-label", r.modal.close);
+    }
+
+    if (typeof window.renderReadyAppsCards === "function") window.renderReadyAppsCards();
+  }
+
   function applySteps(lang) {
     const s = dict(lang).steps;
     if (!s) return;
@@ -525,7 +547,7 @@
     document.querySelectorAll('.consult__input[name="phone"]').forEach((el) => {
       if (c?.phonePlaceholder) el.placeholder = c.phonePlaceholder;
     });
-    document.querySelectorAll(".modal__form input[placeholder], .mobile-modal__form input[placeholder]").forEach((el) => {
+    document.querySelectorAll(".modal__form input[placeholder], .mobile-modal__form input[placeholder], .ready-apps-modal__form input[placeholder]").forEach((el) => {
       if (el.type === "tel") el.placeholder = f.phonePlaceholder;
       else if (el.type === "text" && !el.readOnly) el.placeholder = f.namePlaceholder;
     });
@@ -595,6 +617,7 @@
     applyServices(lang);
     applyPortfolio(lang);
     applyMobileApps(lang);
+    applyReadyApps(lang);
     applySteps(lang);
     applyJunePromo(lang);
     applyAds(lang);

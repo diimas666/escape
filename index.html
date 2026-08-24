@@ -102,6 +102,7 @@
     <link rel="stylesheet" href="./css/faq.css" />
     <link rel="stylesheet" href="./css/ads.css" />
     <link rel="stylesheet" href="./css/mobile-apps.css" />
+    <link rel="stylesheet" href="./css/ready-apps.css" />
     <link rel="stylesheet" href="./css/i18n.css" />
     <link rel="stylesheet" href="./css/contacts.css" />
     <link rel="stylesheet" href="./css/media.css" />
@@ -1663,6 +1664,45 @@
             </article>
           </div>
 
+          <div class="ready-apps" id="ready-apps">
+            <div class="ready-apps__header">
+              <span class="section-label section-label--light ready-apps__label">Готові рішення</span>
+              <h3 class="ready-apps__title">Купити <span>готовий додаток</span></h3>
+              <p class="ready-apps__subtitle">
+                Готові мобільні застосунки з повним функціоналом — запускайте бізнес швидше без тривалої розробки з
+                нуля. Ознайомтесь у App Store або залиште заявку — передзвонимо.
+              </p>
+            </div>
+            <div class="ready-apps__grid" id="ready-apps-grid"></div>
+          </div>
+
+          <div id="ready-apps-modal" class="modal">
+            <div class="modal__content">
+              <button class="modal__close ready-apps-modal__close" type="button" aria-label="Закрити">✕</button>
+              <h3>Купити готовий додаток</h3>
+              <p class="ready-apps-modal__app-name" id="ready-apps-modal-app"></p>
+              <p class="ready-apps-modal__intro">Залиште номер телефону — ми передзвонимо вам найближчим часом</p>
+
+              <form class="ready-apps-modal__form modal__form">
+                <input id="ready-app-name" type="text" readonly hidden />
+
+                <input type="tel" name="phone" placeholder="Телефон" required />
+
+                <label class="form-consent">
+                  <input type="checkbox" name="privacy" class="form-consent__checkbox" required />
+                  <span class="form-consent__text"
+                    >Погоджуюсь з
+                    <a href="./privacy.html" class="form-consent__link" target="_blank" rel="noopener noreferrer"
+                      >політикою конфіденційності</a
+                    ></span
+                  >
+                </label>
+
+                <button type="submit">Надіслати заявку</button>
+              </form>
+            </div>
+          </div>
+
           <div class="mobile-apps__cta">
             <p class="mobile-apps__cta-text">
               Не знаєте, який пакет обрати? Розкажіть про свій проєкт — підберемо оптимальне рішення безкоштовно.
@@ -2764,6 +2804,8 @@
     <script src="./js/translations.js"></script>
     <script src="./js/i18n.js"></script>
     <script src="./js/portfolio-data.js"></script>
+    <script src="./js/ready-apps-data.js"></script>
+    <script src="./js/ready-apps.js"></script>
     <script src="./js/analytics.js"></script>
     <script src="./js/telegram.js"></script>
     <script src="./js/faq.js"></script>
