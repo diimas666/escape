@@ -317,6 +317,12 @@ window.ESCAPE_I18N = {
           price: "$1 500",
           btn: "Купити зараз",
         },
+        {
+          id: "doctor-calendar",
+          name: "Календар лікаря",
+          price: "$5 000",
+          btn: "Купити зараз",
+        },
       ],
       modal: {
         title: "Купити готовий додаток",
@@ -988,6 +994,12 @@ window.ESCAPE_I18N = {
           price: "$1,500",
           btn: "Buy now",
         },
+        {
+          id: "doctor-calendar",
+          name: "Doctor Calendar",
+          price: "$5,000",
+          btn: "Buy now",
+        },
       ],
       modal: {
         title: "Buy a ready-made app",
@@ -1657,6 +1669,12 @@ window.ESCAPE_I18N = {
           id: "mobistuff",
           name: "MobiStuff",
           price: "$1 500",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "doctor-calendar",
+          name: "Календарь врача",
+          price: "$5 000",
           btn: "Купить сейчас",
         },
       ],

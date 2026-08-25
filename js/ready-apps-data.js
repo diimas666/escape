@@ -24,4 +24,10 @@ window.ESCAPE_READY_APPS = [
     image: "./images/ready-apps/mobistuff.png",
     appStoreUrl: "https://apps.apple.com/ua/app/mobistuff/id6785212528?l=ru",
   },
+  {
+    id: "doctor-calendar",
+    image: "./images/ready-apps/doctor-calendar.png",
+    appStoreUrl:
+      "https://apps.apple.com/ua/app/%D0%BA%D0%B0%D0%BB%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D1%8C-%D0%B2%D1%80%D0%B0%D1%87%D0%B0/id6784318000?l=ru",
+  },
 ];
