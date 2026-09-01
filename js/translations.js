@@ -323,6 +323,12 @@ window.ESCAPE_I18N = {
           price: "$5 000",
           btn: "Купити зараз",
         },
+        {
+          id: "your-steps-tracker",
+          name: "Your Steps Tracker",
+          price: "$3 000",
+          btn: "Купити зараз",
+        },
       ],
       modal: {
         title: "Купити готовий додаток",
@@ -1000,6 +1006,12 @@ window.ESCAPE_I18N = {
           price: "$5,000",
           btn: "Buy now",
         },
+        {
+          id: "your-steps-tracker",
+          name: "Your Steps Tracker",
+          price: "$3,000",
+          btn: "Buy now",
+        },
       ],
       modal: {
         title: "Buy a ready-made app",
@@ -1675,6 +1687,12 @@ window.ESCAPE_I18N = {
           id: "doctor-calendar",
           name: "Календарь врача",
           price: "$5 000",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "your-steps-tracker",
+          name: "Your Steps Tracker",
+          price: "$3 000",
           btn: "Купить сейчас",
         },
       ],
