@@ -35,4 +35,9 @@ window.ESCAPE_READY_APPS = [
     image: "./images/ready-apps/your-steps-tracker.png",
     appStoreUrl: "https://apps.apple.com/ua/app/your-steps-tracker/id6804945732?l=ru",
   },
+  {
+    id: "navi",
+    image: "./images/ready-apps/navi.png",
+    appStoreUrl: "https://apps.apple.com/ua/app/navi/id6819172035?l=ru",
+  },
 ];

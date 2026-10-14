@@ -329,6 +329,12 @@ window.ESCAPE_I18N = {
           price: "$3 000",
           btn: "Купити зараз",
         },
+        {
+          id: "navi",
+          name: "Navi",
+          price: "$3 000",
+          btn: "Купити зараз",
+        },
       ],
       modal: {
         title: "Купити готовий додаток",
@@ -1012,6 +1018,12 @@ window.ESCAPE_I18N = {
           price: "$3,000",
           btn: "Buy now",
         },
+        {
+          id: "navi",
+          name: "Navi",
+          price: "$3,000",
+          btn: "Buy now",
+        },
       ],
       modal: {
         title: "Buy a ready-made app",
@@ -1692,6 +1704,12 @@ window.ESCAPE_I18N = {
         {
           id: "your-steps-tracker",
           name: "Your Steps Tracker",
+          price: "$3 000",
+          btn: "Купить сейчас",
+        },
+        {
+          id: "navi",
+          name: "Navi",
           price: "$3 000",
           btn: "Купить сейчас",
         },
