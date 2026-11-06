@@ -3,6 +3,7 @@
     GA4_ID: "G-CZF6ZZN5TP",
     GADS_ID: "AW-11236629410",
     GADS_LEAD_CONVERSION: "AW-11236629410/eqc7CLj4wrscEKK3he4p",
+    GADS_TELEGRAM_CONVERSION: "AW-11236629410/pCpxCKjzn7MdEKK3he4p",
     // Вставте ID пікселя з Meta Events Manager для відстеження Instagram / Facebook
     META_PIXEL_ID: "",
     STORAGE_KEY: "escape_traffic",
@@ -294,6 +295,7 @@
           label: link.getAttribute("href").split("?")[0],
         });
         gtagEvent("contact_telegram", buildEventPayload({ link_url: link.href }));
+        gtagEvent("conversion", { send_to: CONFIG.GADS_TELEGRAM_CONVERSION });
       });
     });
   }
