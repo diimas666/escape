@@ -286,6 +286,16 @@
         });
       });
     });
+
+    document.querySelectorAll('a[href*="t.me/"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        trackCtaClick({
+          action: "telegram_click",
+          label: link.getAttribute("href").split("?")[0],
+        });
+        gtagEvent("contact_telegram", buildEventPayload({ link_url: link.href }));
+      });
+    });
   }
 
   function init() {
