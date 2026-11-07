@@ -1,5 +1,11 @@
 const portfolioProjects = [
   {
+    title: "Dr. Alexandrovna",
+    tag: "Медицина",
+    desc: "Сайт пластичного хірурга",
+    desktop: "mock/17.png",
+  },
+  {
     title: "Romanova",
     tag: "Landing Page",
     desc: "Сайт особистого психолога",

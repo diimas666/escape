@@ -661,6 +661,7 @@ window.ESCAPE_I18N = {
       },
     },
     portfolioProjects: [
+      { tag: "Медицина", desc: "Сайт пластичного хірурга" },
       { tag: "Landing Page", desc: "Сайт особистого психолога" },
       { tag: "Стартап", desc: "IT SaaS-платформа" },
       { tag: "Сервіс", desc: "Доставка органічної їжі" },
@@ -1350,6 +1351,7 @@ window.ESCAPE_I18N = {
       },
     },
     portfolioProjects: [
+      { tag: "Medicine", desc: "Plastic surgeon website" },
       { tag: "Landing Page", desc: "Personal psychologist website" },
       { tag: "Startup", desc: "IT SaaS platform" },
       { tag: "Service", desc: "Organic food delivery" },
@@ -2039,6 +2041,7 @@ window.ESCAPE_I18N = {
       },
     },
     portfolioProjects: [
+      { tag: "Медицина", desc: "Сайт пластического хирурга" },
       { tag: "Landing Page", desc: "Сайт личного психолога" },
       { tag: "Стартап", desc: "IT SaaS-платформа" },
       { tag: "Сервис", desc: "Доставка органической еды" },
