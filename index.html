@@ -82,18 +82,12 @@
     <link rel="manifest" href="./favicon_io/site.webmanifest" />
 
     <!-- Meta -->
-    <meta name="theme-color" content="#0a0612" />
+    <meta name="theme-color" content="#120a20" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/normalize.css" />
@@ -107,6 +101,7 @@
     <link rel="stylesheet" href="./css/i18n.css" />
     <link rel="stylesheet" href="./css/contacts.css" />
     <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./css/redesign.css" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -564,18 +559,12 @@
     </div>
 
     <header class="header">
-      <div class="header__bg">
-        <img class="header__image" src="./images/header-bg.png" alt="" fetchpriority="high" />
-        <div class="header__overlay"></div>
-        <div class="header__glow"></div>
-      </div>
-
       <div class="container">
         <div class="header__top-spacer" aria-hidden="true"></div>
 
         <div class="header__content">
           <div class="header__content-left">
-            <div class="header__badge">Веб-студія преміум-класу</div>
+            <p class="header__badge">Веб-студія преміум-класу</p>
             <h1 class="header__title">
               <span class="header__typed-wrap">
                 <span class="header__typed">Преміальні</span>
@@ -588,41 +577,68 @@
               за 2 секунди та конверсія, яка окупає інвестиції вже з першого місяця.
             </p>
 
-            <div class="header__features">
-              <div class="header__feature">
-                <span class="header__feature-icon">✦</span>
-                <span>Запуск від 5 днів</span>
-              </div>
-              <div class="header__feature">
-                <span class="header__feature-icon">✦</span>
-                <span>Гарантія 6 місяців</span>
-              </div>
-              <div class="header__feature">
-                <span class="header__feature-icon">✦</span>
-                <span>120+ успішних проєктів</span>
-              </div>
-            </div>
-
             <div class="header__actions">
               <a class="btn btn--primary" href="#contacts">Отримати пропозицію</a>
               <a class="btn btn--ghost" href="#portfolio">Дивитись роботи</a>
             </div>
-          </div>
 
-          <div class="header__content-right">
-            <div class="header__visual header__visual--animated">
-              <img
-                src="./images/hero-visual.png?v=2"
-                alt="Escape — преміальна веб-розробка, сайти та мобільні додатки"
-                width="640"
-                height="480"
-                loading="eager"
-              />
-              <div class="header__visual-glow"></div>
-            </div>
+            <ul class="header__features">
+              <li class="header__feature"><span class="header__feature-icon" aria-hidden="true"></span><span>Запуск від 5 днів</span></li>
+              <li class="header__feature"><span class="header__feature-icon" aria-hidden="true"></span><span>Гарантія 6 місяців</span></li>
+              <li class="header__feature"><span class="header__feature-icon" aria-hidden="true"></span><span>120+ успішних проєктів</span></li>
+            </ul>
           </div>
         </div>
       </div>
+
+      <a class="hero-wall" href="#portfolio" aria-label="Наші роботи — перейти до портфоліо">
+        <div class="hero-wall__stage" aria-hidden="true">
+              <div class="hero-wall__col hero-wall__col--a">
+                <div class="hero-wall__track">
+                <img src="./images/hero-wall/01.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/05.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/09.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/13.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/03.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/01.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/05.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/09.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/13.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/03.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                </div>
+              </div>
+              <div class="hero-wall__col hero-wall__col--b">
+                <div class="hero-wall__track">
+                <img src="./images/hero-wall/07.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/02.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/11.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/15.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/06.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/07.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/02.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/11.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/15.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/06.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                </div>
+              </div>
+              <div class="hero-wall__col hero-wall__col--c">
+                <div class="hero-wall__track">
+                <img src="./images/hero-wall/10.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/14.webp" alt="" width="720" height="480" decoding="async" />
+                <img src="./images/hero-wall/04.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/08.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/16.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/12.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/10.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/14.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/04.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/08.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/16.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                <img src="./images/hero-wall/12.webp" alt="" width="720" height="480" decoding="async" loading="lazy" />
+                </div>
+              </div>
+        </div>
+      </a>
     </header>
     <div class="mobile-menu-overlay"></div>
 
