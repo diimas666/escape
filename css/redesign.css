@@ -858,3 +858,223 @@ h3,
 .ads__faq-title {
   text-align: left !important;
 }
+
+.ads__pricing-title {
+  text-align: left !important;
+}
+
+.ads__wrapper {
+  justify-content: flex-start !important;
+}
+
+/* ==========================================================================
+   Full alignment pass — every section reads from one left edge
+   ========================================================================== */
+
+main .section-label {
+  display: block !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+.mobile-apps__pricing-title,
+.mobile-apps__pricing-note,
+.mobile-apps__stages-title,
+.mobile-apps__cta-text,
+.ready-apps__title,
+.ready-apps__subtitle,
+.faq__group-title,
+.ads__budget-banner-label,
+.ads__budget-banner-text,
+.ads__budget-banner-sub {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.mobile-apps__pricing-header,
+.ready-apps__header,
+.ready-apps__subtitle,
+.ads__budget-banner-sub {
+  max-width: 820px;
+  margin-left: 0 !important;
+}
+
+.mobile-apps__pricing-title,
+.ready-apps__title,
+.ads__pricing-title,
+.ads__faq-title,
+.faq__group-title {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-size: clamp(22px, 2.2vw, 30px) !important;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.faq .faq__group-title {
+  color: var(--ink) !important;
+}
+
+/* CTA row under mobile pricing: text and buttons on the left edge */
+.mobile-apps__cta,
+.mobile-apps__cta-actions,
+.ready-apps__actions {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* Ads budget banner: left-aligned statement card */
+.ads__budget-banner {
+  text-align: left !important;
+  padding: clamp(28px, 4vw, 48px) !important;
+  background: var(--ink-raised) !important;
+  border: 1px solid var(--line) !important;
+  border-left: 4px solid var(--signal) !important;
+  border-radius: 24px !important;
+}
+
+/* "Досить зливати бюджет" — a split band: words left, action right */
+.ads__cta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title link"
+    "text  link";
+  align-items: center;
+  gap: 8px 40px;
+  text-align: left !important;
+  padding: clamp(28px, 4vw, 48px) !important;
+  background: var(--signal) !important;
+  border: 0 !important;
+  border-radius: 28px !important;
+}
+
+.ads__cta-title {
+  grid-area: title;
+  font-family: var(--font-display) !important;
+  font-size: clamp(22px, 2.6vw, 34px) !important;
+  margin: 0 !important;
+}
+
+.ads__cta-text {
+  grid-area: text;
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  max-width: 54ch !important;
+}
+
+.ads__cta-link {
+  grid-area: link;
+  background: #fff !important;
+  color: var(--ink) !important;
+  padding: 18px 30px !important;
+  font-size: 16px !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+  .ads__cta {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "text" "link";
+  }
+
+  .ads__cta-link {
+    justify-self: start;
+    margin-top: 12px;
+  }
+}
+
+/* Website prices: three equal columns across the full container */
+.price__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px !important;
+  align-items: stretch !important;
+}
+
+.price__card {
+  width: auto !important;
+  padding: clamp(28px, 3vw, 44px) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.price__card .btn,
+.price__card button,
+.price__card a[class*="btn"] {
+  margin-top: auto;
+}
+
+.price__card--active {
+  border-color: var(--signal) !important;
+  background: linear-gradient(180deg, rgba(123, 60, 255, 0.16), rgba(123, 60, 255, 0) 60%), var(--ink-raised) !important;
+}
+
+@media (max-width: 992px) {
+  .price__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ads plans: same treatment — equal columns, full width */
+.ads__wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px !important;
+}
+
+.ads__card {
+  width: auto !important;
+  max-width: none !important;
+  text-align: left !important;
+}
+
+.ads__card * {
+  text-align: left !important;
+}
+
+.ads__card ul {
+  padding-left: 0;
+}
+
+@media (max-width: 992px) {
+  .ads__wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FAQ lists span the container like every other block */
+.faq__wrapper,
+.ads__faq {
+  max-width: none !important;
+  width: 100%;
+}
+
+/* Contacts: details left, form right, both on the container edges */
+@media (min-width: 993px) {
+  .contacts__wrapper {
+    display: grid !important;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(32px, 5vw, 80px) !important;
+    align-items: start;
+  }
+
+  .contacts__wrapper > .contacts__info,
+  .contacts__wrapper > .contacts__form-wrapper {
+    max-width: none !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+}
+
+.contacts__form-wrapper {
+  background: var(--ink-raised) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 28px !important;
+}
+
+.contacts__item svg,
+.contacts__icon {
+  color: var(--lilac) !important;
+}
